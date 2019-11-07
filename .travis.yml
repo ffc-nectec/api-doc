@@ -7,14 +7,20 @@ branches:
   - master
 
 before_script:
+  - du -sh /tmp/*
   - git clone -b gh-pages https://github.com/ffc-nectec/api-doc.git /tmp/api-doc
+  - du -sh /tmp/api-doc/*
   - npm install -g aglio
 
 script:
   - aglio -i blueprint.apib -o /tmp/api-doc/index.html
   - cd /tmp/api-doc
   - du -sh *
+  - git status
   - git add index.html
+  - git status
   - git commit -m "Build html"
+  - git status
   - git remote add origin-gh-pages https://${GH_TOKEN}@github.com/ffc-nectec/api-doc.git > /dev/null 2>&1
   - git push --set-upstream origin-gh-pages gh-pages
+  - git status
