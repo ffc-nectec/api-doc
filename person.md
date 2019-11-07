@@ -1,10 +1,8 @@
 # Group Person
 
-## ข้อมูลคน Person [/org/{org_id}/person]
+## ข้อมูลคน [/org/{org_id}/person]
 
-จัดการข้อมูลคน ที่หน่วยงานดูแลอยู่
-
-### ดูข้อมูลคนที่หน่วยงานดูแลอยู่ [GET /org/{org_id}/person/{?page}{?per_page}{?query}]
+### รายการข้อมูลคน [GET /org/{org_id}/person/{?page}{?per_page}{?query}]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
@@ -340,7 +338,7 @@
                }
             ]
 
-### ดึงข้อมูลคนด้วย id ของระบบ [GET /org/{org_id}/person/{person_id}]
+### ดูข้อมูลคนด้วย id ของระบบ [GET /org/{org_id}/person/{person_id}]
 
 + Request (application/json)
 
@@ -513,9 +511,7 @@
                "timestamp":"2017-10-09T10:14:10.000+07:00"
             }
 
-### เพิ่มคนเข้าสู่ FFC [POST]
-
-เพิ่มข้อมูลคนที่ละ 1 คนเข้าสู่ระบบ FFC หากเพิ่มสำเร็จ FFC Cloud จะส่งข้อมูลที่เพิ่มสำเร็จกลับมาให้
+### การเพิ่มคน [POST]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
@@ -604,9 +600,7 @@
                "timestamp":"2018-06-25T14:09:07.815+07:00"
             }
 
-### เพิ่มคนเข้าสู่ FFC แบบ array [POST /org/{org_id}/persons]
-
-เพิ่มข้อมูลคนที่ละหลายคนเข้าสู่ระบบ FFC หากเพิ่มสำเร็จ FFC Cloud จะส่งข้อมูลรายการคนที่เพิ่มสำเร็จกลับมาให้
+### เพิ่มคนแบบหลายคน [POST /org/{org_id}/persons]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
@@ -988,6 +982,8 @@
                "type":"Person",
                "timestamp":"2018-06-25T14:09:07.815+07:00"
             }
+
+## ความสัมพันธ์ทางสายเสือด [/org/{org_id}/person/{person_id}/relationship]
 
 ### ดูความสัมพันธ์ทางสายเลือด [GET /org/{org_id}/person/{person_id}/relationship]
 

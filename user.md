@@ -176,7 +176,7 @@
 
 + Response 201
 
-## เพิ่ม/ลบ ผู้ใช้ [/org/{org_id}/user]
+## ข้อมูลผู้ใช้ [/org/{org_id}/user]
 
 ### ดูรายการผู้ใช้ [GET /org/{org_id}/user]
 
