@@ -13,18 +13,12 @@ before_script:
   - npm install -g aglio
 
 script:
-  - pwd
   - ls -al *
   - aglio -i blueprint.apib --theme-variables flatly -o /tmp/index.html
   - cd /tmp/api-doc
   - git checkout gh-pages
   - mv ../index.html .
-  - ls -al *
-  - git status
   - git add index.html
-  - git status
   - git commit -m "Build html"
-  - git status
   - git remote add origin-gh-pages https://${GH_TOKEN}@github.com/ffc-nectec/api-doc.git > /dev/null 2>&1
   - git push --set-upstream origin-gh-pages gh-pages
-  - git status
