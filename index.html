@@ -1,5 +1,461 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>FFC api</title><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"><style>@import url('https://fonts.googleapis.com/css?family=Roboto:400,700|Inconsolata|Raleway:200');.hljs-comment,.hljs-title{color:#8e908c}.hljs-variable,.hljs-attribute,.hljs-tag,.hljs-regexp,.ruby .hljs-constant,.xml .hljs-tag .hljs-title,.xml .hljs-pi,.xml .hljs-doctype,.html .hljs-doctype,.css .hljs-id,.css .hljs-class,.css .hljs-pseudo{color:#c82829}.hljs-number,.hljs-preprocessor,.hljs-pragma,.hljs-built_in,.hljs-literal,.hljs-params,.hljs-constant{color:#f5871f}.ruby .hljs-class .hljs-title,.css .hljs-rules .hljs-attribute{color:#eab700}.hljs-string,.hljs-value,.hljs-inheritance,.hljs-header,.ruby .hljs-symbol,.xml .hljs-cdata{color:#718c00}.css .hljs-hexcolor{color:#3e999f}.hljs-function,.python .hljs-decorator,.python .hljs-title,.ruby .hljs-function .hljs-title,.ruby .hljs-title .hljs-keyword,.perl .hljs-sub,.javascript .hljs-title,.coffeescript .hljs-title{color:#4271ae}.hljs-keyword,.javascript .hljs-function{color:#8959a8}.hljs{display:block;background:white;color:#4d4d4c;padding:.5em}.coffeescript .javascript,.javascript .xml,.tex .hljs-formula,.xml .javascript,.xml .vbscript,.xml .css,.xml .hljs-cdata{opacity:.5}.right .hljs-comment{color:#969896}.right .css .hljs-class,.right .css .hljs-id,.right .css .hljs-pseudo,.right .hljs-attribute,.right .hljs-regexp,.right .hljs-tag,.right .hljs-variable,.right .html .hljs-doctype,.right .ruby .hljs-constant,.right .xml .hljs-doctype,.right .xml .hljs-pi,.right .xml .hljs-tag .hljs-title{color:#c66}.right .hljs-built_in,.right .hljs-constant,.right .hljs-literal,.right .hljs-number,.right .hljs-params,.right .hljs-pragma,.right .hljs-preprocessor{color:#de935f}.right .css .hljs-rule .hljs-attribute,.right .ruby .hljs-class .hljs-title{color:#f0c674}.right .hljs-header,.right .hljs-inheritance,.right .hljs-name,.right .hljs-string,.right .hljs-value,.right .ruby .hljs-symbol,.right .xml .hljs-cdata{color:#b5bd68}.right .css .hljs-hexcolor,.right .hljs-title{color:#8abeb7}.right .coffeescript .hljs-title,.right .hljs-function,.right .javascript .hljs-title,.right .perl .hljs-sub,.right .python .hljs-decorator,.right .python .hljs-title,.right .ruby .hljs-function .hljs-title,.right .ruby .hljs-title .hljs-keyword{color:#81a2be}.right .hljs-keyword,.right .javascript .hljs-function{color:#b294bb}.right .hljs{display:block;overflow-x:auto;background:#1d1f21;color:#c5c8c6;padding:.5em;-webkit-text-size-adjust:none}.right .coffeescript .javascript,.right .javascript .xml,.right .tex .hljs-formula,.right .xml .css,.right .xml .hljs-cdata,.right .xml .javascript,.right .xml .vbscript{opacity:.5}body{color:black;background:white;font:400 14px / 1.42 'Roboto',Helvetica,sans-serif}header{border-bottom:1px solid #ededed;margin-bottom:12px}h1,h2,h3,h4,h5{color:black;margin:12px 0}h1 .permalink,h2 .permalink,h3 .permalink,h4 .permalink,h5 .permalink{margin-left:0;opacity:0;transition:opacity .25s ease}h1:hover .permalink,h2:hover .permalink,h3:hover .permalink,h4:hover .permalink,h5:hover .permalink{opacity:1}.triple h1 .permalink,.triple h2 .permalink,.triple h3 .permalink,.triple h4 .permalink,.triple h5 .permalink{opacity:.15}.triple h1:hover .permalink,.triple h2:hover .permalink,.triple h3:hover .permalink,.triple h4:hover .permalink,.triple h5:hover .permalink{opacity:.15}h1{font:200 36px 'Raleway',Helvetica,sans-serif;font-size:36px}h2{font:200 36px 'Raleway',Helvetica,sans-serif;font-size:30px}h3{font-size:100%;text-transform:uppercase}h5{font-size:100%;font-weight:normal}p{margin:0 0 10px}p.choices{line-height:1.6}a{color:#18bc9c;text-decoration:none}li p{margin:0}hr.split{border:0;height:1px;width:100%;padding-left:6px;margin:12px auto;background-image:linear-gradient(to right, rgba(0,0,0,0) 20%, rgba(0,0,0,0.2) 51.4%, rgba(255,255,255,0.2) 51.4%, rgba(255,255,255,0) 80%)}dl dt{float:left;width:130px;clear:left;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:700}dl dd{margin-left:150px}blockquote{color:rgba(0,0,0,0.5);font-size:15.5px;padding:10px 20px;margin:12px 0;border-left:5px solid #e8e8e8}blockquote p:last-child{margin-bottom:0}pre{background-color:#f5f5f5;padding:12px;border:1px solid #cfcfcf;border-radius:6px;overflow:auto}pre code{color:black;background-color:transparent;padding:0;border:none}code{color:#444;background-color:#f5f5f5;font:'Inconsolata',monospace;padding:1px 4px;border:1px solid #cfcfcf;border-radius:3px}ul,ol{padding-left:2em}table{border-collapse:collapse;border-spacing:0;margin-bottom:12px}table tr:nth-child(2n){background-color:#fafafa}table th,table td{padding:6px 12px;border:1px solid #e6e6e6}.text-muted{opacity:.5}.note,.warning{padding:.3em 1em;margin:1em 0;border-radius:2px;font-size:90%}.note h1,.warning h1,.note h2,.warning h2,.note h3,.warning h3,.note h4,.warning h4,.note h5,.warning h5,.note h6,.warning h6{font-family:200 36px 'Raleway',Helvetica,sans-serif;font-size:135%;font-weight:500}.note p,.warning p{margin:.5em 0}.note{color:black;background-color:#eff7fc;border-left:4px solid #3498db}.note h1,.note h2,.note h3,.note h4,.note h5,.note h6{color:#3498db}.warning{color:black;background-color:#fcf0ef;border-left:4px solid #d62c1a}.warning h1,.warning h2,.warning h3,.warning h4,.warning h5,.warning h6{color:#d62c1a}header{margin-top:24px}nav{position:fixed;top:24px;bottom:0;overflow-y:auto}nav .resource-group{padding:0}nav .resource-group .heading{position:relative}nav .resource-group .heading .chevron{position:absolute;top:12px;right:12px;opacity:.5}nav .resource-group .heading a{display:block;color:black;opacity:.7;border-left:2px solid transparent;margin:0}nav .resource-group .heading a:hover{text-decoration:none;background-color:bad-color;border-left:2px solid black}nav ul{list-style-type:none;padding-left:0}nav ul a{display:block;font-size:13px;color:rgba(0,0,0,0.7);padding:8px 12px;border-top:1px solid #ededed;border-left:2px solid transparent;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}nav ul a:hover{text-decoration:none;background-color:bad-color;border-left:2px solid black}nav ul>li{margin:0}nav ul>li:first-child{margin-top:-12px}nav ul>li:last-child{margin-bottom:-12px}nav ul ul a{padding-left:24px}nav ul ul li{margin:0}nav ul ul li:first-child{margin-top:0}nav ul ul li:last-child{margin-bottom:0}nav>div>div>ul>li:first-child>a{border-top:none}.preload *{transition:none !important}.pull-left{float:left}.pull-right{float:right}.badge{display:inline-block;float:right;min-width:10px;min-height:14px;padding:3px 7px;font-size:12px;color:#000;background-color:#ededed;border-radius:10px;margin:-2px 0}.badge.get{color:white;background-color:#3498db}.badge.head{color:white;background-color:#3498db}.badge.options{color:white;background-color:#3498db}.badge.put{color:white;background-color:#f39c12}.badge.patch{color:white;background-color:#f39c12}.badge.post{color:white;background-color:#18bc9c}.badge.delete{color:white;background-color:#e74c3c}.collapse-button{float:right}.collapse-button .close{display:none;color:#18bc9c;cursor:pointer}.collapse-button .open{color:#18bc9c;cursor:pointer}.collapse-button.show .close{display:inline}.collapse-button.show .open{display:none}.collapse-content{max-height:0;overflow:hidden;transition:max-height .3s ease-in-out}nav{width:220px}.container{max-width:940px;margin-left:auto;margin-right:auto}.container .row .content{margin-left:244px;width:696px}.container .row:after{content:'';display:block;clear:both}.container-fluid nav{width:22%}.container-fluid .row .content{margin-left:24%}.container-fluid.triple nav{width:16.5%;padding-right:1px}.container-fluid.triple .row .content{position:relative;margin-left:16.5%;padding-left:24px}.middle:before,.middle:after{content:'';display:table}.middle:after{clear:both}.middle{box-sizing:border-box;width:51.5%;padding-right:12px}.right{box-sizing:border-box;float:right;width:48.5%;padding-left:12px}.right a{color:#18bc9c}.right h1,.right h2,.right h3,.right h4,.right h5,.right p,.right div{color:white}.right pre{background-color:#1d1f21;border:1px solid #1d1f21}.right pre code{color:#c5c8c6}.right .description{margin-top:12px}.triple .resource-heading{font-size:125%}.definition{margin-top:12px;margin-bottom:12px}.definition .method{font-weight:bold}.definition .method.get{color:#2e80b8}.definition .method.head{color:#2e80b8}.definition .method.options{color:#2e80b8}.definition .method.post{color:#2eb89d}.definition .method.put{color:#b8822e}.definition .method.patch{color:#b8822e}.definition .method.delete{color:#b83b2e}.definition .uri{word-break:break-all;word-wrap:break-word}.definition .hostname{opacity:.5}.example-names{background-color:#eee;padding:12px;border-radius:6px}.example-names .tab-button{cursor:pointer;color:black;border:1px solid #ddd;padding:6px;margin-left:12px}.example-names .tab-button.active{background-color:#d5d5d5}.right .example-names{background-color:#444}.right .example-names .tab-button{color:white;border:1px solid #666;border-radius:6px}.right .example-names .tab-button.active{background-color:#5e5e5e}#nav-background{position:fixed;left:0;top:0;bottom:0;width:16.5%;padding-right:14.4px;background-color:#fbfbfb;border-right:1px solid #f0f0f0;z-index:-1}#right-panel-background{position:absolute;right:-12px;top:-12px;bottom:-12px;width:48.6%;background-color:#333;z-index:-1}@media (max-width:1200px){nav{width:198px}.container{max-width:840px}.container .row .content{margin-left:224px;width:606px}}@media (max-width:992px){nav{width:169.4px}.container{max-width:720px}.container .row .content{margin-left:194px;width:526px}}@media (max-width:768px){nav{display:none}.container{width:95%;max-width:none}.container .row .content,.container-fluid .row .content,.container-fluid.triple .row .content{margin-left:auto;margin-right:auto;width:95%}#nav-background{display:none}#right-panel-background{width:48.6%}}.back-to-top{position:fixed;z-index:1;bottom:0;right:24px;padding:4px 8px;color:rgba(0,0,0,0.5);background-color:#ededed;text-decoration:none !important;border-top:1px solid #ededed;border-left:1px solid #ededed;border-right:1px solid #ededed;border-top-left-radius:3px;border-top-right-radius:3px}.resource-group{padding:12px;margin-bottom:12px;background-color:white;border:1px solid #ededed;border-radius:6px}.resource-group h2.group-heading,.resource-group .heading a{padding:12px;margin:-12px -12px 12px -12px;background-color:#ededed;border-bottom:1px solid #ededed;border-top-left-radius:6px;border-top-right-radius:6px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.triple .content .resource-group{padding:0;border:none}.triple .content .resource-group h2.group-heading,.triple .content .resource-group .heading a{margin:0 0 12px 0;border:1px solid #ededed}nav .resource-group .heading a{padding:12px;margin-bottom:0}nav .resource-group .collapse-content{padding:0}.action{margin-bottom:12px;padding:12px 12px 0 12px;overflow:hidden;border:1px solid transparent;border-radius:6px}.action h4.action-heading{padding:6px 12px;margin:-12px -12px 12px -12px;border-bottom:1px solid transparent;border-top-left-radius:6px;border-top-right-radius:6px;overflow:hidden}.action h4.action-heading .name{float:right;font-weight:normal;padding:6px 0}.action h4.action-heading .method{padding:6px 12px;margin-right:12px;border-radius:3px;display:inline-block}.action h4.action-heading .method.get{color:#000;background-color:white}.action h4.action-heading .method.head{color:#000;background-color:white}.action h4.action-heading .method.options{color:#000;background-color:white}.action h4.action-heading .method.put{color:#000;background-color:white}.action h4.action-heading .method.patch{color:#000;background-color:white}.action h4.action-heading .method.post{color:#000;background-color:white}.action h4.action-heading .method.delete{color:#000;background-color:white}.action h4.action-heading code{color:#444;background-color:rgba(255,255,255,0.7);border-color:transparent;font-weight:normal;word-break:break-all;display:inline-block;margin-top:2px}.action dl.inner{padding-bottom:2px}.action .title{border-bottom:1px solid white;margin:0 -12px -1px -12px;padding:12px}.action.get{border-color:#3498db}.action.get h4.action-heading{color:white;background:#3498db;border-bottom-color:#3498db}.action.head{border-color:#3498db}.action.head h4.action-heading{color:white;background:#3498db;border-bottom-color:#3498db}.action.options{border-color:#3498db}.action.options h4.action-heading{color:white;background:#3498db;border-bottom-color:#3498db}.action.post{border-color:#18bc9c}.action.post h4.action-heading{color:white;background:#18bc9c;border-bottom-color:#18bc9c}.action.put{border-color:#f39c12}.action.put h4.action-heading{color:white;background:#f39c12;border-bottom-color:#f39c12}.action.patch{border-color:#f39c12}.action.patch h4.action-heading{color:white;background:#f39c12;border-bottom-color:#f39c12}.action.delete{border-color:#e74c3c}.action.delete h4.action-heading{color:white;background:#e74c3c;border-bottom-color:#e74c3c}</style></head><body class="preload"><a href="#top" class="text-muted back-to-top"><i class="fa fa-toggle-up"></i>&nbsp;Back to top</a><div class="container"><div class="row"><nav><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#user">User</a></div><div class="collapse-content"><ul><li><a href="#user-ระบบ-login">ระบบ login</a><ul><li><a href="#user-ระบบ-login-post"><span class="badge post"><i class="fa fa-plus"></i></span>login เพื่อขอ token</a></li><li><a href="#user-ระบบ-login-put"><span class="badge put"><i class="fa fa-pencil"></i></span>การเปิดใช้งานผู้ใช้</a></li><li><a href="#user-ระบบ-login-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ขอเลข OTP สำหรับยืนยันผู้ใช้ในครั้งแรก</a></li><li><a href="#user-ระบบ-login-get-1"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดูเลขเอกสารการยอมรับเงื่อไขการใช้งานของผู้ใช้</a></li><li><a href="#user-ระบบ-login-get-2"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดูเลขเอกสารการยอมรับนโยบายความเป็นส่วนตัวของผู้ใช้</a></li><li><a href="#user-ระบบ-login-post-1"><span class="badge post"><i class="fa fa-plus"></i></span>เพิ่มการยอมรับนโยบายความเป็นส่วนตัวของผู้ใช้</a></li></ul></li><li><a href="#user-ข้อมูลผู้ใช้">ข้อมูลผู้ใช้</a><ul><li><a href="#user-ข้อมูลผู้ใช้-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดูรายการผู้ใช้</a></li><li><a href="#user-ข้อมูลผู้ใช้-post"><span class="badge post"><i class="fa fa-plus"></i></span>เพิ่มผู้ใช้</a></li></ul></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#person">Person</a></div><div class="collapse-content"><ul><li><a href="#person-ข้อมูลคน">ข้อมูลคน</a><ul><li><a href="#person-ข้อมูลคน-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>รายการข้อมูลคน</a></li><li><a href="#person-ข้อมูลคน-get-1"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดูข้อมูลคนด้วย id ของระบบ</a></li><li><a href="#person-ข้อมูลคน-post"><span class="badge post"><i class="fa fa-plus"></i></span>การเพิ่มคน</a></li><li><a href="#person-ข้อมูลคน-post-1"><span class="badge post"><i class="fa fa-plus"></i></span>เพิ่มคนแบบหลายคน</a></li><li><a href="#person-ข้อมูลคน-put"><span class="badge put"><i class="fa fa-pencil"></i></span>การแก้ไขข้อมูลคน</a></li></ul></li><li><a href="#person-ความสัมพันธ์ทางสายเสือด">ความสัมพันธ์ทางสายเสือด</a><ul><li><a href="#person-ความสัมพันธ์ทางสายเสือด-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดูความสัมพันธ์ทางสายเลือด</a></li><li><a href="#person-ความสัมพันธ์ทางสายเสือด-put"><span class="badge put"><i class="fa fa-pencil"></i></span>ใส่ความสัมพันธ์ทางสายเลือด</a></li><li><a href="#person-ความสัมพันธ์ทางสายเสือด-get-1"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดึงข้อมูลรายการคนที่มีความสัมพันธ์ทางสายเลือดกับผู้ที่เลือก</a></li></ul></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#healthcareservice">HealthCareService</a></div><div class="collapse-content"><ul><li><a href="#healthcareservice-การให้บริการ">การให้บริการ</a><ul><li><a href="#healthcareservice-การให้บริการ-post"><span class="badge post"><i class="fa fa-plus"></i></span>เพิ่มบริการใหม่</a></li><li><a href="#healthcareservice-การให้บริการ-put"><span class="badge put"><i class="fa fa-pencil"></i></span>แก้ไขบริการ ที่เคยบันทึกไปแล้ว</a></li><li><a href="#healthcareservice-การให้บริการ-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดึงข้อมูลการให้บริการของคน</a></li></ul></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#house">House</a></div><div class="collapse-content"><ul><li><a href="#house-ข้อมูลบ้าน">ข้อมูลบ้าน</a><ul><li><a href="#house-ข้อมูลบ้าน-post"><span class="badge post"><i class="fa fa-plus"></i></span>เพิ่มข้อมูลบ้านไปยัง FFC</a></li><li><a href="#house-ข้อมูลบ้าน-post-1"><span class="badge post"><i class="fa fa-plus"></i></span>เพิ่มข้อมูลบ้านไปยัง FFC (แบบ array)</a></li><li><a href="#house-ข้อมูลบ้าน-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดูข้อมูลบ้านที่หน่วยงานดูแลอยู่</a></li><li><a href="#house-ข้อมูลบ้าน-get-1"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดึงข้อมูลบ้านด้วย id ของระบบ</a></li><li><a href="#house-ข้อมูลบ้าน-get-2"><span class="badge get"><i class="fa fa-arrow-down"></i></span>พิกัดบ้านที่หน่วยงานดูแล ในรูปแบบแบบ Geo json</a></li></ul></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#organization">Organization</a></div><div class="collapse-content"><ul><li><a href="#organization-จัดการเกี่ยวกับหน่วยงาน">จัดการเกี่ยวกับหน่วยงาน</a><ul><li><a href="#organization-จัดการเกี่ยวกับหน่วยงาน-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>แสดงหน่วยงานทั้งหมดที่ใช้งาน</a></li><li><a href="#organization-จัดการเกี่ยวกับหน่วยงาน-post"><span class="badge post"><i class="fa fa-plus"></i></span>ลงทะเบียนเปิดใช้งานหน่วยงานใหม่</a></li><li><a href="#organization-จัดการเกี่ยวกับหน่วยงาน-get-1"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ค้นหาด้วยชื่อ หรือ รหัสหน่วยงาน</a></li><li><a href="#organization-จัดการเกี่ยวกับหน่วยงาน-delete"><span class="badge delete"><i class="fa fa-times"></i></span>ลบหน่วยงานทิ้ง</a></li></ul></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#village">Village</a></div><div class="collapse-content"><ul><li><a href="#village-ข้อมูลหมู่บ้าน">ข้อมูลหมู่บ้าน</a><ul><li><a href="#village-ข้อมูลหมู่บ้าน-post"><span class="badge post"><i class="fa fa-plus"></i></span>เพิ่มหมู่บ้านใน FFC Cloud</a></li><li><a href="#village-ข้อมูลหมู่บ้าน-post-1"><span class="badge post"><i class="fa fa-plus"></i></span>เพิ่มหมู่บ้านใน FFC Cloud แบบ array</a></li><li><a href="#village-ข้อมูลหมู่บ้าน-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดูข้อมูลหมู่บ้านที่หน่วยงานดูแลอยู่</a></li><li><a href="#village-ข้อมูลหมู่บ้าน-get-1"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดึงข้อมูลหมู่บ้านด้วย id ของระบบ</a></li></ul></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#lookup">Lookup</a></div><div class="collapse-content"><ul><li><a href="#lookup-lookup-ประเภทการเยี่ยม-homehealth">Lookup ประเภทการเยี่ยม homehealth</a><ul><li><a href="#lookup-lookup-ประเภทการเยี่ยม-homehealth-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดูรายการเยี่ยม</a></li><li><a href="#lookup-lookup-ประเภทการเยี่ยม-homehealth-get-1"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดูด้วย id การเยี่ยม</a></li></ul></li><li><a href="#lookup-lookup-รายการโรค">Lookup รายการโรค</a><ul><li><a href="#lookup-lookup-รายการโรค-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดูรายการโรค</a></li><li><a href="#lookup-lookup-รายการโรค-get-1"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดูด้วยรหัส ICD10</a></li></ul></li><li><a href="#lookup-specialpp">specialPP</a><ul><li><a href="#lookup-specialpp-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดูรายการ SpecialPP</a></li><li><a href="#lookup-specialpp-get-1"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดูด้วยรหัส SpecialPP</a></li></ul></li><li><a href="#lookup-template-ข้อความ">Template ข้อความ</a><ul><li><a href="#lookup-template-ข้อความ-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดูรายการ Template</a></li><li><a href="#lookup-template-ข้อความ-post"><span class="badge post"><i class="fa fa-plus"></i></span>ใส่รายการ Template ใหม่</a></li></ul></li></ul></div></div><p style="text-align: center; word-wrap: break-word;"><a href="https://api.ffc.in.th/v1">https://api.ffc.in.th/v1</a></p></nav><div class="content"><header><h1 id="top">FFC api</h1></header><p>api สำหรับใช้งานระบบ ffc cloud</p>
-<section id="user" class="resource-group"><h2 class="group-heading">User <a href="#user" class="permalink">&para;</a></h2><div id="user-ระบบ-login" class="resource"><h3 class="resource-heading">ระบบ login <a href="#user-ระบบ-login" class="permalink">&nbsp;&para;</a></h3><div id="user-ระบบ-login-post" class="action post"><h4 class="action-heading"><div class="name">login เพื่อขอ token</div><a href="#user-ระบบ-login-post" class="method post">POST</a><code class="uri">/org/{org_id}/authorize</code></h4><h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">https://api.ffc.in.th/v1</span>/org/<span class="hljs-attribute" title="org_id">5db0973f698922acf8b802fa</span>/authorize</span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>org_id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>5db0973f698922acf8b802fa</span></span><p><code>รหัส id ขององค์หน่วยงานที่ระบบสร้างให้</code></p>
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>FFC api</title><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"><style>@import url('https://fonts.googleapis.com/css?family=Roboto:400,700|Inconsolata|Raleway:200');.hljs-comment,.hljs-title{color:#8e908c}.hljs-variable,.hljs-attribute,.hljs-tag,.hljs-regexp,.ruby .hljs-constant,.xml .hljs-tag .hljs-title,.xml .hljs-pi,.xml .hljs-doctype,.html .hljs-doctype,.css .hljs-id,.css .hljs-class,.css .hljs-pseudo{color:#c82829}.hljs-number,.hljs-preprocessor,.hljs-pragma,.hljs-built_in,.hljs-literal,.hljs-params,.hljs-constant{color:#f5871f}.ruby .hljs-class .hljs-title,.css .hljs-rules .hljs-attribute{color:#eab700}.hljs-string,.hljs-value,.hljs-inheritance,.hljs-header,.ruby .hljs-symbol,.xml .hljs-cdata{color:#718c00}.css .hljs-hexcolor{color:#3e999f}.hljs-function,.python .hljs-decorator,.python .hljs-title,.ruby .hljs-function .hljs-title,.ruby .hljs-title .hljs-keyword,.perl .hljs-sub,.javascript .hljs-title,.coffeescript .hljs-title{color:#4271ae}.hljs-keyword,.javascript .hljs-function{color:#8959a8}.hljs{display:block;background:white;color:#4d4d4c;padding:.5em}.coffeescript .javascript,.javascript .xml,.tex .hljs-formula,.xml .javascript,.xml .vbscript,.xml .css,.xml .hljs-cdata{opacity:.5}.right .hljs-comment{color:#969896}.right .css .hljs-class,.right .css .hljs-id,.right .css .hljs-pseudo,.right .hljs-attribute,.right .hljs-regexp,.right .hljs-tag,.right .hljs-variable,.right .html .hljs-doctype,.right .ruby .hljs-constant,.right .xml .hljs-doctype,.right .xml .hljs-pi,.right .xml .hljs-tag .hljs-title{color:#c66}.right .hljs-built_in,.right .hljs-constant,.right .hljs-literal,.right .hljs-number,.right .hljs-params,.right .hljs-pragma,.right .hljs-preprocessor{color:#de935f}.right .css .hljs-rule .hljs-attribute,.right .ruby .hljs-class .hljs-title{color:#f0c674}.right .hljs-header,.right .hljs-inheritance,.right .hljs-name,.right .hljs-string,.right .hljs-value,.right .ruby .hljs-symbol,.right .xml .hljs-cdata{color:#b5bd68}.right .css .hljs-hexcolor,.right .hljs-title{color:#8abeb7}.right .coffeescript .hljs-title,.right .hljs-function,.right .javascript .hljs-title,.right .perl .hljs-sub,.right .python .hljs-decorator,.right .python .hljs-title,.right .ruby .hljs-function .hljs-title,.right .ruby .hljs-title .hljs-keyword{color:#81a2be}.right .hljs-keyword,.right .javascript .hljs-function{color:#b294bb}.right .hljs{display:block;overflow-x:auto;background:#1d1f21;color:#c5c8c6;padding:.5em;-webkit-text-size-adjust:none}.right .coffeescript .javascript,.right .javascript .xml,.right .tex .hljs-formula,.right .xml .css,.right .xml .hljs-cdata,.right .xml .javascript,.right .xml .vbscript{opacity:.5}body{color:black;background:white;font:400 14px / 1.42 'Roboto',Helvetica,sans-serif}header{border-bottom:1px solid #ededed;margin-bottom:12px}h1,h2,h3,h4,h5{color:black;margin:12px 0}h1 .permalink,h2 .permalink,h3 .permalink,h4 .permalink,h5 .permalink{margin-left:0;opacity:0;transition:opacity .25s ease}h1:hover .permalink,h2:hover .permalink,h3:hover .permalink,h4:hover .permalink,h5:hover .permalink{opacity:1}.triple h1 .permalink,.triple h2 .permalink,.triple h3 .permalink,.triple h4 .permalink,.triple h5 .permalink{opacity:.15}.triple h1:hover .permalink,.triple h2:hover .permalink,.triple h3:hover .permalink,.triple h4:hover .permalink,.triple h5:hover .permalink{opacity:.15}h1{font:200 36px 'Raleway',Helvetica,sans-serif;font-size:36px}h2{font:200 36px 'Raleway',Helvetica,sans-serif;font-size:30px}h3{font-size:100%;text-transform:uppercase}h5{font-size:100%;font-weight:normal}p{margin:0 0 10px}p.choices{line-height:1.6}a{color:#18bc9c;text-decoration:none}li p{margin:0}hr.split{border:0;height:1px;width:100%;padding-left:6px;margin:12px auto;background-image:linear-gradient(to right, rgba(0,0,0,0) 20%, rgba(0,0,0,0.2) 51.4%, rgba(255,255,255,0.2) 51.4%, rgba(255,255,255,0) 80%)}dl dt{float:left;width:130px;clear:left;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:700}dl dd{margin-left:150px}blockquote{color:rgba(0,0,0,0.5);font-size:15.5px;padding:10px 20px;margin:12px 0;border-left:5px solid #e8e8e8}blockquote p:last-child{margin-bottom:0}pre{background-color:#f5f5f5;padding:12px;border:1px solid #cfcfcf;border-radius:6px;overflow:auto}pre code{color:black;background-color:transparent;padding:0;border:none}code{color:#444;background-color:#f5f5f5;font:'Inconsolata',monospace;padding:1px 4px;border:1px solid #cfcfcf;border-radius:3px}ul,ol{padding-left:2em}table{border-collapse:collapse;border-spacing:0;margin-bottom:12px}table tr:nth-child(2n){background-color:#fafafa}table th,table td{padding:6px 12px;border:1px solid #e6e6e6}.text-muted{opacity:.5}.note,.warning{padding:.3em 1em;margin:1em 0;border-radius:2px;font-size:90%}.note h1,.warning h1,.note h2,.warning h2,.note h3,.warning h3,.note h4,.warning h4,.note h5,.warning h5,.note h6,.warning h6{font-family:200 36px 'Raleway',Helvetica,sans-serif;font-size:135%;font-weight:500}.note p,.warning p{margin:.5em 0}.note{color:black;background-color:#eff7fc;border-left:4px solid #3498db}.note h1,.note h2,.note h3,.note h4,.note h5,.note h6{color:#3498db}.warning{color:black;background-color:#fcf0ef;border-left:4px solid #d62c1a}.warning h1,.warning h2,.warning h3,.warning h4,.warning h5,.warning h6{color:#d62c1a}header{margin-top:24px}nav{position:fixed;top:24px;bottom:0;overflow-y:auto}nav .resource-group{padding:0}nav .resource-group .heading{position:relative}nav .resource-group .heading .chevron{position:absolute;top:12px;right:12px;opacity:.5}nav .resource-group .heading a{display:block;color:black;opacity:.7;border-left:2px solid transparent;margin:0}nav .resource-group .heading a:hover{text-decoration:none;background-color:bad-color;border-left:2px solid black}nav ul{list-style-type:none;padding-left:0}nav ul a{display:block;font-size:13px;color:rgba(0,0,0,0.7);padding:8px 12px;border-top:1px solid #ededed;border-left:2px solid transparent;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}nav ul a:hover{text-decoration:none;background-color:bad-color;border-left:2px solid black}nav ul>li{margin:0}nav ul>li:first-child{margin-top:-12px}nav ul>li:last-child{margin-bottom:-12px}nav ul ul a{padding-left:24px}nav ul ul li{margin:0}nav ul ul li:first-child{margin-top:0}nav ul ul li:last-child{margin-bottom:0}nav>div>div>ul>li:first-child>a{border-top:none}.preload *{transition:none !important}.pull-left{float:left}.pull-right{float:right}.badge{display:inline-block;float:right;min-width:10px;min-height:14px;padding:3px 7px;font-size:12px;color:#000;background-color:#ededed;border-radius:10px;margin:-2px 0}.badge.get{color:white;background-color:#3498db}.badge.head{color:white;background-color:#3498db}.badge.options{color:white;background-color:#3498db}.badge.put{color:white;background-color:#f39c12}.badge.patch{color:white;background-color:#f39c12}.badge.post{color:white;background-color:#18bc9c}.badge.delete{color:white;background-color:#e74c3c}.collapse-button{float:right}.collapse-button .close{display:none;color:#18bc9c;cursor:pointer}.collapse-button .open{color:#18bc9c;cursor:pointer}.collapse-button.show .close{display:inline}.collapse-button.show .open{display:none}.collapse-content{max-height:0;overflow:hidden;transition:max-height .3s ease-in-out}nav{width:220px}.container{max-width:940px;margin-left:auto;margin-right:auto}.container .row .content{margin-left:244px;width:696px}.container .row:after{content:'';display:block;clear:both}.container-fluid nav{width:22%}.container-fluid .row .content{margin-left:24%}.container-fluid.triple nav{width:16.5%;padding-right:1px}.container-fluid.triple .row .content{position:relative;margin-left:16.5%;padding-left:24px}.middle:before,.middle:after{content:'';display:table}.middle:after{clear:both}.middle{box-sizing:border-box;width:51.5%;padding-right:12px}.right{box-sizing:border-box;float:right;width:48.5%;padding-left:12px}.right a{color:#18bc9c}.right h1,.right h2,.right h3,.right h4,.right h5,.right p,.right div{color:white}.right pre{background-color:#1d1f21;border:1px solid #1d1f21}.right pre code{color:#c5c8c6}.right .description{margin-top:12px}.triple .resource-heading{font-size:125%}.definition{margin-top:12px;margin-bottom:12px}.definition .method{font-weight:bold}.definition .method.get{color:#2e80b8}.definition .method.head{color:#2e80b8}.definition .method.options{color:#2e80b8}.definition .method.post{color:#2eb89d}.definition .method.put{color:#b8822e}.definition .method.patch{color:#b8822e}.definition .method.delete{color:#b83b2e}.definition .uri{word-break:break-all;word-wrap:break-word}.definition .hostname{opacity:.5}.example-names{background-color:#eee;padding:12px;border-radius:6px}.example-names .tab-button{cursor:pointer;color:black;border:1px solid #ddd;padding:6px;margin-left:12px}.example-names .tab-button.active{background-color:#d5d5d5}.right .example-names{background-color:#444}.right .example-names .tab-button{color:white;border:1px solid #666;border-radius:6px}.right .example-names .tab-button.active{background-color:#5e5e5e}#nav-background{position:fixed;left:0;top:0;bottom:0;width:16.5%;padding-right:14.4px;background-color:#fbfbfb;border-right:1px solid #f0f0f0;z-index:-1}#right-panel-background{position:absolute;right:-12px;top:-12px;bottom:-12px;width:48.6%;background-color:#333;z-index:-1}@media (max-width:1200px){nav{width:198px}.container{max-width:840px}.container .row .content{margin-left:224px;width:606px}}@media (max-width:992px){nav{width:169.4px}.container{max-width:720px}.container .row .content{margin-left:194px;width:526px}}@media (max-width:768px){nav{display:none}.container{width:95%;max-width:none}.container .row .content,.container-fluid .row .content,.container-fluid.triple .row .content{margin-left:auto;margin-right:auto;width:95%}#nav-background{display:none}#right-panel-background{width:48.6%}}.back-to-top{position:fixed;z-index:1;bottom:0;right:24px;padding:4px 8px;color:rgba(0,0,0,0.5);background-color:#ededed;text-decoration:none !important;border-top:1px solid #ededed;border-left:1px solid #ededed;border-right:1px solid #ededed;border-top-left-radius:3px;border-top-right-radius:3px}.resource-group{padding:12px;margin-bottom:12px;background-color:white;border:1px solid #ededed;border-radius:6px}.resource-group h2.group-heading,.resource-group .heading a{padding:12px;margin:-12px -12px 12px -12px;background-color:#ededed;border-bottom:1px solid #ededed;border-top-left-radius:6px;border-top-right-radius:6px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.triple .content .resource-group{padding:0;border:none}.triple .content .resource-group h2.group-heading,.triple .content .resource-group .heading a{margin:0 0 12px 0;border:1px solid #ededed}nav .resource-group .heading a{padding:12px;margin-bottom:0}nav .resource-group .collapse-content{padding:0}.action{margin-bottom:12px;padding:12px 12px 0 12px;overflow:hidden;border:1px solid transparent;border-radius:6px}.action h4.action-heading{padding:6px 12px;margin:-12px -12px 12px -12px;border-bottom:1px solid transparent;border-top-left-radius:6px;border-top-right-radius:6px;overflow:hidden}.action h4.action-heading .name{float:right;font-weight:normal;padding:6px 0}.action h4.action-heading .method{padding:6px 12px;margin-right:12px;border-radius:3px;display:inline-block}.action h4.action-heading .method.get{color:#000;background-color:white}.action h4.action-heading .method.head{color:#000;background-color:white}.action h4.action-heading .method.options{color:#000;background-color:white}.action h4.action-heading .method.put{color:#000;background-color:white}.action h4.action-heading .method.patch{color:#000;background-color:white}.action h4.action-heading .method.post{color:#000;background-color:white}.action h4.action-heading .method.delete{color:#000;background-color:white}.action h4.action-heading code{color:#444;background-color:rgba(255,255,255,0.7);border-color:transparent;font-weight:normal;word-break:break-all;display:inline-block;margin-top:2px}.action dl.inner{padding-bottom:2px}.action .title{border-bottom:1px solid white;margin:0 -12px -1px -12px;padding:12px}.action.get{border-color:#3498db}.action.get h4.action-heading{color:white;background:#3498db;border-bottom-color:#3498db}.action.head{border-color:#3498db}.action.head h4.action-heading{color:white;background:#3498db;border-bottom-color:#3498db}.action.options{border-color:#3498db}.action.options h4.action-heading{color:white;background:#3498db;border-bottom-color:#3498db}.action.post{border-color:#18bc9c}.action.post h4.action-heading{color:white;background:#18bc9c;border-bottom-color:#18bc9c}.action.put{border-color:#f39c12}.action.put h4.action-heading{color:white;background:#f39c12;border-bottom-color:#f39c12}.action.patch{border-color:#f39c12}.action.patch h4.action-heading{color:white;background:#f39c12;border-bottom-color:#f39c12}.action.delete{border-color:#e74c3c}.action.delete h4.action-heading{color:white;background:#e74c3c;border-bottom-color:#e74c3c}</style></head><body class="preload"><a href="#top" class="text-muted back-to-top"><i class="fa fa-toggle-up"></i>&nbsp;Back to top</a><div class="container"><div class="row"><nav><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#organization">Organization</a></div><div class="collapse-content"><ul><li><a href="#organization-จัดการเกี่ยวกับหน่วยงาน">จัดการเกี่ยวกับหน่วยงาน</a><ul><li><a href="#organization-จัดการเกี่ยวกับหน่วยงาน-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>แสดงหน่วยงานทั้งหมดที่ใช้งาน</a></li><li><a href="#organization-จัดการเกี่ยวกับหน่วยงาน-post"><span class="badge post"><i class="fa fa-plus"></i></span>ลงทะเบียนเปิดใช้งานหน่วยงานใหม่</a></li><li><a href="#organization-จัดการเกี่ยวกับหน่วยงาน-get-1"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ค้นหาด้วยชื่อ หรือ รหัสหน่วยงาน</a></li><li><a href="#organization-จัดการเกี่ยวกับหน่วยงาน-delete"><span class="badge delete"><i class="fa fa-times"></i></span>ลบหน่วยงานทิ้ง</a></li></ul></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#user">User</a></div><div class="collapse-content"><ul><li><a href="#user-ระบบ-login">ระบบ login</a><ul><li><a href="#user-ระบบ-login-post"><span class="badge post"><i class="fa fa-plus"></i></span>login เพื่อขอ token</a></li><li><a href="#user-ระบบ-login-put"><span class="badge put"><i class="fa fa-pencil"></i></span>การเปิดใช้งานผู้ใช้</a></li><li><a href="#user-ระบบ-login-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ขอเลข OTP สำหรับยืนยันผู้ใช้ในครั้งแรก</a></li><li><a href="#user-ระบบ-login-get-1"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดูเลขเอกสารการยอมรับเงื่อไขการใช้งานของผู้ใช้</a></li><li><a href="#user-ระบบ-login-get-2"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดูเลขเอกสารการยอมรับนโยบายความเป็นส่วนตัวของผู้ใช้</a></li><li><a href="#user-ระบบ-login-post-1"><span class="badge post"><i class="fa fa-plus"></i></span>เพิ่มการยอมรับนโยบายความเป็นส่วนตัวของผู้ใช้</a></li></ul></li><li><a href="#user-ข้อมูลผู้ใช้">ข้อมูลผู้ใช้</a><ul><li><a href="#user-ข้อมูลผู้ใช้-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดูรายการผู้ใช้</a></li><li><a href="#user-ข้อมูลผู้ใช้-post"><span class="badge post"><i class="fa fa-plus"></i></span>เพิ่มผู้ใช้</a></li></ul></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#person">Person</a></div><div class="collapse-content"><ul><li><a href="#person-ข้อมูลคน">ข้อมูลคน</a><ul><li><a href="#person-ข้อมูลคน-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>รายการข้อมูลคน</a></li><li><a href="#person-ข้อมูลคน-get-1"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดูข้อมูลคนด้วย id ของระบบ</a></li><li><a href="#person-ข้อมูลคน-post"><span class="badge post"><i class="fa fa-plus"></i></span>การเพิ่มคน</a></li><li><a href="#person-ข้อมูลคน-post-1"><span class="badge post"><i class="fa fa-plus"></i></span>เพิ่มคนแบบหลายคน</a></li><li><a href="#person-ข้อมูลคน-put"><span class="badge put"><i class="fa fa-pencil"></i></span>การแก้ไขข้อมูลคน</a></li></ul></li><li><a href="#person-ความสัมพันธ์ทางสายเสือด">ความสัมพันธ์ทางสายเสือด</a><ul><li><a href="#person-ความสัมพันธ์ทางสายเสือด-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดูความสัมพันธ์ทางสายเลือด</a></li><li><a href="#person-ความสัมพันธ์ทางสายเสือด-put"><span class="badge put"><i class="fa fa-pencil"></i></span>ใส่ความสัมพันธ์ทางสายเลือด</a></li><li><a href="#person-ความสัมพันธ์ทางสายเสือด-get-1"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดึงข้อมูลรายการคนที่มีความสัมพันธ์ทางสายเลือดกับผู้ที่เลือก</a></li></ul></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#healthcareservice">HealthCareService</a></div><div class="collapse-content"><ul><li><a href="#healthcareservice-การให้บริการ">การให้บริการ</a><ul><li><a href="#healthcareservice-การให้บริการ-post"><span class="badge post"><i class="fa fa-plus"></i></span>เพิ่มบริการใหม่</a></li><li><a href="#healthcareservice-การให้บริการ-put"><span class="badge put"><i class="fa fa-pencil"></i></span>แก้ไขบริการ ที่เคยบันทึก</a></li><li><a href="#healthcareservice-การให้บริการ-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดูรายการให้บริการของคน</a></li></ul></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#house">House</a></div><div class="collapse-content"><ul><li><a href="#house-ข้อมูลบ้าน">ข้อมูลบ้าน</a><ul><li><a href="#house-ข้อมูลบ้าน-post"><span class="badge post"><i class="fa fa-plus"></i></span>เพิ่มบ้าน</a></li><li><a href="#house-ข้อมูลบ้าน-post-1"><span class="badge post"><i class="fa fa-plus"></i></span>เพิ่มบ้านทีละหลายหลัง</a></li><li><a href="#house-ข้อมูลบ้าน-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดูรายการบ้าน</a></li><li><a href="#house-ข้อมูลบ้าน-get-1"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดูข้อมูลบ้านด้วย id ของระบบ</a></li><li><a href="#house-ข้อมูลบ้าน-get-2"><span class="badge get"><i class="fa fa-arrow-down"></i></span>รายการพิกัดบ้าน Geo json</a></li></ul></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#village">Village</a></div><div class="collapse-content"><ul><li><a href="#village-ข้อมูลหมู่บ้าน">ข้อมูลหมู่บ้าน</a><ul><li><a href="#village-ข้อมูลหมู่บ้าน-post"><span class="badge post"><i class="fa fa-plus"></i></span>เพิ่มหมู่บ้านใน FFC Cloud</a></li><li><a href="#village-ข้อมูลหมู่บ้าน-post-1"><span class="badge post"><i class="fa fa-plus"></i></span>เพิ่มหมู่บ้านใน FFC Cloud แบบ array</a></li><li><a href="#village-ข้อมูลหมู่บ้าน-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดูข้อมูลหมู่บ้านที่หน่วยงานดูแลอยู่</a></li><li><a href="#village-ข้อมูลหมู่บ้าน-get-1"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดึงข้อมูลหมู่บ้านด้วย id ของระบบ</a></li></ul></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#lookup">Lookup</a></div><div class="collapse-content"><ul><li><a href="#lookup-lookup-ประเภทการเยี่ยม-homehealth">Lookup ประเภทการเยี่ยม homehealth</a><ul><li><a href="#lookup-lookup-ประเภทการเยี่ยม-homehealth-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดูรายการเยี่ยม</a></li><li><a href="#lookup-lookup-ประเภทการเยี่ยม-homehealth-get-1"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดูด้วย id การเยี่ยม</a></li></ul></li><li><a href="#lookup-lookup-รายการโรค">Lookup รายการโรค</a><ul><li><a href="#lookup-lookup-รายการโรค-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดูรายการโรค</a></li><li><a href="#lookup-lookup-รายการโรค-get-1"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดูด้วยรหัส ICD10</a></li></ul></li><li><a href="#lookup-specialpp">specialPP</a><ul><li><a href="#lookup-specialpp-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดูรายการ SpecialPP</a></li><li><a href="#lookup-specialpp-get-1"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดูด้วยรหัส SpecialPP</a></li></ul></li><li><a href="#lookup-template-ข้อความ">Template ข้อความ</a><ul><li><a href="#lookup-template-ข้อความ-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>ดูรายการ Template</a></li><li><a href="#lookup-template-ข้อความ-post"><span class="badge post"><i class="fa fa-plus"></i></span>ใส่รายการ Template ใหม่</a></li></ul></li></ul></div></div><p style="text-align: center; word-wrap: break-word;"><a href="https://api.ffc.in.th/v1">https://api.ffc.in.th/v1</a></p></nav><div class="content"><header><h1 id="top">FFC api</h1></header><p>api สำหรับใช้งานระบบ ffc cloud</p>
+<section id="organization" class="resource-group"><h2 class="group-heading">Organization <a href="#organization" class="permalink">&para;</a></h2><div id="organization-จัดการเกี่ยวกับหน่วยงาน" class="resource"><h3 class="resource-heading">จัดการเกี่ยวกับหน่วยงาน <a href="#organization-จัดการเกี่ยวกับหน่วยงาน" class="permalink">&nbsp;&para;</a></h3><div id="organization-จัดการเกี่ยวกับหน่วยงาน-get" class="action get"><h4 class="action-heading"><div class="name">แสดงหน่วยงานทั้งหมดที่ใช้งาน</div><a href="#organization-จัดการเกี่ยวกับหน่วยงาน-get" class="method get">GET</a><code class="uri">/org</code></h4><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.ffc.in.th/v1</span>/org</span></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>[
+  {
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"โรงพยาบาลส่งเสริมสุขภาพตำบลบ้านทางยางม7"</span></span>,
+    "<span class="hljs-attribute">displayName</span>": <span class="hljs-value"><span class="hljs-string">"โรงพยาบาลส่งเสริมสุขภาพตำบลบ้านทางยาง ม.7"</span></span>,
+    "<span class="hljs-attribute">address</span>": <span class="hljs-value"><span class="hljs-string">"สตูล"</span></span>,
+    "<span class="hljs-attribute">users</span>": <span class="hljs-value">[]</span>,
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"5c889fce6989229b7882eb15"</span></span>,
+    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"Organization"</span></span>,
+    "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value"><span class="hljs-string">"2019-03-13T13:14:13.486+07:00"</span>
+  </span>},
+  {
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"รพสตบ้านปากน้ำตฉวางอฉวาง"</span></span>,
+    "<span class="hljs-attribute">displayName</span>": <span class="hljs-value"><span class="hljs-string">"รพ.สต.บ้านปากน้ำ ต.ฉวาง อ.ฉวาง "</span></span>,
+    "<span class="hljs-attribute">tel</span>": <span class="hljs-value"><span class="hljs-string">"075-466949 "</span></span>,
+    "<span class="hljs-attribute">address</span>": <span class="hljs-value"><span class="hljs-string">"นครศรีธรรมราช"</span></span>,
+    "<span class="hljs-attribute">users</span>": <span class="hljs-value">[]</span>,
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"5c8b50fb698922768b669eb3"</span></span>,
+    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"Organization"</span></span>,
+    "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value"><span class="hljs-string">"2019-03-15T14:15:07.999+07:00"</span>
+  </span>}
+]</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+  "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+    "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสคนที่ระบบสร้างให้"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+        "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+          <span class="hljs-string">"Organization"</span>
+        ]</span>,
+        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"คงที่"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"วันที่เกิดการเปลี่ยนแปลงล่าสุดกับข้อมูล"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">displayName</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">avatarUrl</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">tel</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">address</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">location</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+              <span class="hljs-string">"Point"</span>
+            ]</span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ค่าคงที่"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"พิกัด GPS"</span>
+          </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+          <span class="hljs-string">"type"</span>
+        ]
+      </span>}</span>,
+      "<span class="hljs-attribute">users</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">link</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">isSynced</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ข้อมูลนี้ได้รับการ sync ข้อมูลกลับไปยังฐานเดิมหรือยังเช่น sync ไป JHCISDB ที่เครื่อง J Server หรือยัง"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">lastSync</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"เวลาที่ sync ล่าสุด"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">system</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+              <span class="hljs-string">"JHICS"</span>
+            ]</span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ระบบที่ทำการ sync ด้วย"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">keys</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+            "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}</span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"`เก็บคีย์ที่ใช้สำหรับการเชื่อม ระหว่าง HIS กับ FFC หรือข้อมูลจำเป็นอื่นๆ`"</span>
+          </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+          <span class="hljs-string">"system"</span>
+        ]
+      </span>}
+    </span>}</span>,
+    "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+      <span class="hljs-string">"type"</span>
+    ]
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="organization-จัดการเกี่ยวกับหน่วยงาน-post" class="action post"><h4 class="action-heading"><div class="name">ลงทะเบียนเปิดใช้งานหน่วยงานใหม่</div><a href="#organization-จัดการเกี่ยวกับหน่วยงาน-post" class="method post">POST</a><code class="uri">/org</code></h4><p>การลงทะเบียนหน่วยงานใหม่ ในนหน่วยงานจำเป็นต้องมี user ที่มี roles เป็น ORG ด้วยไม่งั้นระบบจะไม่ยอม</p>
+<h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">https://api.ffc.in.th/v1</span>/org</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"รพสต-พรทิพา1"</span></span>,
+  "<span class="hljs-attribute">displayName</span>": <span class="hljs-value"><span class="hljs-string">"รพ.สต. พรทิพา 1"</span></span>,
+  "<span class="hljs-attribute">users</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"pcu100214.airsync"</span></span>,
+      "<span class="hljs-attribute">password</span>": <span class="hljs-value"><span class="hljs-string">"a1e6-4f63e8295160"</span></span>,
+      "<span class="hljs-attribute">roles</span>": <span class="hljs-value">[
+        <span class="hljs-string">"ADMIN"</span>
+      ]</span>,
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"5dc194a5b85b4733889247578e4bd5f0"</span></span>,
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"User"</span></span>,
+      "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value"><span class="hljs-string">"2018-06-28T14:19:29.645+07:00"</span>
+    </span>}
+  ]</span>,
+  "<span class="hljs-attribute">link</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">isSynced</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+    "<span class="hljs-attribute">lastSync</span>": <span class="hljs-value"><span class="hljs-string">"2018-06-28T17:21:29.645+07:00"</span></span>,
+    "<span class="hljs-attribute">system</span>": <span class="hljs-value"><span class="hljs-string">"JHICS"</span></span>,
+    "<span class="hljs-attribute">keys</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">pcucode</span>": <span class="hljs-value"><span class="hljs-string">"12345"</span>
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"1459f3933d5e4ef8b0a68463c012f26b"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"Organization"</span></span>,
+  "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value"><span class="hljs-string">"2018-06-28T17:17:43.645+07:00"</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสคนที่ระบบสร้างให้"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+        <span class="hljs-string">"Organization"</span>
+      ]</span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"คงที่"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"วันที่เกิดการเปลี่ยนแปลงล่าสุดกับข้อมูล"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">displayName</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">avatarUrl</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">tel</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">address</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">location</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+            <span class="hljs-string">"Point"</span>
+          ]</span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ค่าคงที่"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"พิกัด GPS"</span>
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+        <span class="hljs-string">"type"</span>
+      ]
+    </span>}</span>,
+    "<span class="hljs-attribute">users</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">link</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">isSynced</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ข้อมูลนี้ได้รับการ sync ข้อมูลกลับไปยังฐานเดิมหรือยังเช่น sync ไป JHCISDB ที่เครื่อง J Server หรือยัง"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">lastSync</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"เวลาที่ sync ล่าสุด"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">system</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+            <span class="hljs-string">"JHICS"</span>
+          ]</span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ระบบที่ทำการ sync ด้วย"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">keys</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+          "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}</span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"`เก็บคีย์ที่ใช้สำหรับการเชื่อม ระหว่าง HIS กับ FFC หรือข้อมูลจำเป็นอื่นๆ`"</span>
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+        <span class="hljs-string">"system"</span>
+      ]
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"id"</span>,
+    <span class="hljs-string">"type"</span>,
+    <span class="hljs-string">"timestamp"</span>,
+    <span class="hljs-string">"name"</span>,
+    <span class="hljs-string">"users"</span>
+  ]</span>,
+  "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"รพสต-พรทิพา1"</span></span>,
+  "<span class="hljs-attribute">displayName</span>": <span class="hljs-value"><span class="hljs-string">"รพ.สต. พรทิพา 1"</span></span>,
+  "<span class="hljs-attribute">users</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"pcu100214.airsync"</span></span>,
+      "<span class="hljs-attribute">orgId</span>": <span class="hljs-value"><span class="hljs-string">"5dbbc89c698922acf8bc5789"</span></span>,
+      "<span class="hljs-attribute">isActivated</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+      "<span class="hljs-attribute">activateTime</span>": <span class="hljs-value"><span class="hljs-string">"2019-11-01T12:54:36.771+07:00"</span></span>,
+      "<span class="hljs-attribute">roles</span>": <span class="hljs-value">[
+        <span class="hljs-string">"ADMIN"</span>
+      ]</span>,
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"5dbbc89c698922acf8bc578a"</span></span>,
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"User"</span></span>,
+      "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value"><span class="hljs-string">"2019-11-01T12:54:36.771+07:00"</span></span>,
+      "<span class="hljs-attribute">bundle</span>": <span class="hljs-value">{}
+    </span>}
+  ]</span>,
+  "<span class="hljs-attribute">link</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">isSynced</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+    "<span class="hljs-attribute">lastSync</span>": <span class="hljs-value"><span class="hljs-string">"2018-06-28T17:21:29.645+07:00"</span></span>,
+    "<span class="hljs-attribute">system</span>": <span class="hljs-value"><span class="hljs-string">"JHICS"</span></span>,
+    "<span class="hljs-attribute">keys</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">pcucode</span>": <span class="hljs-value"><span class="hljs-string">"12345"</span>
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"5dbbc89c698922acf8bc5789"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"Organization"</span></span>,
+  "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value"><span class="hljs-string">"2018-06-28T17:17:43.645+07:00"</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสคนที่ระบบสร้างให้"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+        <span class="hljs-string">"Organization"</span>
+      ]</span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"คงที่"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"วันที่เกิดการเปลี่ยนแปลงล่าสุดกับข้อมูล"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">displayName</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">avatarUrl</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">tel</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">address</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">location</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+            <span class="hljs-string">"Point"</span>
+          ]</span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ค่าคงที่"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"พิกัด GPS"</span>
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+        <span class="hljs-string">"type"</span>
+      ]
+    </span>}</span>,
+    "<span class="hljs-attribute">users</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">link</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">isSynced</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ข้อมูลนี้ได้รับการ sync ข้อมูลกลับไปยังฐานเดิมหรือยังเช่น sync ไป JHCISDB ที่เครื่อง J Server หรือยัง"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">lastSync</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"เวลาที่ sync ล่าสุด"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">system</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+            <span class="hljs-string">"JHICS"</span>
+          ]</span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ระบบที่ทำการ sync ด้วย"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">keys</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+          "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}</span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"`เก็บคีย์ที่ใช้สำหรับการเชื่อม ระหว่าง HIS กับ FFC หรือข้อมูลจำเป็นอื่นๆ`"</span>
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+        <span class="hljs-string">"system"</span>
+      ]
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"id"</span>,
+    <span class="hljs-string">"type"</span>,
+    <span class="hljs-string">"timestamp"</span>,
+    <span class="hljs-string">"name"</span>,
+    <span class="hljs-string">"users"</span>
+  ]</span>,
+  "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="organization-จัดการเกี่ยวกับหน่วยงาน-get-1" class="action get"><h4 class="action-heading"><div class="name">ค้นหาด้วยชื่อ หรือ รหัสหน่วยงาน</div><a href="#organization-จัดการเกี่ยวกับหน่วยงาน-get-1" class="method get">GET</a><code class="uri">/org{?query}</code></h4><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.ffc.in.th/v1</span>/org?<span class="hljs-attribute">query=</span><span class="hljs-literal"></span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>query</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>ชื่อหน่วยงาน หรือ รหัสหน่ยงาน</p>
+</dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>[
+  {
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Nectecเนคเทคฐานทดสอบ"</span></span>,
+    "<span class="hljs-attribute">displayName</span>": <span class="hljs-value"><span class="hljs-string">"Nectec เนคเทค ฐานทดสอบ"</span></span>,
+    "<span class="hljs-attribute">address</span>": <span class="hljs-value"><span class="hljs-string">"ราชบุรี"</span></span>,
+    "<span class="hljs-attribute">users</span>": <span class="hljs-value">[]</span>,
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"5db0973f698922acf8b802fa"</span></span>,
+    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"Organization"</span></span>,
+    "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value"><span class="hljs-string">"2019-10-24T01:09:02.297+07:00"</span>
+  </span>}
+]</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+  "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+    "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสคนที่ระบบสร้างให้"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+        "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+          <span class="hljs-string">"Organization"</span>
+        ]</span>,
+        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"คงที่"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"วันที่เกิดการเปลี่ยนแปลงล่าสุดกับข้อมูล"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">displayName</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">avatarUrl</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">tel</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">address</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">location</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+              <span class="hljs-string">"Point"</span>
+            ]</span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ค่าคงที่"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"พิกัด GPS"</span>
+          </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+          <span class="hljs-string">"type"</span>
+        ]
+      </span>}</span>,
+      "<span class="hljs-attribute">users</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">link</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">isSynced</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ข้อมูลนี้ได้รับการ sync ข้อมูลกลับไปยังฐานเดิมหรือยังเช่น sync ไป JHCISDB ที่เครื่อง J Server หรือยัง"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">lastSync</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"เวลาที่ sync ล่าสุด"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">system</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+              <span class="hljs-string">"JHICS"</span>
+            ]</span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ระบบที่ทำการ sync ด้วย"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">keys</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+            "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}</span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"`เก็บคีย์ที่ใช้สำหรับการเชื่อม ระหว่าง HIS กับ FFC หรือข้อมูลจำเป็นอื่นๆ`"</span>
+          </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+          <span class="hljs-string">"system"</span>
+        ]
+      </span>}
+    </span>}</span>,
+    "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+      <span class="hljs-string">"type"</span>
+    ]
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="organization-จัดการเกี่ยวกับหน่วยงาน-delete" class="action delete"><h4 class="action-heading"><div class="name">ลบหน่วยงานทิ้ง</div><a href="#organization-จัดการเกี่ยวกับหน่วยงาน-delete" class="method delete">DELETE</a><code class="uri">/org/</code></h4><p>ทำการลบข้อมูลทั้งหมดของหน่วยงานที่เลือก ออกจาก Cloud</p>
+<h4>Example URI</h4><div class="definition"><span class="method delete">DELETE</span>&nbsp;<span class="uri"><span class="hostname">https://api.ffc.in.th/v1</span>/org/</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">Authorization</span>: <span class="hljs-string">Bearer {org_token}</span></code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong></div></div></div></section><section id="user" class="resource-group"><h2 class="group-heading">User <a href="#user" class="permalink">&para;</a></h2><div id="user-ระบบ-login" class="resource"><h3 class="resource-heading">ระบบ login <a href="#user-ระบบ-login" class="permalink">&nbsp;&para;</a></h3><div id="user-ระบบ-login-post" class="action post"><h4 class="action-heading"><div class="name">login เพื่อขอ token</div><a href="#user-ระบบ-login-post" class="method post">POST</a><code class="uri">/org/{org_id}/authorize</code></h4><h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">https://api.ffc.in.th/v1</span>/org/<span class="hljs-attribute" title="org_id">5db0973f698922acf8b802fa</span>/authorize</span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>org_id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>5db0973f698922acf8b802fa</span></span><p><code>รหัส id ขององค์หน่วยงานที่ระบบสร้างให้</code></p>
 </dd></dl></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">username</span>": <span class="hljs-value"><span class="hljs-string">"pcu100214.airsync"</span></span>,
   "<span class="hljs-attribute">password</span>": <span class="hljs-value"><span class="hljs-string">"a1e6-4f63e8295160"</span>
@@ -52,7 +508,8 @@
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
         </span>}</span>,
         "<span class="hljs-attribute">orgId</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ของหน่วยงาน"</span>
         </span>}</span>,
         "<span class="hljs-attribute">displayName</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
@@ -180,7 +637,8 @@
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
         </span>}</span>,
         "<span class="hljs-attribute">orgId</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ของหน่วยงาน"</span>
         </span>}</span>,
         "<span class="hljs-attribute">displayName</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
@@ -384,7 +842,8 @@
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
       </span>}</span>,
       "<span class="hljs-attribute">orgId</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ของหน่วยงาน"</span>
       </span>}</span>,
       "<span class="hljs-attribute">displayName</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
@@ -492,7 +951,8 @@
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
       </span>}</span>,
       "<span class="hljs-attribute">orgId</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ของหน่วยงาน"</span>
       </span>}</span>,
       "<span class="hljs-attribute">displayName</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
@@ -605,7 +1065,8 @@
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
       </span>}</span>,
       "<span class="hljs-attribute">orgId</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ของหน่วยงาน"</span>
       </span>}</span>,
       "<span class="hljs-attribute">displayName</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
@@ -1006,7 +1467,7 @@
       </span>}</span>,
       "<span class="hljs-attribute">orgId</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ขององค์หน่วยงานที่ระบบสร้างให้"</span>
+        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ของหน่วยงาน"</span>
       </span>}</span>,
       "<span class="hljs-attribute">identities</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
@@ -1288,7 +1749,7 @@
     </span>}</span>,
     "<span class="hljs-attribute">orgId</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ขององค์หน่วยงานที่ระบบสร้างให้"</span>
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ของหน่วยงาน"</span>
     </span>}</span>,
     "<span class="hljs-attribute">identities</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
@@ -1445,7 +1906,7 @@
     </span>}</span>,
     "<span class="hljs-attribute">orgId</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ขององค์หน่วยงานที่ระบบสร้างให้"</span>
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ของหน่วยงาน"</span>
     </span>}</span>,
     "<span class="hljs-attribute">identities</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
@@ -1613,7 +2074,7 @@
     </span>}</span>,
     "<span class="hljs-attribute">orgId</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ขององค์หน่วยงานที่ระบบสร้างให้"</span>
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ของหน่วยงาน"</span>
     </span>}</span>,
     "<span class="hljs-attribute">identities</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
@@ -1864,7 +2325,7 @@
       </span>}</span>,
       "<span class="hljs-attribute">orgId</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ขององค์หน่วยงานที่ระบบสร้างให้"</span>
+        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ของหน่วยงาน"</span>
       </span>}</span>,
       "<span class="hljs-attribute">identities</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
@@ -2118,7 +2579,7 @@
       </span>}</span>,
       "<span class="hljs-attribute">orgId</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ขององค์หน่วยงานที่ระบบสร้างให้"</span>
+        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ของหน่วยงาน"</span>
       </span>}</span>,
       "<span class="hljs-attribute">identities</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
@@ -2279,7 +2740,7 @@
     </span>}</span>,
     "<span class="hljs-attribute">orgId</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ขององค์หน่วยงานที่ระบบสร้างให้"</span>
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ของหน่วยงาน"</span>
     </span>}</span>,
     "<span class="hljs-attribute">identities</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
@@ -2447,7 +2908,7 @@
     </span>}</span>,
     "<span class="hljs-attribute">orgId</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ขององค์หน่วยงานที่ระบบสร้างให้"</span>
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ของหน่วยงาน"</span>
     </span>}</span>,
     "<span class="hljs-attribute">identities</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
@@ -2925,7 +3386,7 @@
       </span>}</span>,
       "<span class="hljs-attribute">orgId</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ขององค์หน่วยงานที่ระบบสร้างให้"</span>
+        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ของหน่วยงาน"</span>
       </span>}</span>,
       "<span class="hljs-attribute">identities</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
@@ -3956,7 +4417,7 @@
     <span class="hljs-string">"specialPPs"</span>
   ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
-</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="healthcareservice-การให้บริการ-put" class="action put"><h4 class="action-heading"><div class="name">แก้ไขบริการ ที่เคยบันทึกไปแล้ว</div><a href="#healthcareservice-การให้บริการ-put" class="method put">PUT</a><code class="uri">/org/{org_id}/healthcareservice/{visit_id}</code></h4><h4>Example URI</h4><div class="definition"><span class="method put">PUT</span>&nbsp;<span class="uri"><span class="hostname">https://api.ffc.in.th/v1</span>/org/<span class="hljs-attribute" title="org_id">5db0973f698922acf8b802fa</span>/healthcareservice/<span class="hljs-attribute" title="visit_id">5dbf993f698922acf8bdd8b2</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>org_id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>5db0973f698922acf8b802fa</span></span><p><code>รหัส id ขององค์หน่วยงานที่ระบบสร้างให้</code></p>
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="healthcareservice-การให้บริการ-put" class="action put"><h4 class="action-heading"><div class="name">แก้ไขบริการ ที่เคยบันทึก</div><a href="#healthcareservice-การให้บริการ-put" class="method put">PUT</a><code class="uri">/org/{org_id}/healthcareservice/{visit_id}</code></h4><h4>Example URI</h4><div class="definition"><span class="method put">PUT</span>&nbsp;<span class="uri"><span class="hostname">https://api.ffc.in.th/v1</span>/org/<span class="hljs-attribute" title="org_id">5db0973f698922acf8b802fa</span>/healthcareservice/<span class="hljs-attribute" title="visit_id">5dbf993f698922acf8bdd8b2</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>org_id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>5db0973f698922acf8b802fa</span></span><p><code>รหัส id ขององค์หน่วยงานที่ระบบสร้างให้</code></p>
 </dd><dt>visit_id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>5dbf993f698922acf8bdd8b2</span></span><p><code>visit id ที่ต้องการจะแก้ ระบบจะสร้างให้เมื่อมีการเพิ่มบริการใหม่</code></p>
 </dd></dl></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">Authorization</span>: <span class="hljs-string">Bearer {token}</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"5dbf993f698922acf8bdd8b2"</span></span>,
@@ -4878,7 +5339,7 @@
     <span class="hljs-string">"specialPPs"</span>
   ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
-</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="healthcareservice-การให้บริการ-get" class="action get"><h4 class="action-heading"><div class="name">ดึงข้อมูลการให้บริการของคน</div><a href="#healthcareservice-การให้บริการ-get" class="method get">GET</a><code class="uri">/org/{org_id}/person/{person_id}/healthcareservice</code></h4><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.ffc.in.th/v1</span>/org/<span class="hljs-attribute" title="org_id">5db0973f698922acf8b802fa</span>/person/<span class="hljs-attribute" title="person_id">5dbd37ed698922acf8bc60e6</span>/healthcareservice</span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>org_id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>5db0973f698922acf8b802fa</span></span><p><code>รหัส id ขององค์หน่วยงานที่ระบบสร้างให้</code></p>
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="healthcareservice-การให้บริการ-get" class="action get"><h4 class="action-heading"><div class="name">ดูรายการให้บริการของคน</div><a href="#healthcareservice-การให้บริการ-get" class="method get">GET</a><code class="uri">/org/{org_id}/person/{person_id}/healthcareservice</code></h4><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.ffc.in.th/v1</span>/org/<span class="hljs-attribute" title="org_id">5db0973f698922acf8b802fa</span>/person/<span class="hljs-attribute" title="person_id">5dbd37ed698922acf8bc60e6</span>/healthcareservice</span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>org_id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>5db0973f698922acf8b802fa</span></span><p><code>รหัส id ขององค์หน่วยงานที่ระบบสร้างให้</code></p>
 </dd><dt>person_id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>5dbd37ed698922acf8bc60e6</span></span><p><code>รหัส id ของคนในระบบ FFC</code></p>
 </dd></dl></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">Authorization</span>: <span class="hljs-string">Bearer {token}</span></code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>[
   {
@@ -5336,7 +5797,7 @@
       <span class="hljs-string">"patientId"</span>
     ]
   </span>}
-</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section><section id="house" class="resource-group"><h2 class="group-heading">House <a href="#house" class="permalink">&para;</a></h2><div id="house-ข้อมูลบ้าน" class="resource"><h3 class="resource-heading">ข้อมูลบ้าน <a href="#house-ข้อมูลบ้าน" class="permalink">&nbsp;&para;</a></h3><div id="house-ข้อมูลบ้าน-post" class="action post"><h4 class="action-heading"><div class="name">เพิ่มข้อมูลบ้านไปยัง FFC</div><a href="#house-ข้อมูลบ้าน-post" class="method post">POST</a><code class="uri">/org/{org_id}/house</code></h4><h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">https://api.ffc.in.th/v1</span>/org/<span class="hljs-attribute" title="org_id">5db0973f698922acf8b802fa</span>/house</span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>org_id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>5db0973f698922acf8b802fa</span></span><p><code>รหัส id ขององค์หน่วยงานที่ระบบสร้างให้</code></p>
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section><section id="house" class="resource-group"><h2 class="group-heading">House <a href="#house" class="permalink">&para;</a></h2><div id="house-ข้อมูลบ้าน" class="resource"><h3 class="resource-heading">ข้อมูลบ้าน <a href="#house-ข้อมูลบ้าน" class="permalink">&nbsp;&para;</a></h3><div id="house-ข้อมูลบ้าน-post" class="action post"><h4 class="action-heading"><div class="name">เพิ่มบ้าน</div><a href="#house-ข้อมูลบ้าน-post" class="method post">POST</a><code class="uri">/org/{org_id}/house</code></h4><h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">https://api.ffc.in.th/v1</span>/org/<span class="hljs-attribute" title="org_id">5db0973f698922acf8b802fa</span>/house</span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>org_id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>5db0973f698922acf8b802fa</span></span><p><code>รหัส id ขององค์หน่วยงานที่ระบบสร้างให้</code></p>
 </dd></dl></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">Authorization</span>: <span class="hljs-string">Bearer {token}</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">identity</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"thailand-household-id"</span></span>,
@@ -5372,7 +5833,7 @@
     </span>}</span>,
     "<span class="hljs-attribute">orgId</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ขององค์หน่วยงานที่ระบบสร้างให้"</span>
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ของหน่วยงาน"</span>
     </span>}</span>,
     "<span class="hljs-attribute">no</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
@@ -5533,7 +5994,7 @@
     </span>}</span>,
     "<span class="hljs-attribute">orgId</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ขององค์หน่วยงานที่ระบบสร้างให้"</span>
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ของหน่วยงาน"</span>
     </span>}</span>,
     "<span class="hljs-attribute">no</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
@@ -5652,7 +6113,7 @@
     <span class="hljs-string">"haveChronic"</span>
   ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
-</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="house-ข้อมูลบ้าน-post-1" class="action post"><h4 class="action-heading"><div class="name">เพิ่มข้อมูลบ้านไปยัง FFC (แบบ array)</div><a href="#house-ข้อมูลบ้าน-post-1" class="method post">POST</a><code class="uri">/org/{org_id}/houses</code></h4><h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">https://api.ffc.in.th/v1</span>/org/<span class="hljs-attribute" title="org_id">5db0973f698922acf8b802fa</span>/houses</span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>org_id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>5db0973f698922acf8b802fa</span></span><p><code>รหัส id ขององค์หน่วยงานที่ระบบสร้างให้</code></p>
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="house-ข้อมูลบ้าน-post-1" class="action post"><h4 class="action-heading"><div class="name">เพิ่มบ้านทีละหลายหลัง</div><a href="#house-ข้อมูลบ้าน-post-1" class="method post">POST</a><code class="uri">/org/{org_id}/houses</code></h4><h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">https://api.ffc.in.th/v1</span>/org/<span class="hljs-attribute" title="org_id">5db0973f698922acf8b802fa</span>/houses</span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>org_id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>5db0973f698922acf8b802fa</span></span><p><code>รหัส id ขององค์หน่วยงานที่ระบบสร้างให้</code></p>
 </dd></dl></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">Authorization</span>: <span class="hljs-string">Bearer {token}</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>[
   {
     "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"af1df31674204307b6db328974051c46"</span></span>,
@@ -5699,7 +6160,7 @@
       </span>}</span>,
       "<span class="hljs-attribute">orgId</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ขององค์หน่วยงานที่ระบบสร้างให้"</span>
+        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ของหน่วยงาน"</span>
       </span>}</span>,
       "<span class="hljs-attribute">no</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
@@ -5851,7 +6312,7 @@
       </span>}</span>,
       "<span class="hljs-attribute">orgId</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ขององค์หน่วยงานที่ระบบสร้างให้"</span>
+        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ของหน่วยงาน"</span>
       </span>}</span>,
       "<span class="hljs-attribute">no</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
@@ -5957,7 +6418,7 @@
       <span class="hljs-string">"type"</span>
     ]
   </span>}
-</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="house-ข้อมูลบ้าน-get" class="action get"><h4 class="action-heading"><div class="name">ดูข้อมูลบ้านที่หน่วยงานดูแลอยู่</div><a href="#house-ข้อมูลบ้าน-get" class="method get">GET</a><code class="uri">/org/{org_id}/house.json/{?page}{?per_page}</code></h4><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.ffc.in.th/v1</span>/org/<span class="hljs-attribute" title="org_id">5db0973f698922acf8b802fa</span>/house.json/?<span class="hljs-attribute">page=</span><span class="hljs-literal">2</span>?<span class="hljs-attribute">per_page=</span><span class="hljs-literal">5</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>org_id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>5db0973f698922acf8b802fa</span></span><p><code>รหัส id ขององค์หน่วยงานที่ระบบสร้างให้</code></p>
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="house-ข้อมูลบ้าน-get" class="action get"><h4 class="action-heading"><div class="name">ดูรายการบ้าน</div><a href="#house-ข้อมูลบ้าน-get" class="method get">GET</a><code class="uri">/org/{org_id}/house.json/{?page}{?per_page}</code></h4><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.ffc.in.th/v1</span>/org/<span class="hljs-attribute" title="org_id">5db0973f698922acf8b802fa</span>/house.json/?<span class="hljs-attribute">page=</span><span class="hljs-literal">2</span>?<span class="hljs-attribute">per_page=</span><span class="hljs-literal">5</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>org_id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>5db0973f698922acf8b802fa</span></span><p><code>รหัส id ขององค์หน่วยงานที่ระบบสร้างให้</code></p>
 </dd><dt>page</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>2</span></span><p><code>เนื่องจากข้อมูลมีจำนวนมาก จำเป็นต้องแบ่งข้อมูลเป็นหน้า หากไม่ใส่จะเป็นหน้า 1</code></p>
 </dd><dt>per_page</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>5</span></span><p><code>เนื่องจากข้อมูลมีจำนวนมาก จำเป็นต้องแบ่งข้อมูลเป็นหน้า เป็นค่าที่ระบุว่าใน 1 หน้ามีข้อมูลกี่ชุด หากไม่ใส่จะเป็น 100</code></p>
 </dd></dl></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">Authorization</span>: <span class="hljs-string">Bearer {token}</span></code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>[
@@ -6142,7 +6603,7 @@
       </span>}</span>,
       "<span class="hljs-attribute">orgId</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ขององค์หน่วยงานที่ระบบสร้างให้"</span>
+        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ของหน่วยงาน"</span>
       </span>}</span>,
       "<span class="hljs-attribute">no</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
@@ -6248,7 +6709,7 @@
       <span class="hljs-string">"type"</span>
     ]
   </span>}
-</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="house-ข้อมูลบ้าน-get-1" class="action get"><h4 class="action-heading"><div class="name">ดึงข้อมูลบ้านด้วย id ของระบบ</div><a href="#house-ข้อมูลบ้าน-get-1" class="method get">GET</a><code class="uri">/org/{org_id}/house/{house_id}</code></h4><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.ffc.in.th/v1</span>/org/<span class="hljs-attribute" title="org_id">5db0973f698922acf8b802fa</span>/house/<span class="hljs-attribute" title="house_id">5db31646698922acf8b9f807</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>org_id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>5db0973f698922acf8b802fa</span></span><p><code>รหัส id ขององค์หน่วยงานที่ระบบสร้างให้</code></p>
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="house-ข้อมูลบ้าน-get-1" class="action get"><h4 class="action-heading"><div class="name">ดูข้อมูลบ้านด้วย id ของระบบ</div><a href="#house-ข้อมูลบ้าน-get-1" class="method get">GET</a><code class="uri">/org/{org_id}/house/{house_id}</code></h4><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.ffc.in.th/v1</span>/org/<span class="hljs-attribute" title="org_id">5db0973f698922acf8b802fa</span>/house/<span class="hljs-attribute" title="house_id">5db31646698922acf8b9f807</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>org_id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>5db0973f698922acf8b802fa</span></span><p><code>รหัส id ขององค์หน่วยงานที่ระบบสร้างให้</code></p>
 </dd><dt>house_id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>5db31646698922acf8b9f807</span></span><p><code>รหัสบ้านที่ระบบสร้างให้</code></p>
 </dd></dl></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">Authorization</span>: <span class="hljs-string">Bearer {token}</span></code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">identity</span>": <span class="hljs-value">{
@@ -6296,7 +6757,7 @@
     </span>}</span>,
     "<span class="hljs-attribute">orgId</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ขององค์หน่วยงานที่ระบบสร้างให้"</span>
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ของหน่วยงาน"</span>
     </span>}</span>,
     "<span class="hljs-attribute">no</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
@@ -6401,7 +6862,7 @@
   "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
     <span class="hljs-string">"type"</span>
   ]
-</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="house-ข้อมูลบ้าน-get-2" class="action get"><h4 class="action-heading"><div class="name">พิกัดบ้านที่หน่วยงานดูแล ในรูปแบบแบบ Geo json</div><a href="#house-ข้อมูลบ้าน-get-2" class="method get">GET</a><code class="uri">/org/{org_id}/house</code></h4><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.ffc.in.th/v1</span>/org/<span class="hljs-attribute" title="org_id">5db0973f698922acf8b802fa</span>/house</span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>org_id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>5db0973f698922acf8b802fa</span></span><p><code>รหัส id ขององค์หน่วยงานที่ระบบสร้างให้</code></p>
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="house-ข้อมูลบ้าน-get-2" class="action get"><h4 class="action-heading"><div class="name">รายการพิกัดบ้าน Geo json</div><a href="#house-ข้อมูลบ้าน-get-2" class="method get">GET</a><code class="uri">/org/{org_id}/house</code></h4><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.ffc.in.th/v1</span>/org/<span class="hljs-attribute" title="org_id">5db0973f698922acf8b802fa</span>/house</span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>org_id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>5db0973f698922acf8b802fa</span></span><p><code>รหัส id ขององค์หน่วยงานที่ระบบสร้างให้</code></p>
 </dd></dl></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">Authorization</span>: <span class="hljs-string">Bearer {token}</span></code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"FeatureCollection"</span></span>,
   "<span class="hljs-attribute">crs</span>": <span class="hljs-value">{
@@ -7022,463 +7483,7 @@
       </span>}
     </span>}
   </span>}
-</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section><section id="organization" class="resource-group"><h2 class="group-heading">Organization <a href="#organization" class="permalink">&para;</a></h2><div id="organization-จัดการเกี่ยวกับหน่วยงาน" class="resource"><h3 class="resource-heading">จัดการเกี่ยวกับหน่วยงาน <a href="#organization-จัดการเกี่ยวกับหน่วยงาน" class="permalink">&nbsp;&para;</a></h3><div id="organization-จัดการเกี่ยวกับหน่วยงาน-get" class="action get"><h4 class="action-heading"><div class="name">แสดงหน่วยงานทั้งหมดที่ใช้งาน</div><a href="#organization-จัดการเกี่ยวกับหน่วยงาน-get" class="method get">GET</a><code class="uri">/org</code></h4><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.ffc.in.th/v1</span>/org</span></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>[
-  {
-    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"โรงพยาบาลส่งเสริมสุขภาพตำบลบ้านทางยางม7"</span></span>,
-    "<span class="hljs-attribute">displayName</span>": <span class="hljs-value"><span class="hljs-string">"โรงพยาบาลส่งเสริมสุขภาพตำบลบ้านทางยาง ม.7"</span></span>,
-    "<span class="hljs-attribute">address</span>": <span class="hljs-value"><span class="hljs-string">"สตูล"</span></span>,
-    "<span class="hljs-attribute">users</span>": <span class="hljs-value">[]</span>,
-    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"5c889fce6989229b7882eb15"</span></span>,
-    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"Organization"</span></span>,
-    "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value"><span class="hljs-string">"2019-03-13T13:14:13.486+07:00"</span>
-  </span>},
-  {
-    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"รพสตบ้านปากน้ำตฉวางอฉวาง"</span></span>,
-    "<span class="hljs-attribute">displayName</span>": <span class="hljs-value"><span class="hljs-string">"รพ.สต.บ้านปากน้ำ ต.ฉวาง อ.ฉวาง "</span></span>,
-    "<span class="hljs-attribute">tel</span>": <span class="hljs-value"><span class="hljs-string">"075-466949 "</span></span>,
-    "<span class="hljs-attribute">address</span>": <span class="hljs-value"><span class="hljs-string">"นครศรีธรรมราช"</span></span>,
-    "<span class="hljs-attribute">users</span>": <span class="hljs-value">[]</span>,
-    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"5c8b50fb698922768b669eb3"</span></span>,
-    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"Organization"</span></span>,
-    "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value"><span class="hljs-string">"2019-03-15T14:15:07.999+07:00"</span>
-  </span>}
-]</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
-  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
-  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-  "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
-    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-    "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสคนที่ระบบสร้างให้"</span>
-      </span>}</span>,
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-        "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
-          <span class="hljs-string">"Organization"</span>
-        ]</span>,
-        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"คงที่"</span>
-      </span>}</span>,
-      "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"วันที่เกิดการเปลี่ยนแปลงล่าสุดกับข้อมูล"</span>
-      </span>}</span>,
-      "<span class="hljs-attribute">name</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-      </span>}</span>,
-      "<span class="hljs-attribute">displayName</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-      </span>}</span>,
-      "<span class="hljs-attribute">avatarUrl</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-      </span>}</span>,
-      "<span class="hljs-attribute">tel</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-      </span>}</span>,
-      "<span class="hljs-attribute">address</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-      </span>}</span>,
-      "<span class="hljs-attribute">location</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-            "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
-              <span class="hljs-string">"Point"</span>
-            ]</span>,
-            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ค่าคงที่"</span>
-          </span>}</span>,
-          "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"พิกัด GPS"</span>
-          </span>}
-        </span>}</span>,
-        "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
-          <span class="hljs-string">"type"</span>
-        ]
-      </span>}</span>,
-      "<span class="hljs-attribute">users</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span>
-      </span>}</span>,
-      "<span class="hljs-attribute">link</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">isSynced</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span></span>,
-            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ข้อมูลนี้ได้รับการ sync ข้อมูลกลับไปยังฐานเดิมหรือยังเช่น sync ไป JHCISDB ที่เครื่อง J Server หรือยัง"</span>
-          </span>}</span>,
-          "<span class="hljs-attribute">lastSync</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"เวลาที่ sync ล่าสุด"</span>
-          </span>}</span>,
-          "<span class="hljs-attribute">system</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-            "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
-              <span class="hljs-string">"JHICS"</span>
-            ]</span>,
-            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ระบบที่ทำการ sync ด้วย"</span>
-          </span>}</span>,
-          "<span class="hljs-attribute">keys</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-            "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}</span>,
-            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"`เก็บคีย์ที่ใช้สำหรับการเชื่อม ระหว่าง HIS กับ FFC หรือข้อมูลจำเป็นอื่นๆ`"</span>
-          </span>}
-        </span>}</span>,
-        "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
-          <span class="hljs-string">"system"</span>
-        ]
-      </span>}
-    </span>}</span>,
-    "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
-      <span class="hljs-string">"type"</span>
-    ]
-  </span>}
-</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="organization-จัดการเกี่ยวกับหน่วยงาน-post" class="action post"><h4 class="action-heading"><div class="name">ลงทะเบียนเปิดใช้งานหน่วยงานใหม่</div><a href="#organization-จัดการเกี่ยวกับหน่วยงาน-post" class="method post">POST</a><code class="uri">/org</code></h4><p>การลงทะเบียนหน่วยงานใหม่ ในนหน่วยงานจำเป็นต้องมี user ที่มี roles เป็น ORG ด้วยไม่งั้นระบบจะไม่ยอม</p>
-<h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">https://api.ffc.in.th/v1</span>/org</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
-  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"รพสต-พรทิพา1"</span></span>,
-  "<span class="hljs-attribute">displayName</span>": <span class="hljs-value"><span class="hljs-string">"รพ.สต. พรทิพา 1"</span></span>,
-  "<span class="hljs-attribute">users</span>": <span class="hljs-value">[
-    {
-      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"pcu100214.airsync"</span></span>,
-      "<span class="hljs-attribute">password</span>": <span class="hljs-value"><span class="hljs-string">"a1e6-4f63e8295160"</span></span>,
-      "<span class="hljs-attribute">roles</span>": <span class="hljs-value">[
-        <span class="hljs-string">"ADMIN"</span>
-      ]</span>,
-      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"5dc194a5b85b4733889247578e4bd5f0"</span></span>,
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"User"</span></span>,
-      "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value"><span class="hljs-string">"2018-06-28T14:19:29.645+07:00"</span>
-    </span>}
-  ]</span>,
-  "<span class="hljs-attribute">link</span>": <span class="hljs-value">{
-    "<span class="hljs-attribute">isSynced</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
-    "<span class="hljs-attribute">lastSync</span>": <span class="hljs-value"><span class="hljs-string">"2018-06-28T17:21:29.645+07:00"</span></span>,
-    "<span class="hljs-attribute">system</span>": <span class="hljs-value"><span class="hljs-string">"JHICS"</span></span>,
-    "<span class="hljs-attribute">keys</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">pcucode</span>": <span class="hljs-value"><span class="hljs-string">"12345"</span>
-    </span>}
-  </span>}</span>,
-  "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"1459f3933d5e4ef8b0a68463c012f26b"</span></span>,
-  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"Organization"</span></span>,
-  "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value"><span class="hljs-string">"2018-06-28T17:17:43.645+07:00"</span>
-</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
-  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
-  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-    "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสคนที่ระบบสร้างให้"</span>
-    </span>}</span>,
-    "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
-        <span class="hljs-string">"Organization"</span>
-      ]</span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"คงที่"</span>
-    </span>}</span>,
-    "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"วันที่เกิดการเปลี่ยนแปลงล่าสุดกับข้อมูล"</span>
-    </span>}</span>,
-    "<span class="hljs-attribute">name</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-    </span>}</span>,
-    "<span class="hljs-attribute">displayName</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-    </span>}</span>,
-    "<span class="hljs-attribute">avatarUrl</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-    </span>}</span>,
-    "<span class="hljs-attribute">tel</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-    </span>}</span>,
-    "<span class="hljs-attribute">address</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-    </span>}</span>,
-    "<span class="hljs-attribute">location</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-          "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
-            <span class="hljs-string">"Point"</span>
-          ]</span>,
-          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ค่าคงที่"</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"พิกัด GPS"</span>
-        </span>}
-      </span>}</span>,
-      "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
-        <span class="hljs-string">"type"</span>
-      ]
-    </span>}</span>,
-    "<span class="hljs-attribute">users</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span>
-    </span>}</span>,
-    "<span class="hljs-attribute">link</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">isSynced</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span></span>,
-          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ข้อมูลนี้ได้รับการ sync ข้อมูลกลับไปยังฐานเดิมหรือยังเช่น sync ไป JHCISDB ที่เครื่อง J Server หรือยัง"</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">lastSync</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"เวลาที่ sync ล่าสุด"</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">system</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-          "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
-            <span class="hljs-string">"JHICS"</span>
-          ]</span>,
-          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ระบบที่ทำการ sync ด้วย"</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">keys</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-          "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}</span>,
-          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"`เก็บคีย์ที่ใช้สำหรับการเชื่อม ระหว่าง HIS กับ FFC หรือข้อมูลจำเป็นอื่นๆ`"</span>
-        </span>}
-      </span>}</span>,
-      "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
-        <span class="hljs-string">"system"</span>
-      ]
-    </span>}
-  </span>}</span>,
-  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
-    <span class="hljs-string">"id"</span>,
-    <span class="hljs-string">"type"</span>,
-    <span class="hljs-string">"timestamp"</span>,
-    <span class="hljs-string">"name"</span>,
-    <span class="hljs-string">"users"</span>
-  ]</span>,
-  "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
-</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
-  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"รพสต-พรทิพา1"</span></span>,
-  "<span class="hljs-attribute">displayName</span>": <span class="hljs-value"><span class="hljs-string">"รพ.สต. พรทิพา 1"</span></span>,
-  "<span class="hljs-attribute">users</span>": <span class="hljs-value">[
-    {
-      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"pcu100214.airsync"</span></span>,
-      "<span class="hljs-attribute">orgId</span>": <span class="hljs-value"><span class="hljs-string">"5dbbc89c698922acf8bc5789"</span></span>,
-      "<span class="hljs-attribute">isActivated</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
-      "<span class="hljs-attribute">activateTime</span>": <span class="hljs-value"><span class="hljs-string">"2019-11-01T12:54:36.771+07:00"</span></span>,
-      "<span class="hljs-attribute">roles</span>": <span class="hljs-value">[
-        <span class="hljs-string">"ADMIN"</span>
-      ]</span>,
-      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"5dbbc89c698922acf8bc578a"</span></span>,
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"User"</span></span>,
-      "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value"><span class="hljs-string">"2019-11-01T12:54:36.771+07:00"</span></span>,
-      "<span class="hljs-attribute">bundle</span>": <span class="hljs-value">{}
-    </span>}
-  ]</span>,
-  "<span class="hljs-attribute">link</span>": <span class="hljs-value">{
-    "<span class="hljs-attribute">isSynced</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
-    "<span class="hljs-attribute">lastSync</span>": <span class="hljs-value"><span class="hljs-string">"2018-06-28T17:21:29.645+07:00"</span></span>,
-    "<span class="hljs-attribute">system</span>": <span class="hljs-value"><span class="hljs-string">"JHICS"</span></span>,
-    "<span class="hljs-attribute">keys</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">pcucode</span>": <span class="hljs-value"><span class="hljs-string">"12345"</span>
-    </span>}
-  </span>}</span>,
-  "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"5dbbc89c698922acf8bc5789"</span></span>,
-  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"Organization"</span></span>,
-  "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value"><span class="hljs-string">"2018-06-28T17:17:43.645+07:00"</span>
-</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
-  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
-  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-    "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสคนที่ระบบสร้างให้"</span>
-    </span>}</span>,
-    "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
-        <span class="hljs-string">"Organization"</span>
-      ]</span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"คงที่"</span>
-    </span>}</span>,
-    "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"วันที่เกิดการเปลี่ยนแปลงล่าสุดกับข้อมูล"</span>
-    </span>}</span>,
-    "<span class="hljs-attribute">name</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-    </span>}</span>,
-    "<span class="hljs-attribute">displayName</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-    </span>}</span>,
-    "<span class="hljs-attribute">avatarUrl</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-    </span>}</span>,
-    "<span class="hljs-attribute">tel</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-    </span>}</span>,
-    "<span class="hljs-attribute">address</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-    </span>}</span>,
-    "<span class="hljs-attribute">location</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-          "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
-            <span class="hljs-string">"Point"</span>
-          ]</span>,
-          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ค่าคงที่"</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"พิกัด GPS"</span>
-        </span>}
-      </span>}</span>,
-      "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
-        <span class="hljs-string">"type"</span>
-      ]
-    </span>}</span>,
-    "<span class="hljs-attribute">users</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span>
-    </span>}</span>,
-    "<span class="hljs-attribute">link</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">isSynced</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span></span>,
-          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ข้อมูลนี้ได้รับการ sync ข้อมูลกลับไปยังฐานเดิมหรือยังเช่น sync ไป JHCISDB ที่เครื่อง J Server หรือยัง"</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">lastSync</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"เวลาที่ sync ล่าสุด"</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">system</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-          "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
-            <span class="hljs-string">"JHICS"</span>
-          ]</span>,
-          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ระบบที่ทำการ sync ด้วย"</span>
-        </span>}</span>,
-        "<span class="hljs-attribute">keys</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-          "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}</span>,
-          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"`เก็บคีย์ที่ใช้สำหรับการเชื่อม ระหว่าง HIS กับ FFC หรือข้อมูลจำเป็นอื่นๆ`"</span>
-        </span>}
-      </span>}</span>,
-      "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
-        <span class="hljs-string">"system"</span>
-      ]
-    </span>}
-  </span>}</span>,
-  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
-    <span class="hljs-string">"id"</span>,
-    <span class="hljs-string">"type"</span>,
-    <span class="hljs-string">"timestamp"</span>,
-    <span class="hljs-string">"name"</span>,
-    <span class="hljs-string">"users"</span>
-  ]</span>,
-  "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
-</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="organization-จัดการเกี่ยวกับหน่วยงาน-get-1" class="action get"><h4 class="action-heading"><div class="name">ค้นหาด้วยชื่อ หรือ รหัสหน่วยงาน</div><a href="#organization-จัดการเกี่ยวกับหน่วยงาน-get-1" class="method get">GET</a><code class="uri">/org{?query}</code></h4><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.ffc.in.th/v1</span>/org?<span class="hljs-attribute">query=</span><span class="hljs-literal"></span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>query</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>ชื่อหน่วยงาน หรือ รหัสหน่ยงาน</p>
-</dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>[
-  {
-    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Nectecเนคเทคฐานทดสอบ"</span></span>,
-    "<span class="hljs-attribute">displayName</span>": <span class="hljs-value"><span class="hljs-string">"Nectec เนคเทค ฐานทดสอบ"</span></span>,
-    "<span class="hljs-attribute">address</span>": <span class="hljs-value"><span class="hljs-string">"ราชบุรี"</span></span>,
-    "<span class="hljs-attribute">users</span>": <span class="hljs-value">[]</span>,
-    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"5db0973f698922acf8b802fa"</span></span>,
-    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"Organization"</span></span>,
-    "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value"><span class="hljs-string">"2019-10-24T01:09:02.297+07:00"</span>
-  </span>}
-]</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
-  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
-  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-  "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
-    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-    "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสคนที่ระบบสร้างให้"</span>
-      </span>}</span>,
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-        "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
-          <span class="hljs-string">"Organization"</span>
-        ]</span>,
-        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"คงที่"</span>
-      </span>}</span>,
-      "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"วันที่เกิดการเปลี่ยนแปลงล่าสุดกับข้อมูล"</span>
-      </span>}</span>,
-      "<span class="hljs-attribute">name</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-      </span>}</span>,
-      "<span class="hljs-attribute">displayName</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-      </span>}</span>,
-      "<span class="hljs-attribute">avatarUrl</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-      </span>}</span>,
-      "<span class="hljs-attribute">tel</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-      </span>}</span>,
-      "<span class="hljs-attribute">address</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-      </span>}</span>,
-      "<span class="hljs-attribute">location</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-            "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
-              <span class="hljs-string">"Point"</span>
-            ]</span>,
-            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ค่าคงที่"</span>
-          </span>}</span>,
-          "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"พิกัด GPS"</span>
-          </span>}
-        </span>}</span>,
-        "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
-          <span class="hljs-string">"type"</span>
-        ]
-      </span>}</span>,
-      "<span class="hljs-attribute">users</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span>
-      </span>}</span>,
-      "<span class="hljs-attribute">link</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">isSynced</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span></span>,
-            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ข้อมูลนี้ได้รับการ sync ข้อมูลกลับไปยังฐานเดิมหรือยังเช่น sync ไป JHCISDB ที่เครื่อง J Server หรือยัง"</span>
-          </span>}</span>,
-          "<span class="hljs-attribute">lastSync</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"เวลาที่ sync ล่าสุด"</span>
-          </span>}</span>,
-          "<span class="hljs-attribute">system</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-            "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
-              <span class="hljs-string">"JHICS"</span>
-            ]</span>,
-            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ระบบที่ทำการ sync ด้วย"</span>
-          </span>}</span>,
-          "<span class="hljs-attribute">keys</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-            "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}</span>,
-            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"`เก็บคีย์ที่ใช้สำหรับการเชื่อม ระหว่าง HIS กับ FFC หรือข้อมูลจำเป็นอื่นๆ`"</span>
-          </span>}
-        </span>}</span>,
-        "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
-          <span class="hljs-string">"system"</span>
-        ]
-      </span>}
-    </span>}</span>,
-    "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
-      <span class="hljs-string">"type"</span>
-    ]
-  </span>}
-</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="organization-จัดการเกี่ยวกับหน่วยงาน-delete" class="action delete"><h4 class="action-heading"><div class="name">ลบหน่วยงานทิ้ง</div><a href="#organization-จัดการเกี่ยวกับหน่วยงาน-delete" class="method delete">DELETE</a><code class="uri">/org/</code></h4><p>ทำการลบข้อมูลทั้งหมดของหน่วยงานที่เลือก ออกจาก Cloud</p>
-<h4>Example URI</h4><div class="definition"><span class="method delete">DELETE</span>&nbsp;<span class="uri"><span class="hostname">https://api.ffc.in.th/v1</span>/org/</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">Authorization</span>: <span class="hljs-string">Bearer {org_token}</span></code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong></div></div></div></section><section id="village" class="resource-group"><h2 class="group-heading">Village <a href="#village" class="permalink">&para;</a></h2><div id="village-ข้อมูลหมู่บ้าน" class="resource"><h3 class="resource-heading">ข้อมูลหมู่บ้าน <a href="#village-ข้อมูลหมู่บ้าน" class="permalink">&nbsp;&para;</a></h3><div id="village-ข้อมูลหมู่บ้าน-post" class="action post"><h4 class="action-heading"><div class="name">เพิ่มหมู่บ้านใน FFC Cloud</div><a href="#village-ข้อมูลหมู่บ้าน-post" class="method post">POST</a><code class="uri">/org/{org_id}/village</code></h4><h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">https://api.ffc.in.th/v1</span>/org/<span class="hljs-attribute" title="org_id">5db0973f698922acf8b802fa</span>/village</span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>org_id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>5db0973f698922acf8b802fa</span></span><p><code>รหัส id ขององค์หน่วยงานที่ระบบสร้างให้</code></p>
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section><section id="village" class="resource-group"><h2 class="group-heading">Village <a href="#village" class="permalink">&para;</a></h2><div id="village-ข้อมูลหมู่บ้าน" class="resource"><h3 class="resource-heading">ข้อมูลหมู่บ้าน <a href="#village-ข้อมูลหมู่บ้าน" class="permalink">&nbsp;&para;</a></h3><div id="village-ข้อมูลหมู่บ้าน-post" class="action post"><h4 class="action-heading"><div class="name">เพิ่มหมู่บ้านใน FFC Cloud</div><a href="#village-ข้อมูลหมู่บ้าน-post" class="method post">POST</a><code class="uri">/org/{org_id}/village</code></h4><h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">https://api.ffc.in.th/v1</span>/org/<span class="hljs-attribute" title="org_id">5db0973f698922acf8b802fa</span>/village</span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>org_id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>5db0973f698922acf8b802fa</span></span><p><code>รหัส id ขององค์หน่วยงานที่ระบบสร้างให้</code></p>
 </dd></dl></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">Authorization</span>: <span class="hljs-string">Bearer {token}</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"บ้าน Nectec"</span></span>,
   "<span class="hljs-attribute">places</span>": <span class="hljs-value">[]</span>,
@@ -7504,7 +7509,7 @@
     </span>}</span>,
     "<span class="hljs-attribute">orgId</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ขององค์หน่วยงานที่ระบบสร้างให้"</span>
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ของหน่วยงาน"</span>
     </span>}</span>,
     "<span class="hljs-attribute">location</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
@@ -7591,7 +7596,7 @@
     </span>}</span>,
     "<span class="hljs-attribute">orgId</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ขององค์หน่วยงานที่ระบบสร้างให้"</span>
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ของหน่วยงาน"</span>
     </span>}</span>,
     "<span class="hljs-attribute">location</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
@@ -7699,7 +7704,7 @@
       </span>}</span>,
       "<span class="hljs-attribute">orgId</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ขององค์หน่วยงานที่ระบบสร้างให้"</span>
+        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ของหน่วยงาน"</span>
       </span>}</span>,
       "<span class="hljs-attribute">location</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
@@ -7802,7 +7807,7 @@
       </span>}</span>,
       "<span class="hljs-attribute">orgId</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ขององค์หน่วยงานที่ระบบสร้างให้"</span>
+        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ของหน่วยงาน"</span>
       </span>}</span>,
       "<span class="hljs-attribute">location</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
@@ -7954,7 +7959,7 @@
       </span>}</span>,
       "<span class="hljs-attribute">orgId</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ขององค์หน่วยงานที่ระบบสร้างให้"</span>
+        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ของหน่วยงาน"</span>
       </span>}</span>,
       "<span class="hljs-attribute">location</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
@@ -8039,7 +8044,7 @@
     </span>}</span>,
     "<span class="hljs-attribute">orgId</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ขององค์หน่วยงานที่ระบบสร้างให้"</span>
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ของหน่วยงาน"</span>
     </span>}</span>,
     "<span class="hljs-attribute">location</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
@@ -8562,7 +8567,7 @@
       </span>}</span>,
       "<span class="hljs-attribute">orgId</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"หมายเลย id ของ Organization"</span>
+        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ของหน่วยงาน"</span>
       </span>}</span>,
       "<span class="hljs-attribute">translation</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
@@ -8614,7 +8619,7 @@
       </span>}</span>,
       "<span class="hljs-attribute">orgId</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"หมายเลย id ของ Organization"</span>
+        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ของหน่วยงาน"</span>
       </span>}</span>,
       "<span class="hljs-attribute">translation</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
@@ -8666,7 +8671,7 @@
       </span>}</span>,
       "<span class="hljs-attribute">orgId</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"หมายเลย id ของ Organization"</span>
+        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัส id ของหน่วยงาน"</span>
       </span>}</span>,
       "<span class="hljs-attribute">translation</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
