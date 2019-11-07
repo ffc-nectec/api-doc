@@ -1,4 +1,4 @@
-# Person
+# Group Person
 
 ## ข้อมูลคน Person [/org/{org_id}/person]
 

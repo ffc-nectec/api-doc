@@ -1,4 +1,4 @@
-# Organization
+# Group Organization
 
 ## จัดการเกี่ยวกับหน่วยงาน [/org]
 

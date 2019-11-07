@@ -1,4 +1,4 @@
-# HealthCareService
+# Group HealthCareService
 
 ## การให้บริการ [/org/{org_id}/healthcareservice]
 

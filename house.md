@@ -1,4 +1,4 @@
-# House
+# Group House
 
 ## ข้อมูลบ้าน [/org/{org_id}/house]
 
