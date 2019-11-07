@@ -15,7 +15,7 @@ before_script:
 script:
   - pwd
   - ls -al *
-  - aglio -i blueprint.apib -o /tmp/index.html
+  - aglio -i blueprint.apib --theme-variables flatly -o /tmp/index.html
   - cd /tmp/api-doc
   - git checkout gh-pages
   - mv ../index.html .
