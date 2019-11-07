@@ -1,10 +1,8 @@
 # Group User
 
-## ระบบ User [/org/{org_id}/user]
+## ระบบ login [/org/{org_id}/user]
 
 ### login เพื่อขอ token [POST /org/{org_id}/authorize]
-
-หลังจาก login แล้วให้นำ token มาใช้งาน
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
@@ -47,7 +45,7 @@
                "token":"b1CfPvPRODzxOtvbXNNUUf6jMZiPLuZBvUQ6968slHsTtNvOHhxkmT66fOo5n3Ld"
             }
 
-### การ activate user เพื่อใช้ในงาน [PUT /org/{org_id}/user/activadte]
+### การเปิดใช้งานผู้ใช้ [PUT /org/{org_id}/user/activadte]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
@@ -90,7 +88,97 @@
                 "token": "7l3Ln8fgKvCEwGvC33OMm"
             }
 
-### ดูรายการ User [GET /org/{org_id}/user]
+### ขอเลข OTP สำหรับยืนยันผู้ใช้ในครั้งแรก [GET /org/{org_id}/otp]
+
++ Parameters
+    + org_id: `5db0973f698922acf8b802fa` (string, required)
+      ``รหัส id ขององค์หน่วยงานที่ระบบสร้างให้``
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer {token}
+
++ Response 200 (application/json)
+
+    + Attributes (OTP , fixed-type)
+
+    + Body
+
+            {
+               "otp":"366868"
+            }
+
+### ดูเลขเอกสารการยอมรับเงื่อไขการใช้งานของผู้ใช้ [GET /org/{org_id}/user/{user_id}/agreement/terms/latest]
+
++ Parameters
+    + org_id: `5db0973f698922acf8b802fa` (string, required)
+      ``รหัส id ขององค์หน่วยงานที่ระบบสร้างให้``
+    + user_id: `5db09741698922acf8b80322` (string, required)
+      ``รหัส id ของ User ในระบบ FFC Cloud``
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer {token}
+
++ Response 200 (application/json)
+
+    + Attributes (Agreement , fixed-type)
+
+    + Body
+
+            {
+               "version":"de664cdd3df4bda583db27a51c1e95cc",
+               "agreeTime":"2019-10-24T01:18:18.850+07:00"
+            }
+
+### ดูเลขเอกสารการยอมรับนโยบายความเป็นส่วนตัวของผู้ใช้ [GET /org/{org_id}/user/{user_id}/agreement/privacy/latest]
+
++ Parameters
+    + org_id: `5db0973f698922acf8b802fa` (string, required)
+      ``รหัส id ขององค์หน่วยงานที่ระบบสร้างให้``
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer {token}
+
++ Response 200 (application/json)
+
+    + Attributes (Agreement , fixed-type)
+
+    + Body
+
+            {
+               "version":"de664cdd3df4bda583db27a51c1e95cc",
+               "agreeTime":"2019-10-24T01:18:18.850+07:00"
+            }
+
+### เพิ่มการยอมรับนโยบายความเป็นส่วนตัวของผู้ใช้ [POST /org/{org_id}/user/{user_id}/agreement/privacy/{version}]
+
++ Parameters
+    + org_id: `5db0973f698922acf8b802fa` (string, required)
+      ``รหัส id ขององค์หน่วยงานที่ระบบสร้างให้``
+    + user_id: `5db09741698922acf8b80322` (string, required)
+      ``รหัส id ของ User ในระบบ FFC Cloud``
+    + version: `de664cdd3df4bda583db27a51c1e95cc` (string, required)
+      ``เลข version ของเอกสารที่ยอมรับ``
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer {token}
+
++ Response 201
+
+## เพิ่ม/ลบ ผู้ใช้ [/org/{org_id}/user]
+
+### ดูรายการผู้ใช้ [GET /org/{org_id}/user]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
@@ -157,7 +245,7 @@
                }
             ]
 
-### เพิ่มข้อมูล User [POST /org/{org_id}/user]
+### เพิ่มผู้ใช้ [POST /org/{org_id}/user]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
@@ -250,91 +338,3 @@
                   }
                }
             ]
-
-### ดูเลขเอกสารการยอมรับเงื่อไขการใช้งานของ User [GET /org/{org_id}/user/{user_id}/agreement/terms/latest]
-
-+ Parameters
-    + org_id: `5db0973f698922acf8b802fa` (string, required)
-      ``รหัส id ขององค์หน่วยงานที่ระบบสร้างให้``
-    + user_id: `5db09741698922acf8b80322` (string, required)
-      ``รหัส id ของ User ในระบบ FFC Cloud``
-
-+ Request (application/json)
-
-    + Headers
-
-            Authorization: Bearer {token}
-
-+ Response 200 (application/json)
-
-    + Attributes (Agreement , fixed-type)
-
-    + Body
-
-            {
-               "version":"de664cdd3df4bda583db27a51c1e95cc",
-               "agreeTime":"2019-10-24T01:18:18.850+07:00"
-            }
-
-### ดูเลขเอกสารการยอมรับนโยบายความเป็นส่วนตัวของ User [GET /org/{org_id}/user/{user_id}/agreement/privacy/latest]
-
-+ Parameters
-    + org_id: `5db0973f698922acf8b802fa` (string, required)
-      ``รหัส id ขององค์หน่วยงานที่ระบบสร้างให้``
-
-+ Request (application/json)
-
-    + Headers
-
-            Authorization: Bearer {token}
-
-+ Response 200 (application/json)
-
-    + Attributes (Agreement , fixed-type)
-
-    + Body
-
-            {
-               "version":"de664cdd3df4bda583db27a51c1e95cc",
-               "agreeTime":"2019-10-24T01:18:18.850+07:00"
-            }
-
-### เพิ่มการยอมรับนโยบายความเป็นส่วนตัวของ User [POST /org/{org_id}/user/{user_id}/agreement/privacy/{version}]
-
-+ Parameters
-    + org_id: `5db0973f698922acf8b802fa` (string, required)
-      ``รหัส id ขององค์หน่วยงานที่ระบบสร้างให้``
-    + user_id: `5db09741698922acf8b80322` (string, required)
-      ``รหัส id ของ User ในระบบ FFC Cloud``
-    + version: `de664cdd3df4bda583db27a51c1e95cc` (string, required)
-      ``เลข version ของเอกสารที่ยอมรับ``
-
-+ Request (application/json)
-
-    + Headers
-
-            Authorization: Bearer {token}
-
-+ Response 201
-
-### ขอเลข OTP สำหรับยืนยัน user [GET /org/{org_id}/otp]
-
-+ Parameters
-    + org_id: `5db0973f698922acf8b802fa` (string, required)
-      ``รหัส id ขององค์หน่วยงานที่ระบบสร้างให้``
-
-+ Request (application/json)
-
-    + Headers
-
-            Authorization: Bearer {token}
-
-+ Response 200 (application/json)
-
-    + Attributes (OTP , fixed-type)
-
-    + Body
-
-            {
-               "otp":"366868"
-            }
