@@ -1,3 +1,5 @@
+# HealthCareService
+
 ## การให้บริการ [/org/{org_id}/healthcareservice]
 
 ### เพิ่มบริการใหม่ [POST /org/{org_id}/healthcareservice]
