@@ -9,13 +9,17 @@ branches:
 before_script:
   - du -sh /tmp/*
   - git clone -b gh-pages https://github.com/ffc-nectec/api-doc.git /tmp/api-doc
-  - du -sh /tmp/api-doc/*
+  - ls -al /tmp/api-doc/*
   - npm install -g aglio
 
 script:
-  - aglio -i blueprint.apib -o /tmp/api-doc/index.html
+  - pwd
+  - ls -al *
+  - aglio -i blueprint.apib -o /tmp/index.html
   - cd /tmp/api-doc
-  - du -sh *
+  - git checkout gh-pages
+  - mv ../index.html .
+  - ls -al *
   - git status
   - git add index.html
   - git status
