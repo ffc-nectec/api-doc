@@ -304,7 +304,7 @@
                "timestamp":"2018-11-19T12:55:34.000+07:00"
             }
 
-### แก้ไขบริการ ที่เคยบันทึกไปแล้ว [PUT /org/{org_id}/healthcareservice/{visit_id}]
+### แก้ไขบริการ ที่เคยบันทึก [PUT /org/{org_id}/healthcareservice/{visit_id}]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
@@ -608,7 +608,7 @@
                "timestamp":"2018-11-19T12:55:34.000+07:00"
             }
 
-### ดึงข้อมูลการให้บริการของคน [GET /org/{org_id}/person/{person_id}/healthcareservice]
+### ดูรายการให้บริการของคน [GET /org/{org_id}/person/{person_id}/healthcareservice]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)

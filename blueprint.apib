@@ -5,11 +5,11 @@ HOST: https://api.ffc.in.th/v1
 
 api สำหรับใช้งานระบบ ffc cloud
 
+<!-- include(organization.md) -->
 <!-- include(user.md) -->
 <!-- include(person.md) -->
 <!-- include(healthcare.md) -->
 <!-- include(house.md) -->
-<!-- include(organization.md) -->
 <!-- include(village.md) -->
 <!-- include(lookup.md) -->
 
@@ -41,7 +41,7 @@ api สำหรับใช้งานระบบ ffc cloud
 + type: `User` (string, fixed) - ค่าคงที่
 + name: `สุวรรณ`
 + password: `dlcfesdoiqplq`
-+ orgId: `5db0973f698922acf8b802fa`
++ orgId: `5db0973f698922acf8b802fa` - รหัส id ของหน่วยงาน
 + displayName: `นางสาว สุวรรณ คงดี` (optional)
 + avatarUrl: `https://ttm.sds.com/dsaefd.png` (optional)
 + tel: `064-87-323-43` (optional)
@@ -59,7 +59,7 @@ api สำหรับใช้งานระบบ ffc cloud
 
 # Village
 + name (string,required) - ชื่อหมู่บ้าน
-+ orgId: `5db0973f698922acf8b802fa` - รหัส id ขององค์หน่วยงานที่ระบบสร้างให้
++ orgId: `5db0973f698922acf8b802fa` - รหัส id ของหน่วยงาน
 + location (Point) - ข้อมูลตำแหน่งหมู่บ้าน
 + places (array[Places])
 + link (Link)
@@ -74,7 +74,7 @@ api สำหรับใช้งานระบบ ffc cloud
 # Places (object)
 + villageId: 5db09741698922acf8b80436 - รหัสหมู่บ้านที่ระบบสร้างให้
 + villageName: เขาดินดำ - ชื่อหมู่บ้าน
-+ orgId: 5db2a2a3698922acf8b99b46 - รหัส id ขององค์หน่วยงานที่ระบบสร้างให้
++ orgId: 5db2a2a3698922acf8b99b46 - รหัส id ของหน่วยงาน
 + no: 133 - เลขที่บ้าน
 + road - ถนน
 + location (Point,optional) - ข้อมูลเกี่ยวกับตำแหน่งบ้าน
@@ -86,7 +86,7 @@ api สำหรับใช้งานระบบ ffc cloud
 + coordinates: 99.99909549951553, 13.520111756593 (array[number]) - พิกัด GPS
 
 # Person (Entity)
-+ orgId: `5db0973f698922acf8b802fa` (required) - รหัส id ขององค์หน่วยงานที่ระบบสร้างให้
++ orgId: `5db0973f698922acf8b802fa` (required) - รหัส id ของหน่วยงาน
 + type: `Person` (string, fixed) - ค่าคงที่
 + identities (array[IdentityPerson]) - ข้อมูลอัตลักษณ์คน
 + chronics (array[Chronics]) - ข้อมูลโรคเรื้อรัง
@@ -276,7 +276,7 @@ api สำหรับใช้งานระบบ ffc cloud
 # Template
 + value: `สุขภาพแข็งแรง` - เนื้อหา
 + field: `HealthCareService.syntom` - เป็นเนื้อหาสำหรับ filed อะไร
-+ orgId: `5dbbc89c698922acf8bc5789` (optional) - หมายเลย id ของ Organization
++ orgId: `5dbbc89c698922acf8bc5789` (optional) - รหัส id ของหน่วยงาน
 + translation (Lang)
   + en: `healthy`
   + th: `สุขภาพแข็งแรง`

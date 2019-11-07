@@ -2,7 +2,7 @@
 
 ## ข้อมูลบ้าน [/org/{org_id}/house]
 
-### เพิ่มข้อมูลบ้านไปยัง FFC [POST /org/{org_id}/house]
+### เพิ่มบ้าน [POST /org/{org_id}/house]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
@@ -86,7 +86,7 @@
                }
 
 
-### เพิ่มข้อมูลบ้านไปยัง FFC (แบบ array) [POST /org/{org_id}/houses]
+### เพิ่มบ้านทีละหลายหลัง [POST /org/{org_id}/houses]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
@@ -176,7 +176,7 @@
                }
             ]
 
-### ดูข้อมูลบ้านที่หน่วยงานดูแลอยู่ [GET /org/{org_id}/house.json/{?page}{?per_page}]
+### ดูรายการบ้าน [GET /org/{org_id}/house.json/{?page}{?per_page}]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
@@ -386,7 +386,7 @@
                }
             ]
 
-### ดึงข้อมูลบ้านด้วย id ของระบบ [GET /org/{org_id}/house/{house_id}]
+### ดูข้อมูลบ้านด้วย id ของระบบ [GET /org/{org_id}/house/{house_id}]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
@@ -444,7 +444,7 @@
                "timestamp":"2017-11-29T14:21:26.000+07:00"
             }
 
-### พิกัดบ้านที่หน่วยงานดูแล ในรูปแบบแบบ Geo json [GET /org/{org_id}/house]
+### รายการพิกัดบ้าน Geo json [GET /org/{org_id}/house]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
