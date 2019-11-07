@@ -1,6 +1,6 @@
 # Group Lookup
 
-## Lookup ประเภทการเยี่ยม homehealth [/homehealth]
+## รหัสอ้างอิงประเภทการเยี่ยม [/homehealth]
 
 ### ดูรายการเยี่ยม [GET /homehealth{?query}]
 
@@ -65,7 +65,7 @@
                 "name": "เยี่ยมผู้ป่วยโรคหลอดเลือดสมอง"
             }
 
-## Lookup รายการโรค [/disease]
+## รหัสอ้างอิงรายการโรค [/disease]
 
 ### ดูรายการโรค [GET /disease{?query}]
 
@@ -131,7 +131,7 @@
                 "name": "Cholera"
             }
 
-## specialPP [/specialPP]
+## รหัสอ้างอิง specialPP [/specialPP]
 
 ### ดูรายการ SpecialPP [GET /specialPP{?query}]
 
