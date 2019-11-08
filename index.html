@@ -6199,6 +6199,88 @@
     </span>}</span>,
     "<span class="hljs-attribute">communityServices</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+      "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสคนที่ระบบสร้างให้"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+              <span class="hljs-string">""</span>
+            ]</span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ค่าคงที่"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"วันที่เกิดการเปลี่ยนแปลงล่าสุดกับข้อมูล"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">serviceType</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+            "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+                  <span class="hljs-string">"Lookup"</span>
+                ]
+              </span>}</span>,
+              "<span class="hljs-attribute">translation</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">en</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                  </span>}</span>,
+                  "<span class="hljs-attribute">th</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                  </span>}
+                </span>}
+              </span>}</span>,
+              "<span class="hljs-attribute">link</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">isSynced</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span></span>,
+                    "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ข้อมูลนี้ได้รับการ sync ข้อมูลกลับไปยังฐานเดิมหรือยังเช่น sync ไป JHCISDB ที่เครื่อง J Server หรือยัง"</span>
+                  </span>}</span>,
+                  "<span class="hljs-attribute">lastSync</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                    "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"เวลาที่ sync ล่าสุด"</span>
+                  </span>}</span>,
+                  "<span class="hljs-attribute">system</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                    "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+                      <span class="hljs-string">"JHICS"</span>
+                    ]</span>,
+                    "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ระบบที่ทำการ sync ด้วย"</span>
+                  </span>}</span>,
+                  "<span class="hljs-attribute">keys</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                    "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}</span>,
+                    "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"`เก็บคีย์ที่ใช้สำหรับการเชื่อม ระหว่าง HIS กับ FFC หรือข้อมูลจำเป็นอื่นๆ`"</span>
+                  </span>}
+                </span>}</span>,
+                "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+                  <span class="hljs-string">"system"</span>
+                ]
+              </span>}</span>,
+              "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+              </span>}</span>,
+              "<span class="hljs-attribute">name</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+              </span>}
+            </span>}</span>,
+            "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+              <span class="hljs-string">"type"</span>
+            ]
+          </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+          <span class="hljs-string">"type"</span>
+        ]
+      </span>}</span>,
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ให้บริการอะไร"</span>
     </span>}</span>,
     "<span class="hljs-attribute">ncdScreen</span>": <span class="hljs-value">{
@@ -6659,6 +6741,88 @@
     </span>}</span>,
     "<span class="hljs-attribute">communityServices</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+      "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสคนที่ระบบสร้างให้"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+              <span class="hljs-string">""</span>
+            ]</span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ค่าคงที่"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"วันที่เกิดการเปลี่ยนแปลงล่าสุดกับข้อมูล"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">serviceType</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+            "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+                  <span class="hljs-string">"Lookup"</span>
+                ]
+              </span>}</span>,
+              "<span class="hljs-attribute">translation</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">en</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                  </span>}</span>,
+                  "<span class="hljs-attribute">th</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                  </span>}
+                </span>}
+              </span>}</span>,
+              "<span class="hljs-attribute">link</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">isSynced</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span></span>,
+                    "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ข้อมูลนี้ได้รับการ sync ข้อมูลกลับไปยังฐานเดิมหรือยังเช่น sync ไป JHCISDB ที่เครื่อง J Server หรือยัง"</span>
+                  </span>}</span>,
+                  "<span class="hljs-attribute">lastSync</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                    "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"เวลาที่ sync ล่าสุด"</span>
+                  </span>}</span>,
+                  "<span class="hljs-attribute">system</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                    "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+                      <span class="hljs-string">"JHICS"</span>
+                    ]</span>,
+                    "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ระบบที่ทำการ sync ด้วย"</span>
+                  </span>}</span>,
+                  "<span class="hljs-attribute">keys</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                    "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}</span>,
+                    "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"`เก็บคีย์ที่ใช้สำหรับการเชื่อม ระหว่าง HIS กับ FFC หรือข้อมูลจำเป็นอื่นๆ`"</span>
+                  </span>}
+                </span>}</span>,
+                "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+                  <span class="hljs-string">"system"</span>
+                ]
+              </span>}</span>,
+              "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+              </span>}</span>,
+              "<span class="hljs-attribute">name</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+              </span>}
+            </span>}</span>,
+            "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+              <span class="hljs-string">"type"</span>
+            ]
+          </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+          <span class="hljs-string">"type"</span>
+        ]
+      </span>}</span>,
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ให้บริการอะไร"</span>
     </span>}</span>,
     "<span class="hljs-attribute">ncdScreen</span>": <span class="hljs-value">{
@@ -7121,6 +7285,88 @@
     </span>}</span>,
     "<span class="hljs-attribute">communityServices</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+      "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสคนที่ระบบสร้างให้"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+              <span class="hljs-string">""</span>
+            ]</span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ค่าคงที่"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"วันที่เกิดการเปลี่ยนแปลงล่าสุดกับข้อมูล"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">serviceType</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+            "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+                  <span class="hljs-string">"Lookup"</span>
+                ]
+              </span>}</span>,
+              "<span class="hljs-attribute">translation</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">en</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                  </span>}</span>,
+                  "<span class="hljs-attribute">th</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                  </span>}
+                </span>}
+              </span>}</span>,
+              "<span class="hljs-attribute">link</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">isSynced</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span></span>,
+                    "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ข้อมูลนี้ได้รับการ sync ข้อมูลกลับไปยังฐานเดิมหรือยังเช่น sync ไป JHCISDB ที่เครื่อง J Server หรือยัง"</span>
+                  </span>}</span>,
+                  "<span class="hljs-attribute">lastSync</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                    "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"เวลาที่ sync ล่าสุด"</span>
+                  </span>}</span>,
+                  "<span class="hljs-attribute">system</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                    "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+                      <span class="hljs-string">"JHICS"</span>
+                    ]</span>,
+                    "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ระบบที่ทำการ sync ด้วย"</span>
+                  </span>}</span>,
+                  "<span class="hljs-attribute">keys</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                    "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}</span>,
+                    "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"`เก็บคีย์ที่ใช้สำหรับการเชื่อม ระหว่าง HIS กับ FFC หรือข้อมูลจำเป็นอื่นๆ`"</span>
+                  </span>}
+                </span>}</span>,
+                "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+                  <span class="hljs-string">"system"</span>
+                ]
+              </span>}</span>,
+              "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+              </span>}</span>,
+              "<span class="hljs-attribute">name</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+              </span>}
+            </span>}</span>,
+            "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+              <span class="hljs-string">"type"</span>
+            ]
+          </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+          <span class="hljs-string">"type"</span>
+        ]
+      </span>}</span>,
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ให้บริการอะไร"</span>
     </span>}</span>,
     "<span class="hljs-attribute">ncdScreen</span>": <span class="hljs-value">{
@@ -7581,6 +7827,88 @@
     </span>}</span>,
     "<span class="hljs-attribute">communityServices</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+      "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสคนที่ระบบสร้างให้"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+              <span class="hljs-string">""</span>
+            ]</span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ค่าคงที่"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"วันที่เกิดการเปลี่ยนแปลงล่าสุดกับข้อมูล"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">serviceType</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+            "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+                  <span class="hljs-string">"Lookup"</span>
+                ]
+              </span>}</span>,
+              "<span class="hljs-attribute">translation</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">en</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                  </span>}</span>,
+                  "<span class="hljs-attribute">th</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                  </span>}
+                </span>}
+              </span>}</span>,
+              "<span class="hljs-attribute">link</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">isSynced</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span></span>,
+                    "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ข้อมูลนี้ได้รับการ sync ข้อมูลกลับไปยังฐานเดิมหรือยังเช่น sync ไป JHCISDB ที่เครื่อง J Server หรือยัง"</span>
+                  </span>}</span>,
+                  "<span class="hljs-attribute">lastSync</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                    "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"เวลาที่ sync ล่าสุด"</span>
+                  </span>}</span>,
+                  "<span class="hljs-attribute">system</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                    "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+                      <span class="hljs-string">"JHICS"</span>
+                    ]</span>,
+                    "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ระบบที่ทำการ sync ด้วย"</span>
+                  </span>}</span>,
+                  "<span class="hljs-attribute">keys</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                    "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}</span>,
+                    "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"`เก็บคีย์ที่ใช้สำหรับการเชื่อม ระหว่าง HIS กับ FFC หรือข้อมูลจำเป็นอื่นๆ`"</span>
+                  </span>}
+                </span>}</span>,
+                "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+                  <span class="hljs-string">"system"</span>
+                ]
+              </span>}</span>,
+              "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+              </span>}</span>,
+              "<span class="hljs-attribute">name</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+              </span>}
+            </span>}</span>,
+            "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+              <span class="hljs-string">"type"</span>
+            ]
+          </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+          <span class="hljs-string">"type"</span>
+        ]
+      </span>}</span>,
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ให้บริการอะไร"</span>
     </span>}</span>,
     "<span class="hljs-attribute">ncdScreen</span>": <span class="hljs-value">{
@@ -8047,6 +8375,88 @@
       </span>}</span>,
       "<span class="hljs-attribute">communityServices</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+        "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+          "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสคนที่ระบบสร้างให้"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+                <span class="hljs-string">""</span>
+              ]</span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ค่าคงที่"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"วันที่เกิดการเปลี่ยนแปลงล่าสุดกับข้อมูล"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">serviceType</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+              "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+                    <span class="hljs-string">"Lookup"</span>
+                  ]
+                </span>}</span>,
+                "<span class="hljs-attribute">translation</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">en</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">th</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                    </span>}
+                  </span>}
+                </span>}</span>,
+                "<span class="hljs-attribute">link</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">isSynced</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span></span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ข้อมูลนี้ได้รับการ sync ข้อมูลกลับไปยังฐานเดิมหรือยังเช่น sync ไป JHCISDB ที่เครื่อง J Server หรือยัง"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">lastSync</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"เวลาที่ sync ล่าสุด"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">system</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                      "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+                        <span class="hljs-string">"JHICS"</span>
+                      ]</span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ระบบที่ทำการ sync ด้วย"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">keys</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}</span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"`เก็บคีย์ที่ใช้สำหรับการเชื่อม ระหว่าง HIS กับ FFC หรือข้อมูลจำเป็นอื่นๆ`"</span>
+                    </span>}
+                  </span>}</span>,
+                  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+                    <span class="hljs-string">"system"</span>
+                  ]
+                </span>}</span>,
+                "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">name</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                </span>}
+              </span>}</span>,
+              "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+                <span class="hljs-string">"type"</span>
+              ]
+            </span>}
+          </span>}</span>,
+          "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+            <span class="hljs-string">"type"</span>
+          ]
+        </span>}</span>,
         "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ให้บริการอะไร"</span>
       </span>}</span>,
       "<span class="hljs-attribute">ncdScreen</span>": <span class="hljs-value">{
