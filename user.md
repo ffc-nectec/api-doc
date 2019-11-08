@@ -45,6 +45,19 @@
                "token":"b1CfPvPRODzxOtvbXNNUUf6jMZiPLuZBvUQ6968slHsTtNvOHhxkmT66fOo5n3Ld"
             }
 
++ Response 401 (application/json)
+
+  เมื่อชื่อผู้ใช้ หรือ รหัสผ่านไม่ถูกต้อง
+
+    + Attributes (Error)
+
+    + Body
+
+            {
+               "code": 401,
+               "message": "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
+            }
+
 ### การเปิดใช้งานผู้ใช้ [PUT /org/{org_id}/user/activadte]
 
 + Parameters
