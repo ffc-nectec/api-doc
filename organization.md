@@ -131,7 +131,7 @@
 + Parameters
 
     + query: `คลอง` (string)
-      ``ชื่อหน่วยงาน หรือ รหัสหน่ยงาน``
+      ``ชื่อหน่วยงาน หรือ รหัสหน่วยงาน``
 
 + Response 200 (application/json)
 
@@ -153,12 +153,9 @@
                }
             ]
 
-+ Parameters
-
-    + query: `คลองอะไรนะ`
-      ``ใส่ชื่อหน่วยงานที่ไม่มีอยู่จริง``
-
 + Response 404 (application/json)
+
+เมื่อไม่พบผลการค้นหา
 
     + Attributes (Error)
 
@@ -184,10 +181,15 @@
 
 + Response 200
 
-+ Request (application/json)
++ Response 404 (application/json)
 
-+ Parameters
-    + org_id: `999999999999999999999999` (string, required)
-      ``รหัส id ของหน่วยงานที่ไม่มีอยู่จริง``
+หากใส่รหัส id ของหน่วยงานที่ไม่มีอยู่จริงจะ return 404
 
-+ Response 404
+    + Attributes (Error)
+
+    + Body
+
+            {
+               "code": 404,
+               "message": "HTTP 404 Not Found"
+            }

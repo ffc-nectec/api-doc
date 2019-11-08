@@ -1,6 +1,6 @@
 # Group User
 
-## ระบบ login [/org/{org_id}/user]
+## ระบบ login [/org/{org_id}/authorize]
 
 ### login เพื่อขอ token [POST /org/{org_id}/authorize]
 
@@ -177,6 +177,9 @@
             Authorization: Bearer {token}
 
 + Response 201
+
+    + Body
+
 
 ## ข้อมูลผู้ใช้ [/org/{org_id}/user]
 
