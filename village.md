@@ -2,7 +2,7 @@
 
 ## ข้อมูลหมู่บ้าน [/org/{org_id}/village]
 
-### เพิ่มหมู่บ้านใน FFC Cloud [POST /org/{org_id}/village]
+### เพิ่มหมู่บ้าน [POST /org/{org_id}/village]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
@@ -62,7 +62,7 @@
                "timestamp":"2019-10-24T01:09:05.412+07:00"
             }
 
-### เพิ่มหมู่บ้านใน FFC Cloud แบบ array [POST /org/{org_id}/villages]
+### เพิ่มแบบหลายหมู่บ้าน [POST /org/{org_id}/villages]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
@@ -162,7 +162,7 @@
                }
             ]
 
-### ดูข้อมูลหมู่บ้านที่หน่วยงานดูแลอยู่ [GET /org/{org_id}/village]
+### ดูรายการหมู่บ้าน [GET /org/{org_id}/village]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
@@ -274,7 +274,7 @@
             ]
 
 
-### ดึงข้อมูลหมู่บ้านด้วย id ของระบบ [GET /org/{org_id}/village/{village_id}]
+### ดึงหมู่บ้านด้วย id [GET /org/{org_id}/village/{village_id}]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)

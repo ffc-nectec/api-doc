@@ -110,7 +110,9 @@
                "otp":"366868"
             }
 
-### ดูเลขเอกสารการยอมรับเงื่อไขการใช้งานของผู้ใช้ [GET /org/{org_id}/user/{user_id}/agreement/terms/latest]
+## ข้อตกลงการใช้งาน [/org/{org_id}/user/{user_id}/agreement]
+
+### ดูข้อตกลงของผู้ใช้ [GET /org/{org_id}/user/{user_id}/agreement/terms/latest]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
@@ -135,7 +137,7 @@
                "agreeTime":"2019-10-24T01:18:18.850+07:00"
             }
 
-### ดูเลขเอกสารการยอมรับนโยบายความเป็นส่วนตัวของผู้ใช้ [GET /org/{org_id}/user/{user_id}/agreement/privacy/latest]
+### ดูนโยบายความเป็นส่วนตัวของผู้ใช้ [GET /org/{org_id}/user/{user_id}/agreement/privacy/latest]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
@@ -158,7 +160,7 @@
                "agreeTime":"2019-10-24T01:18:18.850+07:00"
             }
 
-### เพิ่มการยอมรับนโยบายความเป็นส่วนตัวของผู้ใช้ [POST /org/{org_id}/user/{user_id}/agreement/privacy/{version}]
+### เพิ่มการยอมรับนโยบายความเป็นส่วนตัว [POST /org/{org_id}/user/{user_id}/agreement/privacy/{version}]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)

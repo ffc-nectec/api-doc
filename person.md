@@ -338,7 +338,7 @@
                }
             ]
 
-### ดูข้อมูลคนด้วย id ของระบบ [GET /org/{org_id}/person/{person_id}]
+### ดึงข้อมูลคนด้วย id [GET /org/{org_id}/person/{person_id}]
 
 + Request (application/json)
 
@@ -350,7 +350,7 @@
     + org_id: `5db0973f698922acf8b802fa` (string, required)
       ``รหัส id ขององค์หน่วยงานที่ระบบสร้างให้``
     + person_id: `5db31646698922acf8b9f807` (string, required)
-      ``รหัสคนที่ระบบสร้างให้``
+      ``รหัส id คนที่ระบบสร้างให้``
 
 + Response 200 (application/json)
 
@@ -600,7 +600,7 @@
                "timestamp":"2018-06-25T14:09:07.815+07:00"
             }
 
-### เพิ่มคนแบบหลายคน [POST /org/{org_id}/persons]
+### เพิ่มแบบหลายคน [POST /org/{org_id}/persons]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
@@ -985,7 +985,7 @@
 
 ## ความสัมพันธ์ทางสายเสือด [/org/{org_id}/person/{person_id}/relationship]
 
-### ดูความสัมพันธ์ทางสายเลือด [GET /org/{org_id}/person/{person_id}/relationship]
+### ดูความสัมพันธ์ [GET /org/{org_id}/person/{person_id}/relationship]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
@@ -1034,7 +1034,7 @@
                }
             ]
 
-### ใส่ความสัมพันธ์ทางสายเลือด [PUT /org/{org_id}/person/{person_id}/relationship]
+### ใส่ความสัมพันธ์ [PUT /org/{org_id}/person/{person_id}/relationship]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
@@ -1112,7 +1112,7 @@
                }
             ]
 
-### ดึงข้อมูลรายการคนที่มีความสัมพันธ์ทางสายเลือดกับผู้ที่เลือก [GET /org/{org_id}/person/{person_id}/genogram/collect]
+### ดึงคนที่มีความสัมพันธ์กับผู้ที่เลือก [GET /org/{org_id}/person/{person_id}/genogram/collect]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)

@@ -386,7 +386,7 @@
                }
             ]
 
-### ดูข้อมูลบ้านด้วย id ของระบบ [GET /org/{org_id}/house/{house_id}]
+### ดึงข้อมูลบ้านด้วย id [GET /org/{org_id}/house/{house_id}]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
@@ -444,7 +444,7 @@
                "timestamp":"2017-11-29T14:21:26.000+07:00"
             }
 
-### รายการพิกัดบ้าน Geo json [GET /org/{org_id}/house]
+### พิกัดบ้าน GeoJSON [GET /org/{org_id}/house]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
