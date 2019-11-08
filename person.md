@@ -124,7 +124,7 @@
                         "relate":"Mother",
                         "id":"5db315b9698922acf8b9de63",
                         "name":"น.ส.สุขสม เปลื้องทุกข์",
-                        "age":22
+                        "age":65
                      },
                      {
                         "relate":"Child",
@@ -276,7 +276,7 @@
                         "relate":"Mother",
                         "id":"5db315b9698922acf8b9de63",
                         "name":"น.ส.สุขสม เปลื้องทุกข์",
-                        "age":22
+                        "age":65
                      },
                      {
                         "relate":"Child",
@@ -450,7 +450,7 @@
                      "relate":"Mother",
                      "id":"5db315b9698922acf8b9de63",
                      "name":"น.ส.สุขสม เปลื้องทุกข์",
-                     "age":22
+                     "age":65
                   },
                   {
                      "relate":"Child",
