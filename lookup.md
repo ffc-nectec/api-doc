@@ -131,9 +131,9 @@
                 "name": "Cholera"
             }
 
-## รหัสอ้างอิง specialPP [/specialPP]
+## รหัสบริการส่งเสริมป้องกันเฉพาะ [/specialPP]
 
-### ดูรายการ SpecialPP [GET /specialPP{?query}]
+### ดูรายการ [GET /specialPP{?query}]
 
 + Parameters
     + query: `ซึมเศร้าในหญิง` (string)
@@ -164,7 +164,7 @@
                }
             ]
 
-### ดูด้วยรหัส SpecialPP [GET /specialPP/{pp_id}]
+### ค้นหาด้วยรหัส [GET /specialPP/{pp_id}]
 
 + Parameters
     + pp_id: `1B140` (string)
