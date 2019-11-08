@@ -6,7 +6,7 @@
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
-      ``รหัส id ขององค์หน่วยงานที่ระบบสร้างให้``
+      ``รหัส id ของหน่วยงาน``
 
 + Request (application/json)
 
@@ -66,7 +66,7 @@
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
-      ``รหัส id ขององค์หน่วยงานที่ระบบสร้างให้``
+      ``รหัส id ของหน่วยงาน``
 
 + Request (application/json)
 
@@ -166,7 +166,7 @@
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
-      ``รหัส id ขององค์หน่วยงานที่ระบบสร้างให้``
+      ``รหัส id ของหน่วยงาน``
 
 + Request (application/json)
 
@@ -278,7 +278,7 @@
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
-      ``รหัส id ขององค์หน่วยงานที่ระบบสร้างให้``
+      ``รหัส id ของหน่วยงาน``
     + village_id: `5db31646698922acf8b9f807` (string, required)
       ``รหัสหมู่บ้านที่ระบบสร้างให้``
 

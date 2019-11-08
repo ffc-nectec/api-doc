@@ -6,7 +6,7 @@
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
-      ``รหัส id ขององค์หน่วยงานที่ระบบสร้างให้``
+      ``รหัส id ของหน่วยงาน``
 
 + Request (application/json)
 
@@ -308,7 +308,7 @@
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
-      ``รหัส id ขององค์หน่วยงานที่ระบบสร้างให้``
+      ``รหัส id ของหน่วยงาน``
     + visit_id: `5dbf993f698922acf8bdd8b2` (string, required)
       ``visit id ที่ต้องการจะแก้ ระบบจะสร้างให้เมื่อมีการเพิ่มบริการใหม่``
 
@@ -612,7 +612,7 @@
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
-      ``รหัส id ขององค์หน่วยงานที่ระบบสร้างให้``
+      ``รหัส id ของหน่วยงาน``
     + person_id: `5dbd37ed698922acf8bc60e6` (string, required)
       ``รหัส id ของคนในระบบ FFC``
 

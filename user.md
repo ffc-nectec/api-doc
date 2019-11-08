@@ -6,7 +6,7 @@
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
-      ``รหัส id ขององค์หน่วยงานที่ระบบสร้างให้``
+      ``รหัส id ของหน่วยงาน``
 
 + Request (application/json)
 
@@ -49,7 +49,7 @@
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
-      ``รหัส id ขององค์หน่วยงานที่ระบบสร้างให้``
+      ``รหัส id ของหน่วยงาน``
 
 + Request (application/json)
 
@@ -92,7 +92,7 @@
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
-      ``รหัส id ขององค์หน่วยงานที่ระบบสร้างให้``
+      ``รหัส id ของหน่วยงาน``
 
 + Request (application/json)
 
@@ -116,7 +116,7 @@
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
-      ``รหัส id ขององค์หน่วยงานที่ระบบสร้างให้``
+      ``รหัส id ของหน่วยงาน``
     + user_id: `5db09741698922acf8b80322` (string, required)
       ``รหัส id ของ User ในระบบ FFC Cloud``
 
@@ -141,7 +141,7 @@
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
-      ``รหัส id ขององค์หน่วยงานที่ระบบสร้างให้``
+      ``รหัส id ของหน่วยงาน``
 
 + Request (application/json)
 
@@ -164,7 +164,7 @@
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
-      ``รหัส id ขององค์หน่วยงานที่ระบบสร้างให้``
+      ``รหัส id ของหน่วยงาน``
     + user_id: `5db09741698922acf8b80322` (string, required)
       ``รหัส id ของ User ในระบบ FFC Cloud``
     + version: `de664cdd3df4bda583db27a51c1e95cc` (string, required)
@@ -184,7 +184,7 @@
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
-      ``รหัส id ขององค์หน่วยงานที่ระบบสร้างให้``
+      ``รหัส id ของหน่วยงาน``
 
 + Request (application/json)
 
@@ -251,7 +251,7 @@
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
-      ``รหัส id ขององค์หน่วยงานที่ระบบสร้างให้``
+      ``รหัส id ของหน่วยงาน``
 
 + Request (application/json)
 

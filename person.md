@@ -6,7 +6,7 @@
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
-      ``รหัส id ขององค์หน่วยงานที่ระบบสร้างให้``
+      ``รหัส id ของหน่วยงาน``
     + page: `1` (string, optional)
       ``เนื่องจากข้อมูลมีจำนวนมาก จำเป็นต้องแบ่งข้อมูลเป็นหน้า หากไม่ใส่จะเป็นหน้า 1``
     + per_page: `200` (string, optional)
@@ -348,7 +348,7 @@
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
-      ``รหัส id ขององค์หน่วยงานที่ระบบสร้างให้``
+      ``รหัส id ของหน่วยงาน``
     + person_id: `5db31646698922acf8b9f807` (string, required)
       ``รหัส id คนที่ระบบสร้างให้``
 
@@ -515,7 +515,7 @@
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
-      ``รหัส id ขององค์หน่วยงานที่ระบบสร้างให้``
+      ``รหัส id ของหน่วยงาน``
 
 + Request (application/json)
 
@@ -604,7 +604,7 @@
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
-      ``รหัส id ขององค์หน่วยงานที่ระบบสร้างให้``
+      ``รหัส id ของหน่วยงาน``
 
 + Request (application/json)
 
@@ -894,7 +894,7 @@
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
-      ``รหัส id ขององค์หน่วยงานที่ระบบสร้างให้``
+      ``รหัส id ของหน่วยงาน``
     + person_id: `5dbd37ed698922acf8bc60e6` (string, required)
       ``รหัส id ของคนที่ต้องการจะแก้ไข``
 
@@ -989,7 +989,7 @@
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
-      ``รหัส id ขององค์หน่วยงานที่ระบบสร้างให้``
+      ``รหัส id ของหน่วยงาน``
     + person_id: `5dbd37ed698922acf8bc60e6` (string, required)
       ``รหัส id ของคนที่ต้องการจะแก้ไข``
 
@@ -1038,7 +1038,7 @@
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
-      ``รหัส id ขององค์หน่วยงานที่ระบบสร้างให้``
+      ``รหัส id ของหน่วยงาน``
     + person_id: `5dbd37ed698922acf8bc60e6` (string, required)
       ``รหัส id ของคนที่ต้องการจะแก้ไข``
 
@@ -1116,7 +1116,7 @@
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
-      ``รหัส id ขององค์หน่วยงานที่ระบบสร้างให้``
+      ``รหัส id ของหน่วยงาน``
     + person_id: `5dbd37ed698922acf8bc60e6` (string, required)
       ``รหัส id ของคนที่ต้องการจะแก้ไข``
 

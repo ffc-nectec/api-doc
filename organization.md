@@ -74,7 +74,7 @@
                "timestamp":"2018-06-28T17:17:43.645+07:00"
             }
 
-+ Response 200 (application/json) - ลงทะเบียนสำเร็จ
++ Response 200 (application/json)
 
     + Attributes (Organization, fixed-type)
 
@@ -113,7 +113,7 @@
                "timestamp":"2018-06-28T17:17:43.645+07:00"
             }
 
-+ Response 400 (application/json) - ลงทะเบียนซ้ำ
++ Response 400 (application/json)
 
   ถ้ามีการลงทะเบียนชื่อซ้ำกันจะไม่สามารถลงทะเบียนได้
 
@@ -152,6 +152,25 @@
                   "timestamp":"2019-10-24T01:09:02.297+07:00"
                }
             ]
+
++ Request
+    + Parameters
+        + query: `คลองอะไรนะ`
+          ``ใส่ชื่อหน่วยงานที่ไม่มีอยู่จริง``
+
++ Response 404 (application/json)
+
+  ถ้ามีการลงทะเบียนชื่อซ้ำกันจะไม่สามารถลงทะเบียนได้
+
+    + Attributes (Error)
+
+    + Body
+
+            {
+               "code": 404,
+               "message": "ค้นหา คลองอะไรนะ ไม่พบ"
+            }
+
 
 ### ลบหน่วยงาน [DELETE /org/{org_id}]
 
