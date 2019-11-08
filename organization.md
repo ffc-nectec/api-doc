@@ -153,14 +153,12 @@
                }
             ]
 
-+ Request
-    + Parameters
-        + query: `คลองอะไรนะ`
-          ``ใส่ชื่อหน่วยงานที่ไม่มีอยู่จริง``
++ Parameters
+
+    + query: `คลองอะไรนะ`
+      ``ใส่ชื่อหน่วยงานที่ไม่มีอยู่จริง``
 
 + Response 404 (application/json)
-
-  ถ้ามีการลงทะเบียนชื่อซ้ำกันจะไม่สามารถลงทะเบียนได้
 
     + Attributes (Error)
 
@@ -180,4 +178,16 @@
 
             Authorization: Bearer {org_token}
 
++ Parameters
+    + org_id: `5db0973f698922acf8b802fa` (string, required)
+      ``รหัส id ของหน่วยงาน``
+
 + Response 200
+
++ Request (application/json)
+
++ Parameters
+    + org_id: `999999999999999999999999` (string, required)
+      ``รหัส id ของหน่วยงานที่ไม่มีอยู่จริง``
+
++ Response 404
