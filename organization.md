@@ -38,7 +38,10 @@
 
 ### ลงทะเบียนหน่วยงานใหม่ [POST]
 
-การลงทะเบียนหน่วยงานใหม่ จำเป็นต้องมี user ที่มี roles เป็น ORG ด้วยไม่งั้นระบบจะไม่ยอม
+  ::: note
+  **สำคัญ**
+  การลงทะเบียนหน่วยงานใหม่ จำเป็นต้องมี user ที่มี roles เป็น ORG ด้วย ไม่งั้นระบบจะไม่ยอมรับการลงทะเบียน
+  :::
 
 + Request (application/json)
 
@@ -155,7 +158,7 @@
 
 + Response 404 (application/json)
 
-เมื่อไม่พบผลการค้นหา
+  เมื่อไม่พบผลการค้นหา
 
     + Attributes (Error)
 
@@ -183,7 +186,7 @@
 
 + Response 404 (application/json)
 
-หากใส่รหัส id ของหน่วยงานที่ไม่มีอยู่จริงจะ return 404
+  เมื่อไม่พบ id ของหน่วยงาน
 
     + Attributes (Error)
 
@@ -192,4 +195,17 @@
             {
                "code": 404,
                "message": "HTTP 404 Not Found"
+            }
+
++ Response 401 (application/json)
+
+  เมื่อ token หมดอายุ
+
+    + Attributes (Error)
+
+    + Body
+
+            {
+               "code": 401,
+               "message": "กรุณาทำการยืนยันตัวตนใหม่"
             }

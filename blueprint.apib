@@ -3,7 +3,7 @@ HOST: https://api.ffc.in.th/v1
 
 # FFC api
 
-เอกสารการใช้งาน **FFC's [RESTful API](https://github.com/ffc-nectec/api).**
+เอกสารการใช้งาน **[FFC's RESTful API](https://github.com/ffc-nectec/api).**
 
 <!-- include(organization.md) -->
 <!-- include(user.md) -->
@@ -51,11 +51,11 @@ HOST: https://api.ffc.in.th/v1
 + link (Link,optional)
 
 # Role (enum)
-+ ADMIN
-+ PROVIDER
-+ SURVEYOR
-+ PATIENT
-+ SYNC_AGENT
++ ADMIN - ผู้ดูแล
++ PROVIDER - ผู้ให้บริการ เช่น หมอ, แพทย์
++ SURVEYOR - นักสำรวจ
++ PATIENT - user ทั่วไป เช่น ตัวผู้ป่วยเอง
++ SYNC_AGENT - ใช้สำหรับระบบ sync หากใส่ token จะไม่มีวันหมดอายุ
 
 # Village
 + name (string,required) - ชื่อหมู่บ้าน
@@ -123,15 +123,15 @@ HOST: https://api.ffc.in.th/v1
 + ACTIVITIES
 
 # Death
-+ date: `2008-06-27`
-+ causes (array[Disease])
++ date: `2008-06-27` - วันที่เสียชีวิต
++ causes (array[Disease]) - สาเหตุการเสียชีวิต ด้วยโรคอะไร
 
 # Disabilities
 + group (DisabilitiesGroup)
-+ detectDate: `2008-06-27` - วันที่ตรวจพบ
++ detectDate: `2008-06-27` - วันที่ตรวจพบความพิการ
 + startDate: `2008-06-27`
-+ cause (DisabilitiesCause)
-+ disease (Disease)
++ cause (DisabilitiesCause) - มีความพิการ
++ disease (Disease) - มีโรค
 + severity (Severity) - ระดับความรุนแรง
 
 # DisabilitiesGroup (enum)
@@ -150,12 +150,12 @@ HOST: https://api.ffc.in.th/v1
 + DISEASED - โรค
 
 # Severity
-+ UNDEFINED
-+ OK
-+ LOW
-+ MID
-+ HI
-+ VERY_HI
++ UNDEFINED - ไม่ระบุ
++ OK - ปกติ
++ LOW - ต่ำ
++ MID - ปลานกลาง
++ HI - สูง
++ VERY_HI - สูงมาก
 
 # Chronics (object)
 + diagDate: `2019-10-25` - วันที่ได้รับการวินิฉัย
