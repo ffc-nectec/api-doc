@@ -74,7 +74,7 @@
                "timestamp":"2018-06-28T17:17:43.645+07:00"
             }
 
-+ Response 200 (application/json)
++ Response 200 (application/json) - ลงทะเบียนสำเร็จ
 
     + Attributes (Organization, fixed-type)
 
@@ -113,9 +113,11 @@
                "timestamp":"2018-06-28T17:17:43.645+07:00"
             }
 
-+ Response 400 (application/json)
++ Response 400 (application/json) - ลงทะเบียนซ้ำ
 
   ถ้ามีการลงทะเบียนชื่อซ้ำกันจะไม่สามารถลงทะเบียนได้
+
+    + Attributes (Error)
 
     + Body
 
