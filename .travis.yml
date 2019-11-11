@@ -19,6 +19,7 @@ script:
   - cd /tmp/api-doc
   - git checkout gh-pages
   - mv ../index.html .
+  - git add data
   - git add index.html
   - git commit -m "Build html"
   - git remote add origin-gh-pages https://${GH_TOKEN}@github.com/ffc-nectec/api-doc.git > /dev/null 2>&1
