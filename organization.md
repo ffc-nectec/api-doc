@@ -4,12 +4,12 @@
 
 ### ลงทะเบียนหน่วยงานใหม่ [POST]
 
+<img src="data\image\create_organization.svg">
+
   ::: note
   **สำคัญ**
   การลงทะเบียนหน่วยงานใหม่ จำเป็นต้องมี user ที่มี roles เป็น ORG ด้วย ไม่งั้นระบบจะไม่ยอมรับการลงทะเบียน
   :::
-
-![image](data\image\create_organization.svg)
 
 + Request (application/json)
 
