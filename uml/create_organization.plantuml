@@ -1,0 +1,8 @@
+@startuml
+Client -> Server: Create organization Request
+note left: Organization Body\n id: HEX character length 32.
+
+Server --> Client: Create confirm Response
+note right: Organization Body\n id: HEX character length 24.
+
+@enduml

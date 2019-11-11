@@ -14,6 +14,7 @@ before_script:
 
 script:
   - ls -al *
+  - rsync -av --delete ./data /tmp/api-doc/
   - aglio -i blueprint.apib --theme-variables flatly -o /tmp/index.html
   - cd /tmp/api-doc
   - git checkout gh-pages

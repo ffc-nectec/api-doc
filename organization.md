@@ -2,46 +2,14 @@
 
 ## ข้อมูลหน่วยงาน [/org]
 
-### แสดงหน่วยงานทั้งหมด [GET]
-
-+ Response 200 (application/json)
-
-    + Attributes (array[Organization], fixed-type)
-
-    + Body
-
-            [
-               {
-                  "name":"โรงพยาบาลส่งเสริมสุขภาพตำบลบ้านทางยางม7",
-                  "displayName":"โรงพยาบาลส่งเสริมสุขภาพตำบลบ้านทางยาง ม.7",
-                  "address":"สตูล",
-                  "users":[
-
-                  ],
-                  "id":"5c889fce6989229b7882eb15",
-                  "type":"Organization",
-                  "timestamp":"2019-03-13T13:14:13.486+07:00"
-               },
-               {
-                  "name":"รพสตบ้านปากน้ำตฉวางอฉวาง",
-                  "displayName":"รพ.สต.บ้านปากน้ำ ต.ฉวาง อ.ฉวาง ",
-                  "tel":"075-466949 ",
-                  "address":"นครศรีธรรมราช",
-                  "users":[
-
-                  ],
-                  "id":"5c8b50fb698922768b669eb3",
-                  "type":"Organization",
-                  "timestamp":"2019-03-15T14:15:07.999+07:00"
-               }
-            ]
-
 ### ลงทะเบียนหน่วยงานใหม่ [POST]
 
   ::: note
   **สำคัญ**
   การลงทะเบียนหน่วยงานใหม่ จำเป็นต้องมี user ที่มี roles เป็น ORG ด้วย ไม่งั้นระบบจะไม่ยอมรับการลงทะเบียน
   :::
+
+![image](data\image\create_organization.svg)
 
 + Request (application/json)
 
@@ -128,6 +96,40 @@
                "code": 400,
                "message": "ลงทะเบียน Org ซ้ำ"
             }
+
+### แสดงหน่วยงานทั้งหมด [GET]
+
++ Response 200 (application/json)
+
+    + Attributes (array[Organization], fixed-type)
+
+    + Body
+
+            [
+               {
+                  "name":"โรงพยาบาลส่งเสริมสุขภาพตำบลบ้านทางยางม7",
+                  "displayName":"โรงพยาบาลส่งเสริมสุขภาพตำบลบ้านทางยาง ม.7",
+                  "address":"สตูล",
+                  "users":[
+
+                  ],
+                  "id":"5c889fce6989229b7882eb15",
+                  "type":"Organization",
+                  "timestamp":"2019-03-13T13:14:13.486+07:00"
+               },
+               {
+                  "name":"รพสตบ้านปากน้ำตฉวางอฉวาง",
+                  "displayName":"รพ.สต.บ้านปากน้ำ ต.ฉวาง อ.ฉวาง ",
+                  "tel":"075-466949 ",
+                  "address":"นครศรีธรรมราช",
+                  "users":[
+
+                  ],
+                  "id":"5c8b50fb698922768b669eb3",
+                  "type":"Organization",
+                  "timestamp":"2019-03-15T14:15:07.999+07:00"
+               }
+            ]
 
 ### ค้นหาหน่วยงาน [GET /org{?query}]
 

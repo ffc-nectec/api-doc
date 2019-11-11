@@ -1,0 +1,8 @@
+@startuml
+Client -> Server: Authentication Request
+note left: Login body\n{\n  "username":"thanachai",\n  "password":"a1e6-4f63e8295160"\n}
+
+Server --> Client: Authentication Response
+note right: Token\n{\n  "expireDate":"xxx",\n  ...,\n  "token":"sdfsdfue"\n}
+
+@enduml
