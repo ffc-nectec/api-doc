@@ -4,6 +4,8 @@
 
 ### login เพื่อขอ token [POST /org/{org_id}/authorize]
 
+<img src="data\image\login.svg">
+
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
       ``รหัส id ของหน่วยงาน``
