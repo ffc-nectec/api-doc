@@ -1,6 +1,6 @@
 @startuml
 Client -> Server: Create organization Request
-note left: Organization Body\n id: HEX character length 32.
+note left: Organization Body\n id: HEX character length 32.\n users: Need one person is 'ADMIN' in roles.
 
 Server --> Client: Create confirm Response
 note right: Organization Body\n id: HEX character length 24.
