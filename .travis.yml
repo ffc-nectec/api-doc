@@ -15,11 +15,7 @@ before_script:
 script:
   - ls -al *
   - rsync -av --delete ./data /tmp/api-doc/
-  - snowboard apib -o API.apib blueprint.apib
-  - tail -n 500 API.apib
-  - snowboard lint API.apib
-  - snowboard html -o index.html API.apib
-  - mv index.html /tmp/index.html
+  - snowboard html -o /tmp/index.html blueprint.apib
   - cd /tmp/api-doc
   - git checkout gh-pages
   - mv ../index.html .
