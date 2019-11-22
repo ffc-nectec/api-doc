@@ -4,7 +4,7 @@
 
 ### login เพื่อขอ token [POST /org/{org_id}/authorize]
 
-<img src="data\image\login.svg">
+<img src="data\image\login.svg" width="100%">
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
