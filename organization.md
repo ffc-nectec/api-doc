@@ -4,7 +4,7 @@
 
 ### ลงทะเบียนหน่วยงานใหม่ [POST]
 
-<img src="data\image\create_organization.svg">
+<img src="data\image\create_organization.svg" width="100%">
 
   ::: note
   **สำคัญ**
@@ -18,18 +18,23 @@
     + Body
 
             {
+               "id":"1459f3933d5e4ef8b0a68463c012f26b",
+               "type":"Organization",
+               "timestamp":"2018-06-28T17:17:43.645+07:00",
                "name":"รพสต-พรทิพา1",
                "displayName":"รพ.สต. พรทิพา 1",
+               "avatarUrl" : "https://firebasestorage.googleapis.com/v0/b/family-folder-collector.appspot.com/o/images",
                "users":[
                   {
-                     "name":"pcu100214.airsync",
-                     "password":"a1e6-4f63e8295160",
-                     "roles":[
-                        "ADMIN"
-                     ],
                      "id":"5dc194a5b85b4733889247578e4bd5f0",
                      "type":"User",
-                     "timestamp":"2018-06-28T14:19:29.645+07:00"
+                     "timestamp":"2018-06-28T14:19:29.645+07:00",
+                     "name":"pcu100214.airsync",
+                     "password":"a1e6-4f63e8295160",
+                     "avatarUrl" : "https://firebasestorage.googleapis.com/v0/b/family-folder-collector.appspot.com/o/images",
+                     "roles":[
+                        "ADMIN"
+                     ]
                   }
                ],
                "link":{
@@ -39,10 +44,7 @@
                   "keys":{
                      "pcucode":"12345"
                   }
-               },
-               "id":"1459f3933d5e4ef8b0a68463c012f26b",
-               "type":"Organization",
-               "timestamp":"2018-06-28T17:17:43.645+07:00"
+               }
             }
 
 + Response 200 (application/json)
@@ -52,20 +54,25 @@
     + Body
 
             {
+               "id":"5dbbc89c698922acf8bc5789",
+               "type":"Organization",
+               "timestamp":"2018-06-28T17:17:43.645+07:00",
                "name":"รพสต-พรทิพา1",
                "displayName":"รพ.สต. พรทิพา 1",
+               "avatarUrl" : "https://firebasestorage.googleapis.com/v0/b/family-folder-collector.appspot.com/o/images",
                "users":[
                   {
+                     "id":"5dbbc89c698922acf8bc578a",
+                     "type":"User",
+                     "timestamp":"2019-11-01T12:54:36.771+07:00",
                      "name":"pcu100214.airsync",
                      "orgId":"5dbbc89c698922acf8bc5789",
                      "isActivated":true,
                      "activateTime":"2019-11-01T12:54:36.771+07:00",
+                     "avatarUrl" : "https://firebasestorage.googleapis.com/v0/b/family-folder-collector.appspot.com/o/images",
                      "roles":[
                         "ADMIN"
                      ],
-                     "id":"5dbbc89c698922acf8bc578a",
-                     "type":"User",
-                     "timestamp":"2019-11-01T12:54:36.771+07:00",
                      "bundle":{
 
                      }
@@ -78,10 +85,7 @@
                   "keys":{
                      "pcucode":"12345"
                   }
-               },
-               "id":"5dbbc89c698922acf8bc5789",
-               "type":"Organization",
-               "timestamp":"2018-06-28T17:17:43.645+07:00"
+               }
             }
 
 + Response 400 (application/json)
@@ -121,6 +125,7 @@
                   "name":"รพสตบ้านปากน้ำตฉวางอฉวาง",
                   "displayName":"รพ.สต.บ้านปากน้ำ ต.ฉวาง อ.ฉวาง ",
                   "tel":"075-466949 ",
+                  "avatarUrl" : "https://firebasestorage.googleapis.com/v0/b/family-folder-collector.appspot.com/o/images",
                   "address":"นครศรีธรรมราช",
                   "users":[
 
