@@ -10,12 +10,14 @@ before_script:
   - du -sh /tmp/*
   - git clone -b gh-pages https://github.com/ffc-nectec/api-doc.git /tmp/api-doc
   - ls -al /tmp/api-doc/*
-  - npm install -g aglio
+  - npm install -g snowboard
 
 script:
   - ls -al *
   - rsync -av --delete ./data /tmp/api-doc/
-  - aglio -i blueprint.apib --theme-variables flatly -o /tmp/index.html
+  - snowboard apib -o API.apib blueprint.apib
+  - snowboard lint API.apib
+  - snowboard html -o /tmp/index.html API.apib
   - cd /tmp/api-doc
   - git checkout gh-pages
   - mv ../index.html .
