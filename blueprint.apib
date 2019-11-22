@@ -15,38 +15,39 @@ HOST: https://api.ffc.in.th/v1
 
 ## Data Structures
 
-# Organization (Entity)
+# Organization (object)
++ Include Entity
 + type : `Organization` (string,fixed) - คงที่
-+ name: `รพสต-พรทิพา1`
-+ displayName: `รพ.สต. พรทิพา 1` (optional)
-+ avatarUrl: `https://ttm.sds.com/dsaefd.png` (optional)
-+ tel: `037-323-043` (optional)
-+ address: `amed คลองหลือง 111` (optional)
++ name: `รพสต-พรทิพา1` (string)
++ displayName: `รพ.สต. พรทิพา 1` (string, optional)
++ avatarUrl: `https://ttm.sds.com/dsaefd.png` (string,optional)
++ tel: `037-323-043` (string,optional)
++ address: `amed คลองหลือง 111` (string,optional)
 + location (Point,optional)
 + users (array[User])
 + link (Link,optional)
 
-# Token
+# Token (object)
 + user (User) - ข้อมูลของ user
 + token: `b1CfPvPRODzxOtvbXNNUUf6jMZiPLuZBvUQ6968slHsTtNvOHhxkmT66fOo5n3Ld` (string) - token สำหรับใช้งาน api
 + createDate: `2019-11-01T12:59:14.669+07:00` (string) - วันเวลาที่สร้าง token
 + expireDate: `2019-11-02T12:59:14.669+07:00` (string) - วันเวลาที่ token หมดอายุ
 
-# Agreement
+# Agreement (object)
 + version: `de664cdd3df4bda583db27a51c1e95cc` (string) - เลข version เอกสาร
-+ agreeTime: `2019-10-24T01:18:18.850+07:00` - เวลาที่ยอมรับ
++ agreeTime: `2019-10-24T01:18:18.850+07:00` (string) - เวลาที่ยอมรับ
 
-# User
+# User (object)
 + Include Entity
 + type: `User` (string, fixed) - ค่าคงที่
-+ name: `สุวรรณ`
-+ password: `dlcfesdoiqplq`
-+ orgId: `5db0973f698922acf8b802fa` - รหัส id ของหน่วยงาน
-+ displayName: `นางสาว สุวรรณ คงดี` (optional)
-+ avatarUrl: `https://ttm.sds.com/dsaefd.png` (optional)
-+ tel: `064-87-323-43` (optional)
++ name: `สุวรรณ` (string)
++ password: `dlcfesdoiqplq` (string)
++ orgId: `5db0973f698922acf8b802fa` (string) - รหัส id ของหน่วยงาน
++ displayName: `นางสาว สุวรรณ คงดี` (string, optional)
++ avatarUrl: `https://ttm.sds.com/dsaefd.png` (string, optional)
++ tel: `064-87-323-43` (string, optional)
 + isActivated: true (boolean)
-+ activateTime: `2008-06-27`
++ activateTime: `2008-06-27` (string)
 + roles (array[Role])
 + link (Link,optional)
 
@@ -57,26 +58,27 @@ HOST: https://api.ffc.in.th/v1
 + PATIENT - user ทั่วไป เช่น ตัวผู้ป่วยเอง
 + SYNC_AGENT - ใช้สำหรับระบบ sync หากใส่ token จะไม่มีวันหมดอายุ
 
-# Village
+# Village (object)
 + name (string,required) - ชื่อหมู่บ้าน
-+ orgId: `5db0973f698922acf8b802fa` - รหัส id ของหน่วยงาน
++ orgId: `5db0973f698922acf8b802fa` (string) - รหัส id ของหน่วยงาน
 + location (Point) - ข้อมูลตำแหน่งหมู่บ้าน
 + places (array[Places])
 + link (Link)
 
-# House (Places)
+# House (object)
 + Include Entity
++ Include Places
 + type: House - ค่าคงที่
 + identity (IdentityHouse) - ข้อมูลอัตลักษณ์บ้าน
 + people (array[Person])
 + haveChronic: true (boolean) - มีคนเป็นโรคเรื้อรังภายในบ้านหลังนี้หรือไม่
 
 # Places (object)
-+ villageId: 5db09741698922acf8b80436 - รหัสหมู่บ้านที่ระบบสร้างให้
-+ villageName: เขาดินดำ - ชื่อหมู่บ้าน
-+ orgId: 5db2a2a3698922acf8b99b46 - รหัส id ของหน่วยงาน
-+ no: 133 - เลขที่บ้าน
-+ road - ถนน
++ villageId: 5db09741698922acf8b80436 (string) - รหัสหมู่บ้านที่ระบบสร้างให้
++ villageName: เขาดินดำ (string) - ชื่อหมู่บ้าน
++ orgId: 5db2a2a3698922acf8b99b46 (string) - รหัส id ของหน่วยงาน
++ no: 133 (string) - เลขที่บ้าน
++ road (string) - ถนน
 + location (Point,optional) - ข้อมูลเกี่ยวกับตำแหน่งบ้าน
 + link (Link)
 + imagesUrl (URLs) - ภาพบ้าน
@@ -85,26 +87,27 @@ HOST: https://api.ffc.in.th/v1
 + type: `Point` (string, fixed) - ค่าคงที่
 + coordinates: 99.99909549951553, 13.520111756593 (array[number]) - พิกัด GPS
 
-# Person (Entity)
-+ orgId: `5db0973f698922acf8b802fa` (required) - รหัส id ของหน่วยงาน
+# Person (object)
++ Include Entity
++ orgId: `5db0973f698922acf8b802fa` (string,required) - รหัส id ของหน่วยงาน
 + type: `Person` (string, fixed) - ค่าคงที่
 + identities (array[IdentityPerson]) - ข้อมูลอัตลักษณ์คน
 + chronics (array[Chronics]) - ข้อมูลโรคเรื้อรัง
 + disabilities (array[Disabilities]) - ข้อมูลความพิการ
 + link (Link,optional)
 + relationships (array[Relationship]) - ความสัมพันธ์ทางสายเลือด
-+ prename: `ด.ช.` (required) - คำนำหน้าชื่อ
-+ firstname: `ปริศนา` (required) - ชื่อ
-+ midname: `กัน` (optional)
-+ lastname: `ยากยิ่ง` (required) - นามสกุล
++ prename: `ด.ช.` (string,required) - คำนำหน้าชื่อ
++ firstname: `ปริศนา` (string,required) - ชื่อ
++ midname: `กัน` (string, optional)
++ lastname: `ยากยิ่ง` (string,required) - นามสกุล
 + sex (Sex) - เพศ
-+ birthDate: `2008-06-27` (optional) - วันเกิด
-+ houseId: `5db0973f698922acf8b8065b` - รหัสบ้านที่ระบบสร้างให้
++ birthDate: `2008-06-27` (string, optional) - วันเกิด
++ houseId: `5db0973f698922acf8b8065b` (string) - รหัสบ้านที่ระบบสร้างให้
 + avatarUrl: `https://i.m.com/323223.png` (string,optional) - ภาพคน
 + death (Death,optional)
 + healthAnalyze (HealthAnalyzer,optional)
 
-# HealthAnalyzer
+# HealthAnalyzer (object)
 + result (array[HealthIssue])
 
 # HealthIssue (enum)
@@ -122,14 +125,14 @@ HOST: https://api.ffc.in.th/v1
 + FALL_RISK
 + ACTIVITIES
 
-# Death
-+ date: `2008-06-27` - วันที่เสียชีวิต
+# Death (object)
++ date: `2008-06-27` (string) - วันที่เสียชีวิต
 + causes (array[Disease]) - สาเหตุการเสียชีวิต ด้วยโรคอะไร
 
-# Disabilities
+# Disabilities (object)
 + group (DisabilitiesGroup)
-+ detectDate: `2008-06-27` - วันที่ตรวจพบความพิการ
-+ startDate: `2008-06-27`
++ detectDate: `2008-06-27` (string) - วันที่ตรวจพบความพิการ
++ startDate: `2008-06-27` (string)
 + cause (DisabilitiesCause) - มีความพิการ
 + disease (Disease) - มีโรค
 + severity (Severity) - ระดับความรุนแรง
@@ -149,7 +152,7 @@ HOST: https://api.ffc.in.th/v1
 + INJURED - ได้รับบาดเจ็บ
 + DISEASED - โรค
 
-# Severity
+# Severity (enum)
 + UNDEFINED - ไม่ระบุ
 + OK - ปกติ
 + LOW - ต่ำ
@@ -158,19 +161,20 @@ HOST: https://api.ffc.in.th/v1
 + VERY_HI - สูงมาก
 
 # Chronics (object)
-+ diagDate: `2019-10-25` - วันที่ได้รับการวินิฉัย
++ diagDate: `2019-10-25` (string) - วันที่ได้รับการวินิฉัย
 + link (Link)
 + disease (Disease)
 
 # Disease (object)
-+ icd10: `J45.9` - รหัส ICD10
++ icd10: `J45.9` (string) - รหัส ICD10
 + isEpimedic: false (boolean) - อยู่ในกลุ่มโรคระบาดหรือไม่
 + isChronic: true (boolean) - อยู่ในกลุ่มโรคเรื้อรังหรือไม่
 + isNCD: false (boolean) - อยู่ในกลุ่มโรค NCDs หรือไม่
 + type: Icd10 (string, fixed) - ค่าคงที่
-+ translation: `{"th":"โรคหืด ไม่ระบุรายละเอียด"}` - แปลในภาษาอื่น
-+ id: `9c9067926ec740e28a3860c8d61690dc` - id ที่ระบบสร้างให้
-+ name: `Asthma, unspecified` - ชื่อโรค
++ translation (Lang) - แปลในภาษาอื่น
+  + th: `โรคหืด ไม่ระบุรายละเอียด`
++ id: `9c9067926ec740e28a3860c8d61690dc` (string) - id ที่ระบบสร้างให้
++ name: `Asthma, unspecified` (string) - ชื่อโรค
 
 # Sex (enum)
 + MALE - ชาย
@@ -187,25 +191,26 @@ HOST: https://api.ffc.in.th/v1
 
 # Relationship (object)
 + relate: Father, Mother, Sibling, Twin, Married, Seperated, LegallySeperated, Divorced, Engaged, LoveAffair, Child (enum) - ความสัมพันธ์ทางสายเลือด
-+ id: 5db31646698922acf8b9f807 - รหัส id คนในระบบ
-+ name: `น.ส.สุขสม เปลื้องทุกข์` - ชื่อ นามสกุล
++ id: 5db31646698922acf8b9f807 (string) - รหัส id คนในระบบ
++ name: `น.ส.สุขสม เปลื้องทุกข์` (string) - ชื่อ นามสกุล
 + age: 23 (number)
 
 # Link (object)
 + isSynced: true (boolean) - ข้อมูลนี้ได้รับการ sync ข้อมูลกลับไปยังฐานเดิมหรือยังเช่น sync ไป JHCISDB ที่เครื่อง J Server หรือยัง
-+ lastSync: `2019-10-25T14:20:51.213+07:00` - เวลาที่ sync ล่าสุด
++ lastSync: `2019-10-25T14:20:51.213+07:00` (string) - เวลาที่ sync ล่าสุด
 + system: `JHICS` (string, fixed) - ระบบที่ทำการ sync ด้วย
 + keys (object) - `เก็บคีย์ที่ใช้สำหรับการเชื่อม ระหว่าง HIS กับ FFC หรือข้อมูลจำเป็นอื่นๆ`
 
 # URLs (array[string])
 +  `https://i.simple/33232.png`,`https://i.simple/32.png`
 
-# HealthCareService (Service)
-+ type:`HealthCareService` (fixed) - ค่าคงที่
-+ id: `73008541152448718e204a104a8d1a34`
-+ nextAppoint: `2019-01-09` (optional) - วันที่นัดครั้งต่อไป
-+ syntom: `ติดตามเยี่ยมมารดาหลังคลอดครั้งที่3` (optional) - อาการ
-+ suggestion: `แนะนำการดูแลมารดาหลังคลอด การเลียงดูบุตร ด้วยนมแม่ ให้คำแนะนำเรื่องวัคซีน และแรื่องสมุนไพรไพรการทับหม้อเกลือ` (optional) - คำแนะนำ
+# HealthCareService (object)
++ Include Service
++ type:`HealthCareService` (string,fixed) - ค่าคงที่
++ id: `73008541152448718e204a104a8d1a34` (string)
++ nextAppoint: `2019-01-09` (string, optional) - วันที่นัดครั้งต่อไป
++ syntom: `ติดตามเยี่ยมมารดาหลังคลอดครั้งที่3` (string, optional) - อาการ
++ suggestion: `แนะนำการดูแลมารดาหลังคลอด การเลียงดูบุตร ด้วยนมแม่ ให้คำแนะนำเรื่องวัคซีน และแรื่องสมุนไพรไพรการทับหม้อเกลือ` (string, optional) - คำแนะนำ
 + weight: 64.5 (number,optional) - น้ำหนัก
 + height: 158 (number,optional) - ส่วนสูง
 + waist: 78 (number,optional) - รอบเอว
@@ -216,22 +221,23 @@ HOST: https://api.ffc.in.th/v1
 + respiratoryRate: 22 (number,optional) - อัตราการหายใจ
 + bodyTemperature: 36.5 (number,optional) - อุณหภูมิร่างกาย
 + diagnosises (array[Diagnosis]) - การวินิฉัยโรค
-+ note: `เยี่ยมมารดาครั้งที่3` (optional) - จดบันทึกโน๊ต
++ note: `เยี่ยมมารดาครั้งที่3` (string, optional) - จดบันทึกโน๊ต
 + photosUrl (URLs) - url รูปภาพการให้บริการ
 + communityServices (array[CommunityService] , fixed-type) - ให้บริการอะไร
 + ncdScreen (NCDScreen,optional) - ข้อมูลเกี่ยวกับ NCDs
 + specialPPs (array[SpecialPP])
 
-# SpecialPP
+# SpecialPP (object)
 + Include Service
-+ type: `SpecialPP` (fixed) - ค่าคงที่
++ type: `SpecialPP` (string,fixed) - ค่าคงที่
 + ppType (PPType)
 
-# PPType (Lookup)
-+ id: `1B52`
-+ name: `ผู้มารับบริการมีพฤติกรรมไม่เคยสูบบุหรี่`
+# PPType (object)
++ Include Lookup
++ id: `1B52` (string)
++ name: `ผู้มารับบริการมีพฤติกรรมไม่เคยสูบบุหรี่` (string)
 
-# NCDScreen
+# NCDScreen (object)
 + Include Service
 + type: `NCDScreen` (string, fixed) - ค่าคงที่
 + hasDmInFamily: true (boolean) - มีคนเป็นเบาหวานในครอบครัวหรือไม่
@@ -255,33 +261,35 @@ HOST: https://api.ffc.in.th/v1
 + Include Entity
 + serviceType (ServiceType)
 
-# HomeVisit (ServiceType)
-+ detail: `แนะนำกระตุ้นพัฒนาการเด็กให้เหมาะสมกับวัย`
-+ result: `มารดามีความรู้และจะพาบุตรไปฉีดวัคซีน DTP+HB 1 อายุ 2 เดือน และตรวจพัฒนาการ`
+# HomeVisit (object)
++ Include ServiceType
++ detail: `แนะนำกระตุ้นพัฒนาการเด็กให้เหมาะสมกับวัย` (string)
++ result: `มารดามีความรู้และจะพาบุตรไปฉีดวัคซีน DTP+HB 1 อายุ 2 เดือน และตรวจพัฒนาการ` (string)
 + plan (string)
 
-# ServiceType (Lookup)
-+ id: `1A213` - รหัสกิจกรรมการให้บริการปฐมภูมิในชุมชน
-+ name: `เยี่ยมหญิงหลังคลอด ครั้งที่ 2 (4-6 สัปดาห์) ที่ไม่มีภาวะผิดปกติ`
+# ServiceType (object)
++ Include Lookup
++ id: `1A213` (string) - รหัสกิจกรรมการให้บริการปฐมภูมิในชุมชน
++ name: `เยี่ยมหญิงหลังคลอด ครั้งที่ 2 (4-6 สัปดาห์) ที่ไม่มีภาวะผิดปกติ` (string)
 
 # Lookup (object)
 + type: `Lookup` (fixed)
 + translation (Lang)
 + link (Link)
 
-# Lang
-+ en: `Cholera`
-+ th: `อหิวาตกโรค`
+# Lang (object)
++ en: `Cholera` (string)
++ th: `อหิวาตกโรค` (string)
 
-# Template
-+ value: `สุขภาพแข็งแรง` - เนื้อหา
-+ field: `HealthCareService.syntom` - เป็นเนื้อหาสำหรับ filed อะไร
-+ orgId: `5dbbc89c698922acf8bc5789` (optional) - รหัส id ของหน่วยงาน
+# Template (object)
++ value: `สุขภาพแข็งแรง` (string) - เนื้อหา
++ field: `HealthCareService.syntom` (string) - เป็นเนื้อหาสำหรับ filed อะไร
++ orgId: `5dbbc89c698922acf8bc5789` (string, optional) - รหัส id ของหน่วยงาน
 + translation (Lang)
   + en: `healthy`
   + th: `สุขภาพแข็งแรง`
 
-# Diagnosis
+# Diagnosis (object)
 + disease (Disease)
 + dxType: PRINCIPLE_DX, CO_MORBIDITY, COMPLICATION, OTHER, EXTERNAL_CAUSE (enum)
 + isContinued: false (boolean)
@@ -290,18 +298,19 @@ HOST: https://api.ffc.in.th/v1
 + systolic: 110 (number)
 + diastolic: 62 (number)
 
-# Service (Entity)
-+ providerId: `5c07f94a6eabfa0004258b77` (required) - รหัส id ของ User(เจ้าหน้าที่)
-+ patientId: `5dbd37ed698922acf8bc60e6` (required) - รหัส id ของผู้รับบริการ
+# Service (object)
++ Include Entity
++ providerId: `5c07f94a6eabfa0004258b77` (string,required) - รหัส id ของ User(เจ้าหน้าที่)
++ patientId: `5dbd37ed698922acf8bc60e6` string,(required) - รหัส id ของผู้รับบริการ
 + time: `2018-11-12T12:49:11.000+07:00` (string) - เวลาเริ่มให้บริการ
 + endTime: `2018-11-12T12:55:33.000+07:00` (string) - เวลาที่ให้บริการเสร็จสิ้น
 + location (Point,optional)
 + link (Link,optional)
 
 # Entity (object)
-+ id: `5db31646698922acf8b9f807` - รหัสคนที่ระบบสร้างให้
++ id: `5db31646698922acf8b9f807` (string) - รหัสคนที่ระบบสร้างให้
 + type (string, fixed) - ค่าคงที่
-+ timestamp: `2014-09-04T16:19:17.000+07:00` - วันที่เกิดการเปลี่ยนแปลงล่าสุดกับข้อมูล
++ timestamp: `2014-09-04T16:19:17.000+07:00` (string) - วันที่เกิดการเปลี่ยนแปลงล่าสุดกับข้อมูล
 
 # OTP (object)
 + otp: `366868` (string) - เลข otp
