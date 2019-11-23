@@ -62,7 +62,7 @@
 
 + Response 403 (application/json)
 
-  สำหรับการใช้งาน user ครั้งแรก จำเป็นต้องผ่านการเปิดการใช้งานก่อน
+  สำหรับการใช้งาน user ครั้งแรก จำเป็นต้องผ่านการเปิดการใช้งานก่อน ดูส่วน การเปิดใช้งานผู้ใช้
 
     + Attributes (Error)
 
@@ -73,7 +73,10 @@
                "message": "บัญชีผู้ใช้ยังไม่ได้ activate"
             }
 
-### การเปิดใช้งานผู้ใช้ [PUT /org/{org_id}/user/activadte]
+### การเปิดใช้งานผู้ใช้ [PUT /org/{org_id}/user/activate]
+
+user ที่ใช้งานในครั้งแรก จำเป็นต้องเปิดการใช้งานก่อน  
+<img src="data\image\activadte_user.svg" width="100%">
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
@@ -114,6 +117,19 @@
                     "bundle": {}
                 },
                 "token": "7l3Ln8fgKvCEwGvC33OMm"
+            }
+
++ Response 401 (application/json)
+
+  เมื่อ username password หรือ รหัส OTP ไม่ถูกต้องจะ return 401 รายละเอียดให้ดูที่ message ที่ส่งกลับมา
+
+    + Attributes (Error)
+
+    + Body
+
+            {
+               "code": 401,
+               "message": "รหัส OTP ไม่ถูกต้อง โปรดกรอกใหม่"
             }
 
 ### ขอเลข OTP สำหรับยืนยันผู้ใช้ในครั้งแรก [GET /org/{org_id}/otp]

@@ -1,0 +1,24 @@
+@startuml
+actor User
+
+== Authorize ==
+User -> "Authorize service": Authentication Request
+note left: ใช้ user ที่ยังไม่ได้ผ่านการ activate
+"Authorize service" ->x "Authorize service": Check user is activate\nactivate=false
+User x<-- "Authorize service": 403 Error authentication Response
+
+== Activate User ==
+User -> "OTP service": Request with ADMIN token
+"OTP service" -> "OTP service": Generate OTP\n with individal key.
+"OTP service" --> User: OTP number Response
+User -> "Activadte service": Authentication with otp
+"Activadte service" -> "Activadte service" : Set user\nactivate = true
+User <-- "Activadte service": Another authentication Response
+
+== Authorize ==
+note left: User ที่ผ่านการ activate แล้ว\nครั้งหน้าสามารถ Authorize ได้เลย
+User --> "Authorize service": Authentication Request
+"Authorize service" -> "Authorize service": Check user is activate\nactivate=true
+User <-- "Authorize service": Another authentication Response
+
+@enduml
