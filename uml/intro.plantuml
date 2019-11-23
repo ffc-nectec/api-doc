@@ -16,12 +16,12 @@ rectangle "Not authorize" {
 }
 
 note right of (Homehealth type lookup)
-รหัสประเภทการตรวจสุขภาพที่บ้าน
+รหัสอ้างอิงประเภทการเยี่ยม
   1A000 เยี่ยมผู้ป่วยโรคความดันโลหิตสูง
 endnote
 
 note right of (ICD10 lookup)
-รหัสรายการโรคตามมาฐาน ICD10
+รหัสอ้างอิงรายการโรคตามมาตฐาน ICD10
   A00 อหิวาตกโรค
 endnote
 
