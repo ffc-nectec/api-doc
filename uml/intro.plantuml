@@ -1,0 +1,54 @@
+@startuml
+left to right direction
+
+:Dev: as Dev
+note left of Dev
+Maybe:
+  Other service.
+  Other platform.
+end note
+
+rectangle "Not authorize" {
+  Dev -- (Homehealth type lookup)
+  Dev -- (ICD10 lookup)
+  Dev -- (Special PP lookup)
+}
+
+note right of (Homehealth type lookup)
+รหัสประเภทการตรวจสุขภาพที่บ้าน
+  1A000 เยี่ยมผู้ป่วยโรคความดันโลหิตสูง
+endnote
+
+note right of (ICD10 lookup)
+รหัสรายการโรคตามมาฐาน ICD10
+  A00 อหิวาตกโรค
+endnote
+
+note right of (Special PP lookup)
+รหัสบริการส่งเสริมป้องกันเฉพาะ
+  1B140 การตรวจคัดกรองโรคซึมเศร้าในหญิงตั้งครรภ...
+endnote
+
+rectangle Authorize {
+  Dev -- (Organization)
+  Dev -- (User)
+  Dev -- (Village)
+  Dev -- (House)
+  Dev -- (Person)
+  Dev -- (HealthCareService)
+  Dev -- (Template lookup)
+}
+
+note right of (User)
+ข้อมูลเจ้าหน้าที่ ที่ใช้งานระบบ รวมถึง
+กระบวนการยืนยันตัวตน เพื่อ Authorize
+ขอ token ในการขอเข้าถึง api ที่ป้องกันไว้
+endnote
+
+note right of (Template lookup)
+ชุดข้อมูล สำหรับใช้ในการช่วยกรอก
+โดยในแต่ละ Organization จะมีชุด
+Template ที่อาจจะเหมือ หรือ ต่างกันก็ได้
+endnote
+
+@enduml
