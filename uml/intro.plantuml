@@ -1,9 +1,10 @@
 @startuml
 left to right direction
 
-:Dev: as Dev
+:User: as Dev
 note left of Dev
 Maybe:
+  Developer.
   Other service.
   Other platform.
 end note
