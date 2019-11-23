@@ -1,6 +1,6 @@
-# Group Person
+# Group 5. Person
 
-## ข้อมูลคน [/org/{org_id}/person]
+## 5.1 ข้อมูลคน [/org/{org_id}/person]
 
 ### รายการข้อมูลคน [GET /org/{org_id}/person/{?page}{?per_page}{?query}]
 
@@ -983,7 +983,7 @@
                "timestamp":"2018-06-25T14:09:07.815+07:00"
             }
 
-## ความสัมพันธ์ทางสายเสือด [/org/{org_id}/person/{person_id}/relationship]
+## 5.2 ความสัมพันธ์ทางสายเสือด [/org/{org_id}/person/{person_id}/relationship]
 
 ### ดูความสัมพันธ์ [GET /org/{org_id}/person/{person_id}/relationship]
 

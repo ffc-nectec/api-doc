@@ -1,6 +1,6 @@
-# Group Lookup
+# Group 7. Lookup
 
-## รหัสอ้างอิงประเภทการเยี่ยม [/homehealth]
+## 7.1 รหัสอ้างอิงประเภทการเยี่ยม [/homehealth]
 
 ### ดูรายการเยี่ยม [GET /homehealth{?query}]
 
@@ -65,7 +65,7 @@
                 "name": "เยี่ยมผู้ป่วยโรคหลอดเลือดสมอง"
             }
 
-## รหัสอ้างอิงรายการโรค [/disease]
+## 7.2 รหัสอ้างอิงรายการโรค [/disease]
 
 ### ดูรายการโรค [GET /disease{?query}]
 
@@ -131,7 +131,7 @@
                 "name": "Cholera"
             }
 
-## รหัสบริการส่งเสริมป้องกันเฉพาะ [/specialPP]
+## 7.3 รหัสบริการส่งเสริมป้องกันเฉพาะ [/specialPP]
 
 ### ดูรายการ [GET /specialPP{?query}]
 
@@ -185,7 +185,7 @@
                "name":"การตรวจคัดกรองโรคซึมเศร้าในหญิงตั้งครรภ์/หลังคลอดด้วยแบบคัดกรอง 2Q พบว่าผลปกติ"
             }
 
-## Template ข้อความ [/org/{org_id}/template]
+## 7.4 Template ข้อความ [/org/{org_id}/template]
 
 ### ดูรายการ Template [GET /org/{org_id}/template{?query}]
 

@@ -1,4 +1,4 @@
-# Group Village
+# Group 3. Village
 
 ## ข้อมูลหมู่บ้าน [/org/{org_id}/village]
 
