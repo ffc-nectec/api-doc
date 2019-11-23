@@ -6,14 +6,12 @@
 
 <img src="data\image\create_organization.svg" width="100%">
 
-  ::: note
+
   **สำคัญ**
-  การลงทะเบียนหน่วยงานใหม่ จำเป็นต้องมี user ที่มี roles เป็น ADMIN ด้วย ไม่งั้นระบบจะไม่ยอมรับการลงทะเบียน
-  :::  
-  ::: note
-  หากเพิ่ม roles SYNC_AGENT เข้าไป จะส่งผลให้เวลา authorize ตัว token จะไม่มีวันหมดอายุ  
+  - การลงทะเบียนหน่วยงานใหม่ จำเป็นต้องมี user ที่มี roles เป็น ADMIN ด้วย ไม่งั้นระบบจะไม่ยอมรับการลงทะเบียน
+  - หากเพิ่ม roles SYNC_AGENT เข้าไป จะส่งผลให้เวลา authorize ตัว token จะไม่มีวันหมดอายุ  
   เป็น token ใช้สำหรับในกระบวนการ sync
-  :::
+
 
 + Request (application/json)
 

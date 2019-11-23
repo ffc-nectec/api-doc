@@ -8,7 +8,7 @@ note left: ใช้ user ที่ยังไม่ได้ผ่านกา
 User x<-- "Authorize service": 403 Error authentication Response
 
 == Activate User ==
-User -> "OTP service": Request with ADMIN token
+User -> "OTP service": Request GET /otp endpoint with ADMIN token
 note left: Header\nAuthorization: Bearer {ADMIN token}
 "OTP service" -> "OTP service": Generate OTP\n with individal key.
 "OTP service" --> User: OTP number Response
