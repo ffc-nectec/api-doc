@@ -3,22 +3,27 @@ actor User
 
 == Authorize ==
 User -> "Authorize service": Authentication Request
-note left: ใช้ user ที่ยังไม่ได้ผ่านการ activate
+note left: ใช้ user ที่ยังไม่ได้ผ่านการ activate\n{\n  "username":"thanachai",\n  "password":"a1e6-4f63e8295160"\n}
 "Authorize service" ->x "Authorize service": Check user is activate\nactivate=false
 User x<-- "Authorize service": 403 Error authentication Response
 
 == Activate User ==
 User -> "OTP service": Request with ADMIN token
+note left: Header\nAuthorization: Bearer {ADMIN token}
 "OTP service" -> "OTP service": Generate OTP\n with individal key.
 "OTP service" --> User: OTP number Response
+note left: {\n  "otp":"123456"\n}
 User -> "Activadte service": Authentication with otp
+note left: {\n  "username":"thanachai",\n  "password":"a1e6-4f63e8295160",\n  "otp":"123456"\n}
 "Activadte service" -> "Activadte service" : Set user\nactivate = true
 User <-- "Activadte service": Another authentication Response
+note left: User ที่ผ่านการ activate แล้ว\nครั้งหน้าสามารถ Authorize ได้เลย
 
 == Authorize ==
-note left: User ที่ผ่านการ activate แล้ว\nครั้งหน้าสามารถ Authorize ได้เลย
 User --> "Authorize service": Authentication Request
+note left: {\n  "username":"thanachai",\n  "password":"a1e6-4f63e8295160"\n}
 "Authorize service" -> "Authorize service": Check user is activate\nactivate=true
 User <-- "Authorize service": Another authentication Response
+note right: Token\n{\n  "expireDate":"xxx",\n  ...,\n  "token":"sdfsdfue"\n}
 
 @enduml
