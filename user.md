@@ -60,6 +60,19 @@
                "message": "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
             }
 
++ Response 403 (application/json)
+
+  สำหรับการใช้งาน user ครั้งแรก จำเป็นต้องผ่านการเปิดการใช้งานก่อน
+
+    + Attributes (Error)
+
+    + Body
+
+            {
+               "code": 403,
+               "message": "บัญชีผู้ใช้ยังไม่ได้ activate"
+            }
+
 ### การเปิดใช้งานผู้ใช้ [PUT /org/{org_id}/user/activadte]
 
 + Parameters
