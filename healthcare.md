@@ -608,7 +608,7 @@
                "timestamp":"2018-11-19T12:55:34.000+07:00"
             }
 
-### ดูรายการให้บริการของคน [GET /org/{org_id}/person/{person_id}/healthcareservice]
+### ข้อมูลรายการให้บริการของคน [GET /org/{org_id}/person/{person_id}/healthcareservice]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)

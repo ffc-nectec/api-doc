@@ -162,7 +162,7 @@
                }
             ]
 
-### ดูรายการหมู่บ้าน [GET /org/{org_id}/village]
+### ข้อมูลรายการหมู่บ้าน [GET /org/{org_id}/village]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)

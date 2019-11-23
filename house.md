@@ -176,7 +176,7 @@
                }
             ]
 
-### ดูรายการบ้าน [GET /org/{org_id}/house.json/{?page}{?per_page}]
+### ข้อมูลรายการบ้าน [GET /org/{org_id}/house.json/{?page}{?per_page}]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)

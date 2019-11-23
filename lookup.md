@@ -2,7 +2,7 @@
 
 ## 7.1 รหัสอ้างอิงประเภทการเยี่ยม [/homehealth]
 
-### ดูรายการเยี่ยม [GET /homehealth{?query}]
+### ข้อมูลรายการเยี่ยม [GET /homehealth{?query}]
 
 + Parameters
     + query: `เบาหวาน` (string)
@@ -35,7 +35,7 @@
                 }
             ]
 
-### ดูด้วย id การเยี่ยม [GET /homehealth/{homehealthid}]
+### ข้อมูลด้วย id การเยี่ยม [GET /homehealth/{homehealthid}]
 
 + Parameters
     + homehealthid: `1A01106` (string)
@@ -67,7 +67,7 @@
 
 ## 7.2 รหัสอ้างอิงรายการโรค [/disease]
 
-### ดูรายการโรค [GET /disease{?query}]
+### ข้อมูลรายการโรค [GET /disease{?query}]
 
 + Parameters
     + query: `fever` (string)
@@ -106,7 +106,7 @@
                 }
             ]
 
-### ดูด้วยรหัส ICD10 [GET /disease/icd10/{icd10id}]
+### ข้อมูลด้วยรหัส ICD10 [GET /disease/icd10/{icd10id}]
 
 + Parameters
     + icd10id: `A00.1` (string)
@@ -133,7 +133,7 @@
 
 ## 7.3 รหัสบริการส่งเสริมป้องกันเฉพาะ [/specialPP]
 
-### ดูรายการ [GET /specialPP{?query}]
+### ข้อมูลรายการ [GET /specialPP{?query}]
 
 + Parameters
     + query: `ซึมเศร้าในหญิง` (string)
@@ -187,7 +187,7 @@
 
 ## 7.4 Template ข้อความ [/org/{org_id}/template]
 
-### ดูรายการ Template [GET /org/{org_id}/template{?query}]
+### ข้อมูลรายการ Template [GET /org/{org_id}/template{?query}]
 
 + Parameters
     + query: `แข็งแรง` (string)

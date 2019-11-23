@@ -985,7 +985,7 @@
 
 ## 5.2 ความสัมพันธ์ทางสายเสือด [/org/{org_id}/person/{person_id}/relationship]
 
-### ดูความสัมพันธ์ [GET /org/{org_id}/person/{person_id}/relationship]
+### ข้อมูลความสัมพันธ์ [GET /org/{org_id}/person/{person_id}/relationship]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
