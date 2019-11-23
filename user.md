@@ -1,6 +1,6 @@
 # Group 2. User
 
-## ระบบ login [/org/{org_id}/authorize]
+## 2.1 ระบบ login [/org/{org_id}/authorize]
 
 ### login เพื่อขอ token [POST /org/{org_id}/authorize]
 
@@ -125,7 +125,7 @@
                "otp":"366868"
             }
 
-## ข้อตกลงการใช้งาน [/org/{org_id}/user/{user_id}/agreement]
+## 2.2 ข้อตกลงการใช้งาน [/org/{org_id}/user/{user_id}/agreement]
 
 ### ดูข้อตกลงของผู้ใช้ [GET /org/{org_id}/user/{user_id}/agreement/terms/latest]
 
@@ -196,7 +196,7 @@
     + Body
 
 
-## ข้อมูลผู้ใช้ [/org/{org_id}/user]
+## 2.3 ข้อมูลผู้ใช้ [/org/{org_id}/user]
 
 ### ดูรายการผู้ใช้ [GET /org/{org_id}/user]
 
