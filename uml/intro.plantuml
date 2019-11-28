@@ -43,7 +43,7 @@ rectangle Authorize {
 note right of (User)
 ข้อมูลเจ้าหน้าที่ ที่ใช้งานระบบ รวมถึง
 กระบวนการยืนยันตัวตน เพื่อ Authorize
-ขอ token ในการขอเข้าถึง api ที่ป้องกันไว้
+ขอ token ในการขอเข้าถึง API ที่ป้องกันไว้
 endnote
 
 note right of (Template lookup)
