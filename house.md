@@ -388,15 +388,13 @@
                }
             ]
 
-### ดึงข้อมูลบ้านด้วย id [GET /org/{org_id}/house/{house_id}{?query}]
+### ดึงข้อมูลบ้านด้วย id [GET /org/{org_id}/house/{house_id}]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
       ``รหัส id ของหน่วยงาน``
     + house_id: `5db31646698922acf8b9f807` (string, required)
       ``รหัสบ้านที่ระบบสร้างให้``
-    + query: `123` (string, optional)
-      ``สิ่งที่ต้องการค้นหา เช่น บ้านเลขที่``
 
 + Request (application/json)
 
@@ -448,11 +446,13 @@
                "timestamp":"2017-11-29T14:21:26.000+07:00"
             }
 
-### พิกัดบ้าน GeoJSON [GET /org/{org_id}/house]
+### พิกัดบ้าน GeoJSON [GET /org/{org_id}/house{?query}]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
       ``รหัส id ของหน่วยงาน``
+    + query: `123` (string, optional)
+      ``สิ่งที่ต้องการค้นหา เช่น บ้านเลขที่``
 
 + Request (application/json)
 
