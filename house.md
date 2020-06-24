@@ -176,7 +176,7 @@
                }
             ]
 
-### ข้อมูลรายการบ้าน [GET /org/{org_id}/house.json/{?page}{?per_page}]
+### ข้อมูลรายการบ้าน [GET /org/{org_id}/house.json/{?page}{?per_page}{?query}]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
@@ -185,6 +185,8 @@
       ``เนื่องจากข้อมูลมีจำนวนมาก จำเป็นต้องแบ่งข้อมูลเป็นหน้า หากไม่ใส่จะเป็นหน้า 1``
     + per_page: `5` (string, optional)
       ``เนื่องจากข้อมูลมีจำนวนมาก จำเป็นต้องแบ่งข้อมูลเป็นหน้า เป็นค่าที่ระบุว่าใน 1 หน้ามีข้อมูลกี่ชุด หากไม่ใส่จะเป็น 100``
+    + query: `123` (string, optional)
+      ``สิ่งที่ต้องการค้นหา เช่น บ้านเลขที่``
 
 + Request (application/json)
 
@@ -386,13 +388,15 @@
                }
             ]
 
-### ดึงข้อมูลบ้านด้วย id [GET /org/{org_id}/house/{house_id}]
+### ดึงข้อมูลบ้านด้วย id [GET /org/{org_id}/house/{house_id}{?query}]
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
       ``รหัส id ของหน่วยงาน``
     + house_id: `5db31646698922acf8b9f807` (string, required)
       ``รหัสบ้านที่ระบบสร้างให้``
+    + query: `123` (string, optional)
+      ``สิ่งที่ต้องการค้นหา เช่น บ้านเลขที่``
 
 + Request (application/json)
 
