@@ -1,5 +1,6 @@
 @startuml
-header update ข้อมูล user จาก cloud ไป jhcisdb 
+header update ข้อมูล user จาก cloud ไป jhcisdb
+title __**Update user**__\nCloud to jhcisdb\n
   jhcisdb -> Client: ดึงข้อมูลรายการ User
   Client <- Cloud: ดึงข้อมูลรายการ User
   activate Client
@@ -14,7 +15,8 @@ header update ข้อมูล user จาก cloud ไป jhcisdb
   ref over jhcisdb, Client
     ข้อควรระวัง
     - ให้ใช้ name กับ idcard เป็น key
-    - ตรวจสอบเรื่องเวลา timestamp ให้ดี
+    - ตรวจสอบเรื่องแปลงเวลา
+      timestamp to dateupdate ให้ดี
   end ref
 
   Client -> Cloud: บอก Cloud ว่าข้อมูลได้ sync แล้ว
