@@ -1,0 +1,24 @@
+@startuml
+header update ข้อมูล user จาก jhcisdb ไป cloud
+title __**Update user**__\njhcisdb to Cloud\n
+  jhcisdb -> Client: ดึงข้อมูลรายการ User
+  Client <- Cloud: ดึงข้อมูลรายการ User
+  activate Client
+  Client <-- Client: ตรวจสอบหารายการที่มีการ Update to Cloud
+  note left
+    ตรวจสอบจาก Timestamp
+    ดูว่าเวลาไหนจาก jhcisdb มากกว่า Cloud
+  end note
+
+  'Update ข้อมูล User ไป Cloud
+  Client -> Cloud: Update ข้อมูล User
+  ref over Client, cloud
+    ข้อควรระวัง
+    - ให้ใช้ name กับ idcard เป็น key
+    - ตรวจสอบเรื่องเวลา timestamp ให้ดี
+    - ห้ามเปลี่ยน Object id ให้ใช้ name กับ idcard เป็น key
+    - ตรวจสอบ role ให้ดี
+    - ตัวแปร isActivated ให้คงไว้
+    - link.isSynced = true
+  end ref
+@enduml
