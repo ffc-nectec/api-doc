@@ -1,0 +1,12 @@
+@startuml
+header Sync User
+title __**Syc user**__\n
+  ref over jhcisdb, Client, Cloud
+    Call
+      __**Update user**__ jhcisdb to Cloud
+  end ref
+  ref over jhcisdb, Client, Cloud
+    Call
+      __**Update user**__ Cloud to jhcisdb
+  end ref
+@enduml
