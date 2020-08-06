@@ -456,13 +456,13 @@
     + query: `123` (string, optional)
       ``สิ่งที่ต้องการค้นหา เช่น บ้านเลขที่``
 
-+ Request (application/json)
++ Request (application/vnd.geo+json)
 
     + Headers
 
             Authorization: Bearer {token}
 
-+ Response 200 (application/json)
++ Response 200 (application/vnd.geo+json)
 
     + Body
 
