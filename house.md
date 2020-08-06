@@ -188,7 +188,7 @@
     + query: `123` (string, optional)
       ``สิ่งที่ต้องการค้นหา เช่น บ้านเลขที่``
     + haveLocation: `true` (boolean, optional)
-      ``Filter ต้องการบ้านที่มีการปักพิกัด:true หรือ ไม่มีการปักพิกัด:false``
+      ``กรองรายการบ้าน ที่มีการปักพิกัด:true หรือ ไม่มีการปักพิกัด:false``
 
 + Request (application/json)
 
