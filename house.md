@@ -175,8 +175,221 @@
                   "timestamp":"2019-11-01T13:26:48.626+07:00"
                }
             ]
+### ข้อมูลรายการบ้าน [GET /org/{org_id}/house/{?page}{?per_page}{?query}]
 
-### ข้อมูลรายการบ้าน [GET /org/{org_id}/house.json/{?page}{?per_page}{?query}]
++ Parameters
+    + org_id: `5db0973f698922acf8b802fa` (string, required)
+      ``รหัส id ของหน่วยงาน``
+    + page: `2` (string, optional)
+      ``เนื่องจากข้อมูลมีจำนวนมาก จำเป็นต้องแบ่งข้อมูลเป็นหน้า หากไม่ใส่จะเป็นหน้า 1``
+    + per_page: `5` (string, optional)
+      ``เนื่องจากข้อมูลมีจำนวนมาก จำเป็นต้องแบ่งข้อมูลเป็นหน้า เป็นค่าที่ระบุว่าใน 1 หน้ามีข้อมูลกี่ชุด หากไม่ใส่จะเป็น 100``
+    + query: `123` (string, optional)
+      ``สิ่งที่ต้องการค้นหา เช่น บ้านเลขที่``
+    + haveLocation: `true` (boolean, optional)
+      ``กรองรายการบ้าน ที่มีการปักพิกัด:true หรือ ไม่มีการปักพิกัด:false``
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer {token}
+
++ Response 200 (application/json)
+
+    + Attributes (array[House],fixed-type)
+
+    + Body
+
+            [
+               {
+                  "identity":{
+                     "type":"thailand-household-id",
+                     "id":"70040048543"
+                  },
+                  "people":[
+
+                  ],
+                  "haveChronic":false,
+                  "villageId":"5db09741698922acf8b80326",
+                  "villageName":"บ้านคลองพันเละ",
+                  "orgId":"5db0973f698922acf8b802fa",
+                  "no":"12",
+                  "location":{
+                     "type":"Point",
+                     "coordinates":[
+                        99.99524921178818,
+                        13.516997928225631
+                     ]
+                  },
+                  "link":{
+                     "isSynced":true,
+                     "lastSync":"2019-10-25T14:20:50.009+07:00",
+                     "system":"JHICS",
+                     "keys":{
+                        "villcode":"70041208",
+                        "pcucode":"12345",
+                        "hcode":"501"
+                     }
+                  },
+                  "imagesUrl":[
+
+                  ],
+                  "id":"5db2a252698922acf8b988e1",
+                  "type":"House",
+                  "timestamp":"2017-11-29T14:11:59.000+07:00"
+               },
+               {
+                  "identity":{
+                     "type":"thailand-household-id",
+                     "id":"70040048551"
+                  },
+                  "people":[
+
+                  ],
+                  "haveChronic":false,
+                  "villageId":"5db09741698922acf8b80326",
+                  "villageName":"บ้านคลองพันเละ",
+                  "orgId":"5db0973f698922acf8b802fa",
+                  "no":"13",
+                  "location":{
+                     "type":"Point",
+                     "coordinates":[
+                        99.99178916215897,
+                        13.518706105441401
+                     ]
+                  },
+                  "link":{
+                     "isSynced":true,
+                     "lastSync":"2019-10-25T14:20:50.009+07:00",
+                     "system":"JHICS",
+                     "keys":{
+                        "villcode":"70041208",
+                        "pcucode":"12345",
+                        "hcode":"502"
+                     }
+                  },
+                  "imagesUrl":[
+
+                  ],
+                  "id":"5db2a252698922acf8b988e2",
+                  "type":"House",
+                  "timestamp":"2017-11-29T13:55:42.000+07:00"
+               },
+               {
+                  "identity":{
+                     "type":"thailand-household-id",
+                     "id":"70040048560"
+                  },
+                  "people":[
+
+                  ],
+                  "haveChronic":false,
+                  "villageId":"5db09741698922acf8b80326",
+                  "villageName":"บ้านคลองพันเละ",
+                  "orgId":"5db0973f698922acf8b802fa",
+                  "no":"14",
+                  "location":{
+                     "type":"Point",
+                     "coordinates":[
+                        99.99172747135162,
+                        13.518880834328966
+                     ]
+                  },
+                  "link":{
+                     "isSynced":true,
+                     "lastSync":"2019-10-25T14:20:50.009+07:00",
+                     "system":"JHICS",
+                     "keys":{
+                        "villcode":"70041208",
+                        "pcucode":"12345",
+                        "hcode":"503"
+                     }
+                  },
+                  "imagesUrl":[
+
+                  ],
+                  "id":"5db2a252698922acf8b988e3",
+                  "type":"House",
+                  "timestamp":"2017-11-29T13:55:49.000+07:00"
+               },
+               {
+                  "identity":{
+                     "type":"thailand-household-id",
+                     "id":"70040048578"
+                  },
+                  "people":[
+
+                  ],
+                  "haveChronic":true,
+                  "villageId":"5db09741698922acf8b80326",
+                  "villageName":"บ้านคลองพันเละ",
+                  "orgId":"5db0973f698922acf8b802fa",
+                  "no":"15",
+                  "location":{
+                     "type":"Point",
+                     "coordinates":[
+                        99.99520897865295,
+                        13.517376075381975
+                     ]
+                  },
+                  "link":{
+                     "isSynced":true,
+                     "lastSync":"2019-10-25T14:20:50.009+07:00",
+                     "system":"JHICS",
+                     "keys":{
+                        "villcode":"70041208",
+                        "pcucode":"12345",
+                        "hcode":"504"
+                     }
+                  },
+                  "imagesUrl":[
+
+                  ],
+                  "id":"5db2a252698922acf8b988e4",
+                  "type":"House",
+                  "timestamp":"2017-11-29T14:12:32.000+07:00"
+               },
+               {
+                  "identity":{
+                     "type":"thailand-household-id",
+                     "id":"70040282589"
+                  },
+                  "people":[
+
+                  ],
+                  "haveChronic":false,
+                  "villageId":"5db09741698922acf8b80326",
+                  "villageName":"บ้านคลองพันเละ",
+                  "orgId":"5db0973f698922acf8b802fa",
+                  "no":"15/1",
+                  "location":{
+                     "type":"Point",
+                     "coordinates":[
+                        99.99523043632507,
+                        13.517271758984984
+                     ]
+                  },
+                  "link":{
+                     "isSynced":true,
+                     "lastSync":"2019-10-25T14:20:50.009+07:00",
+                     "system":"JHICS",
+                     "keys":{
+                        "villcode":"70041208",
+                        "pcucode":"12345",
+                        "hcode":"505"
+                     }
+                  },
+                  "imagesUrl":[
+
+                  ],
+                  "id":"5db2a252698922acf8b988e5",
+                  "type":"House",
+                  "timestamp":"2017-11-29T14:12:24.000+07:00"
+               }
+            ]
+### ข้อมูลรายการบ้าน.json [GET /org/{org_id}/house.json/{?page}{?per_page}{?query}]
+ได้ข้อมูลเหมือนกับ ข้อมูลรายการบ้าน
 
 + Parameters
     + org_id: `5db0973f698922acf8b802fa` (string, required)
