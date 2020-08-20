@@ -194,6 +194,7 @@
     + Headers
 
             Authorization: Bearer {token}
+            Accept: application/json
 
 + Response 200 (application/json)
 
@@ -408,6 +409,7 @@
     + Headers
 
             Authorization: Bearer {token}
+            Accept: application/json
 
 + Response 200 (application/json)
 
@@ -674,6 +676,7 @@
     + Headers
 
             Authorization: Bearer {token}
+            Accept: application/vnd.geo+json
 
 + Response 200 (application/vnd.geo+json)
 
