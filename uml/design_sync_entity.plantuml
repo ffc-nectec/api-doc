@@ -1,0 +1,43 @@
+@startuml
+header กระบวนการ sync entity หลักทั้งหมด
+title __**Sync entity**__
+
+  jhcisdb -> AirSync: ดึงข้อมูลรายการ entity
+  AirSync <- Cloud: ดึงข้อมูลรายการ entity
+
+  AirSync -> AirSync: รายการ entity ที่มีทั้งบน Cloud และ AirSync (Cloud ∩ Airsync) :Send to Update
+  AirSync -> AirSync: รายการ entity ที่มีบน Cloud แต่ไม่มีบน AirSync (Cloud - AirSync) :Send to Cerate data on jhcisdb
+  AirSync -> AirSync: รายการ entity ที่ไม่มีบน Cloud แต่มีบน AirSync (AirSync - Cloud) :Send to Create data on cloud
+@enduml
+
+@startuml
+header กระบวนการ update entity หลักทั้งหมด จับคู่เข้ามาที่ละรายการ
+
+  (*) --> if "Timestamp (cloud > airsync)"
+          --> [true]  "Update data from cloud to jhcisdb"
+          --> "อย่าลืม update jhcisdb timestamp และ isSync = true"
+          --> (*)
+        else
+          --> if "Timestamp (cloud < airsync)"
+                --> [true] "Update data from jhcisdb to cloud"
+                --> "อย่าลืม update cloud timestamp และ isSync = true"
+                --> (*)
+              else
+                --> [false] (*)
+              endif
+        endif
+@enduml
+
+@startuml
+header กระบวนการ create data on jhcisdb ข้อมูลเข้ามาที่ละรายการ
+  (*) --> "Create data on jhcisdb"
+  --> "อย่าลืม timestamp และ isSync = true และ keys ไปยัง cloud"
+  --> (*)
+@enduml
+
+@startuml
+header กระบวนการ create data on cloud ข้อมูลเข้ามาที่ละรายการ
+  (*) --> "Create data on cloud"
+  --> "อย่าลืม timestamp และ isSync = true และ keys"
+  --> (*)
+@enduml

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="344px" preserveAspectRatio="none" style="width:803px;height:344px;" version="1.1" viewBox="0 0 803 344" width="803px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="fjyz0760sx0bk" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0" />
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" />
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3" />
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal" />
+        </filter>
+    </defs>
+    <g><text fill="#000000" font-family="sans-serif" font-size="18" font-weight="bold" lengthAdjust="spacingAndGlyphs" text-decoration="underline" textLength="99" x="347.75" y="44.2637">Sync entity</text>
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="39" x2="39" y1="91.8281" y2="302.5859" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="189" x2="189" y1="91.8281" y2="302.5859" />
+        <line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="758.5" x2="758.5" y1="91.8281" y2="302.5859" />
+        <rect fill="#FEFECE" filter="url(#fjyz0760sx0bk)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="58" x="8" y="55.2188" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="44" x="15" y="76.752">jhcisdb</text>
+        <rect fill="#FEFECE" filter="url(#fjyz0760sx0bk)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="58" x="8" y="301.5859" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="44" x="15" y="323.1191">jhcisdb</text>
+        <rect fill="#FEFECE" filter="url(#fjyz0760sx0bk)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="62" x="156" y="55.2188" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="48" x="163" y="76.752">AirSync</text>
+        <rect fill="#FEFECE" filter="url(#fjyz0760sx0bk)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="62" x="156" y="301.5859" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="48" x="163" y="323.1191">AirSync</text>
+        <rect fill="#FEFECE" filter="url(#fjyz0760sx0bk)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="51" x="731.5" y="55.2188" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="37" x="738.5" y="76.752">Cloud</text>
+        <rect fill="#FEFECE" filter="url(#fjyz0760sx0bk)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="51" x="731.5" y="301.5859" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="37" x="738.5" y="323.1191">Cloud</text>
+        <polygon fill="#A80036" points="177,120.1797,187,124.1797,177,128.1797,181,124.1797" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="39" x2="183" y1="124.1797" y2="124.1797" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="126" x="46" y="119.3232">ดึงข้อมูลรายการ entity</text>
+        <polygon fill="#A80036" points="200,150.5313,190,154.5313,200,158.5313,196,154.5313" style="stroke: #A80036; stroke-width: 1.0;" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="194" x2="758" y1="154.5313" y2="154.5313" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="126" x="206" y="149.6748">ดึงข้อมูลรายการ entity</text>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="189" x2="231" y1="184.8828" y2="184.8828" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="231" x2="231" y1="184.8828" y2="197.8828" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="190" x2="231" y1="197.8828" y2="197.8828" />
+        <polygon fill="#A80036" points="200,193.8828,190,197.8828,200,201.8828,196,197.8828" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="451" x="196" y="180.0264">รายการ entity ที่มีทั้งบน Cloud และ AirSync (Cloud ∩ Airsync) :Send to Update</text>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="189" x2="231" y1="228.2344" y2="228.2344" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="231" x2="231" y1="228.2344" y2="241.2344" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="190" x2="231" y1="241.2344" y2="241.2344" />
+        <polygon fill="#A80036" points="200,237.2344,190,241.2344,200,245.2344,196,241.2344" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="556" x="196" y="223.3779">รายการ entity ที่มีบน Cloud แต่ไม่มีบน AirSync (Cloud - AirSync) :Send to Cerate data on jhcisdb</text>
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="189" x2="231" y1="271.5859" y2="271.5859" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="231" x2="231" y1="271.5859" y2="284.5859" />
+        <line style="stroke: #A80036; stroke-width: 1.0;" x1="190" x2="231" y1="284.5859" y2="284.5859" />
+        <polygon fill="#A80036" points="200,280.5859,190,284.5859,200,288.5859,196,284.5859" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="546" x="196" y="266.7295">รายการ entity ที่ไม่มีบน Cloud แต่มีบน AirSync (AirSync - Cloud) :Send to Create data on cloud</text><text fill="#888888" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="157" x="634.5" y="13.3809">กระบวนการ sync entity หลักทั้งหมด</text>
+        <!--MD5=[4e9d580e2bc6f2a136e43dc942a90b3f]
+@startuml
+header กระบวนการ sync entity หลักทั้งหมด
+title __**Sync entity**__
+
+  jhcisdb -> AirSync: ดึงข้อมูลรายการ entity
+  AirSync <- Cloud: ดึงข้อมูลรายการ entity
+
+  AirSync -> AirSync: รายการ entity ที่มีทั้งบน Cloud และ AirSync (Cloud ∩ Airsync) :Send to Update
+  AirSync -> AirSync: รายการ entity ที่มีบน Cloud แต่ไม่มีบน AirSync (Cloud - AirSync) :Send to Cerate data on jhcisdb
+  AirSync -> AirSync: รายการ entity ที่ไม่มีบน Cloud แต่มีบน AirSync (AirSync - Cloud) :Send to Create data on cloud
+@enduml
+
+PlantUML version 1.2020.02(Sun Mar 01 17:22:07 ICT 2020)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_181-b13
+Operating System: Windows 10
+Default Encoding: MS874
+Language: en
+Country: US
+-->
+    </g>
+</svg>

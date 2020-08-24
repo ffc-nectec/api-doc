@@ -1,5 +1,14 @@
 # Group 8. Design
 
+## Entity
+
+### Sync Entity
+
+<img src="data\image\design_sync_entity.svg" width="100%">
+<img src="data\image\design_sync_entity_001.svg" width="100%">
+<img src="data\image\design_sync_entity_002.svg" width="100%">
+<img src="data\image\design_sync_entity_003.svg" width="100%">
+
 ## User
 
 ### Sync User
