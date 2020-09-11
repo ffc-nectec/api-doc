@@ -389,6 +389,94 @@
                   "timestamp":"2017-11-29T14:12:24.000+07:00"
                }
             ]
+
+
+### อัพเดทข้อมูลบ้าน [PUT /org/{org_id}/house/{house_id}]
+
++ Parameters
+    + org_id: `5db0973f698922acf8b802fa` (string, required)
+      ``รหัส id ของหน่วยงาน``
+    + house_id: `5db0973f698922acf8b802fb` (string, required)
+      ``รหัส id ของบ้าน``
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer {token}
+
+    + Attributes (House , fixed-type)
+
+    + Body
+
+            {
+               "identity":{
+                  "type":"thailand-household-id",
+                  "id":"54520015001"
+               },
+               "people":[
+
+               ],
+               "haveChronic":false,
+               "no":"510/32",
+               "road":"รังสิต-นครนายก",
+               "link":{
+                  "isSynced":true,
+                  "lastSync":"2019-11-01T13:39:39.569+07:00",
+                  "system":"JHICS",
+                  "keys":{
+                     "hid":"22"
+                  }
+               },
+               "imagesUrl":[
+
+               ],
+               "id":"5db0973f698922acf8b802fb",
+               "type":"House",
+               "timestamp":"2019-11-01T13:39:39.569+07:00"
+            }
+
++ Response 201 (application/json)
+
+    + Attributes (House , fixed-type)
+
+    + Body
+
+               {
+                  "identity":{
+                     "type":"thailand-household-id",
+                     "id":"54520015001"
+                  },
+                  "people":[
+
+                  ],
+                  "haveChronic":false,
+                  "no":"8/12",
+                  "road":"รังสิต-นครนายก",
+                  "location":{
+                     "type":"Point",
+                     "coordinates":[
+                        100.6027899,
+                        14.0782897
+                     ]
+                  },
+                  "link":{
+                     "isSynced":true,
+                     "lastSync":"2019-11-01T13:26:48.626+07:00",
+                     "system":"JHICS",
+                     "keys":{
+                        "hid":"22"
+                     }
+                  },
+                  "imagesUrl":[
+
+                  ],
+                  "id":"5db0973f698922acf8b802fb",
+                  "type":"House",
+                  "timestamp":"2019-11-01T13:26:48.626+07:00"
+               }
+
+
 ### ข้อมูลรายการบ้าน.json [GET /org/{org_id}/house.json/{?page}{?per_page}{?query}]
 ได้ข้อมูลเหมือนกับ ข้อมูลรายการบ้าน
 
