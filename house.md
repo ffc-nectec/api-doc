@@ -436,7 +436,7 @@
                "timestamp":"2019-11-01T13:39:39.569+07:00"
             }
 
-+ Response 201 (application/json)
++ Response 200 (application/json)
 
     + Attributes (House , fixed-type)
 
