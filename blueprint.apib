@@ -106,6 +106,7 @@ HOST: https://api.ffc.in.th/v1
 + identities (array[IdentityPerson]) - ข้อมูลอัตลักษณ์คน
 + chronics (array[Chronics]) - ข้อมูลโรคเรื้อรัง
 + disabilities (array[Disabilities]) - ข้อมูลความพิการ
++ behavior (Behavior, optional) - ข้อมูลพฤติกรรม
 + link (Link,optional)
 + relationships (array[Relationship]) - ความสัมพันธ์ทางสายเลือด
 + prename: `ด.ช.` (string,required) - คำนำหน้าชื่อ
@@ -262,6 +263,18 @@ HOST: https://api.ffc.in.th/v1
 + height: 158 (number,optional) - ส่วนสูง
 + waist: 78 (number,optional) - รอบเอว
 + bloodPressure (BloodPressure,optional) - ความดันเลือดวัดครั้งที่ 1
+
+# Behavior(object)
++ ciga (Frequency) - ความถี่ในการสูบบุหรี่
++ alcohol (Frequency) - ความถี่ในการดื่ม alcohol
++ exercise (Frequency) - ความถี่ในการออกกำลังกาย
++ bigaccidentever: false (boolean) - เคยเกิดอุบัติเหตุใหญ่หรือไม่
++ tonic: false (boolean) - ดื่มเครื่องดื่มชูกำลังไหม
++ habitfoming: false (boolean) - ลักษ
++ drugbyyourseft: false (boolean) - ซื้อยากินเองไหม
++ sugar: false (boolean) - ทานหวานไหม
++ salt: false (boolean) - ทานเค็มไหม
++ timestamp: `2014-09-04T16:19:17.000+07:00` (string) - วันที่เกิดการเปลี่ยนแปลงล่าสุดกับข้อมูล
 
 # Frequency (enum)
 + NEVER - ไม่เคย
